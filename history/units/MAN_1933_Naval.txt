@@ -1,0 +1,28 @@
+﻿units= {
+	##### NAVAL UNITS #####	
+	### Pacific Fleet -- Liaotung
+	fleet = {
+		name = "Tikhookeanskiy Flot"
+		naval_base = 11764 # Liaotung
+		task_force = {				
+			name = "Tikhookeanskiy Flot"
+			location = 11764 # Liaotung
+			# 1ya Flotiliya Esmintsev
+			ship = { name = "Mech" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = MAN version_name = "Orfey Class" } } }
+			ship = { name = "Molniya" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = MAN version_name = "Orfey Class" } } }
+			ship = { name = "Zarya" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = MAN version_name = "Orfey Class" } } }
+		}	
+		task_force = {	
+			name = "Tikhookyeanskiy Podvodniy Flot"
+			location = 11764 # Liaotung
+			# 1iy Podvodniy Flot
+			ship = { name = "Shch-101" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = MAN version_name = "Series V Shchuka" } } }			
+			ship = { name = "Shch-102" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = MAN version_name = "Series V Shchuka" } } }			
+			ship = { name = "Shch-103" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = MAN version_name = "Series V Shchuka" } } }			
+			ship = { name = "Shch-104" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = MAN version_name = "Series V Shchuka" } } }			
+			ship = { name = "Shch-105" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = MAN version_name = "Series V Shchuka" } } }					
+		}		
+	}
+} 
+
+#####################

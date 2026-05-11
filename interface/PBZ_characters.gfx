@@ -1,0 +1,39 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_Portrait_MAN_Dmitry_Horvat_small"
+		texturefile = "gfx/interface/ideas/MAN/Portrait_MAN_Dmitry_Horvat_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_Konstantin_Nechaev_small"
+		texturefile = "gfx/interface/ideas/MAN/Portrait_MAN_Konstantin_Nechaev_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_Mihail_Diterihs_small"
+		texturefile = "gfx/interface/ideas/MAN/Portrait_MAN_Mihail_Diterihs_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_Nikolai_Azariev_small"
+		texturefile = "gfx/interface/ideas/MAN/Portrait_MAN_Nikolai_Azariev_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_Leon_Dusimetier_small"
+		texturefile = "gfx/interface/ideas/MAN/Portrait_MAN_Leon_Dusimetier_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_Veniamin_Rychkov_small"
+		texturefile = "gfx/interface/ideas/MAN/Portrait_MAN_Veniamin_Rychkov_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_Alexander_Andogskiy_small"
+		texturefile = "gfx/interface/ideas/MAN/Portrait_MAN_Alexander_Andogskiy_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_Nikolai_Volodchenko_small"
+		texturefile = "gfx/interface/ideas/MAN/Portrait_MAN_Nikolai_Volodchenko_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_Pyotr_Mezhak_small"
+		texturefile = "gfx/interface/ideas/MAN/Portrait_MAN_Pyotr_Mezhak_small.dds"
+	}
+} 

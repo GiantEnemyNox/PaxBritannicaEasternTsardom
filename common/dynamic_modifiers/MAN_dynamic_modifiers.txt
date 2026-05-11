@@ -1,0 +1,10 @@
+MAN_cossack_host_modifier = {
+	icon = "GFX_dynamic_mod_modifiers_man_cossack_host"
+	remove_trigger = {
+		NOT = { is_owned_by = MAN }
+	}
+	local_org_regain = 0.05
+	local_supplies = 0.1
+	enemy_army_speed_factor = -0.1
+	enemy_attrition = 0.1
+}

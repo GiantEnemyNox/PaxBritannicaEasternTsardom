@@ -1,0 +1,28 @@
+﻿units= {
+	### Pacific Fleet -- Liaotung
+	fleet = {
+		name = "Tikhookeanskiy Flot"
+		naval_base = 11764 # Liaotung
+		task_force = {				
+			name = "Tikhookeanskiy Flot"
+			location = 11764 # Liaotung
+			# 1ya Flotiliya Esmintsev
+			ship = { name = "Mech" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = MAN  } } }
+			ship = { name = "Molniya" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = MAN  } } }
+			ship = { name = "Zarya" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = MAN  } } }
+		}	
+		task_force = {	
+			name = "Tikhookyeanskiy Podvodniy Flot"
+			location = 11764 # Liaotung
+			# 1iy Podvodniy Flot
+			ship = { name = "Shch-101" definition = submarine equipment = { submarine_1 = { amount = 1 owner = MAN  } } }			
+			ship = { name = "Shch-102" definition = submarine equipment = { submarine_1 = { amount = 1 owner = MAN  } } }			
+			ship = { name = "Shch-103" definition = submarine equipment = { submarine_1 = { amount = 1 owner = MAN  } } }			
+			ship = { name = "Shch-104" definition = submarine equipment = { submarine_1 = { amount = 1 owner = MAN  } } }			
+			ship = { name = "Shch-105" definition = submarine equipment = { submarine_1 = { amount = 1 owner = MAN  } } }			
+			ship = { name = "Shch-106" definition = submarine equipment = { submarine_1 = { amount = 1 owner = MAN  } } }					
+		}		
+	}
+}
+
+#####################

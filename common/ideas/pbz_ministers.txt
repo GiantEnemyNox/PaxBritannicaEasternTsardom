@@ -1,0 +1,127 @@
+ideas = {
+
+	head_of_government = {
+		law = yes
+
+		MAN_PBZ_Georgiy_Guins_HOG = {
+			
+			cost = 0 
+
+			removal_cost = -1
+			level = 7
+
+			visible = {
+				original_tag = MAN
+			}
+
+			available = { 
+				always = yes
+			}
+
+			allowed_to_remove = { 
+				always = no 
+			}
+
+			traits = {
+				PB_ni_trait
+				PB_Zealous_Nationalist 
+			}
+			
+			cancel_if_invalid = no
+		}
+	}
+
+	economics_minister = {
+		law = yes
+
+		MAN_PBZ_Ivan_Mikhailov_ECM = {
+			
+			cost = 0 
+
+			removal_cost = -1
+			level = 7
+
+			visible = {
+				original_tag = MAN
+			}
+
+			available = { 
+				always = yes
+			}
+
+			allowed_to_remove = { 
+				always = no 
+			}
+
+			traits = {
+				PB_ni_trait
+				PB_Bean_Counter 
+			}
+			
+			cancel_if_invalid = no
+		}
+	}
+
+	foreign_minister = {
+		law = yes
+
+		MAN_PBZ_Viktor_Grosse_FAM = {
+			
+			cost = 0 
+
+			removal_cost = -1
+			level = 7
+
+			visible = {
+				original_tag = MAN
+			}
+
+			available = { 
+				always = yes
+			}
+
+			allowed_to_remove = { 
+				always = no 
+			}
+
+			traits = {
+				PB_ds_trait
+				PB_Diplomatic_Strongman 
+			}
+			
+			cancel_if_invalid = no
+		}
+	}
+
+	internal_minister = {
+		law = yes
+
+		MAN_PBZ_Viktor_Pepelyayev_IM = {
+	
+			cost = 0 
+
+			removal_cost = -1
+			level = 7
+
+			visible = {
+				original_tag = MAN
+			}
+			
+			allowed_to_remove = {
+				always = no 
+			}
+
+			available = {
+				always = no 
+			}
+
+			traits = {
+				PB_ds_trait
+				PB_Crime_Fighter 
+			}
+			
+			cancel_if_invalid = no
+		}
+
+	}
+}

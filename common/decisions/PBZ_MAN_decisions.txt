@@ -1,0 +1,852 @@
+PBZ_MAN_resource_decisions = {
+
+	PBZ_MAN_Liaotung_Expand_Iron_Mines = {
+		icon = steel
+
+		available = {
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = {
+			716 = { is_owned_and_controlled_by = ROOT } #Liaotung
+		}
+
+		cost = 25
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 716 } #Liaotung
+		}
+		remove_effect = {
+			716 = {
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+			}
+		}
+	}
+
+	PBZ_MAN_Jilin_Open_Tungsten_Mines = {
+		icon = tungsten
+
+		available = {
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = {
+			328 = { is_owned_and_controlled_by = ROOT } #Jilin
+		}
+
+		cost = 25
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 328 } #Jilin
+		}
+		remove_effect = {
+			328 = {
+				add_resource = {
+					type = tungsten
+					amount = 16
+				}
+			}
+		}
+	}
+
+	PBZ_MAN_Jehol_Open_Alunite_Deposits = {
+		icon = aluminium
+
+		available = {
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = {
+			610 = { is_owned_and_controlled_by = ROOT } #Jehol
+		}
+
+		cost = 25
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 610 } #Jehol
+		}
+		remove_effect = {
+			610 = {
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+			}
+		}
+	}
+
+	PBZ_MAN_Heilungkiang_Resources_Prospection = {
+		icon = generic_construction
+
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = {
+			714 = { is_owned_and_controlled_by = ROOT } #Heilungkiang
+		}
+
+		cost = 25
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 714 } #Heilungkiang
+		}
+		remove_effect = {
+			714 = {
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+			}
+		}
+	}
+
+	PBZ_MAN_Liaoning_Resources_Prospection = {
+		icon = generic_construction
+
+		available = {
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = {
+			715 = { is_owned_and_controlled_by = ROOT } #Liaoning
+		}
+
+		cost = 25
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 715 } #Liaoning
+		}
+		remove_effect = {
+			715 = {
+				add_resource = {
+					type = oil
+					amount = 20
+				}
+				add_resource = {
+					type = chromium
+					amount = 12
+				}
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+			}
+		}
+	}
+}
+PBZ_MAN_cossack_host_decisions = {
+
+	PBZ_MAN_form_cossack_host_sungkiang = {
+		allowed = { always = no }
+		
+		available = {
+			717 = { is_owned_and_controlled_by = ROOT } #Sungkiang
+		}
+		
+		custom_cost_text = PBZ_command_power_20
+		custom_cost_trigger = { command_power > 19.99 }
+		days_remove = 60
+		fire_only_once = yes
+		
+		state_target = yes
+		
+		ai_will_do = {
+			factor = 50
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 717 } #Sungkiang
+		}
+		complete_effect = {
+			add_command_power = -20	
+		}
+		remove_effect = {
+			717 = {
+				add_dynamic_modifier = { modifier = MAN_cossack_host_modifier }
+			}
+		}
+	}
+
+	PBZ_MAN_form_cossack_host_jilin = {
+		allowed = { always = no }
+		
+		available = {
+			328 = { is_owned_and_controlled_by = ROOT } #Jilin
+		}
+
+		custom_cost_text = PBZ_command_power_20
+		custom_cost_trigger = { command_power > 19.99 }
+		days_remove = 60
+		fire_only_once = yes
+		
+		state_target = yes
+		
+		ai_will_do = {
+			factor = 50
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 328 } #Jilin
+		}
+		complete_effect = {
+			add_command_power = -20	
+		}
+		remove_effect = {
+			328 = {
+				add_dynamic_modifier = { modifier = MAN_cossack_host_modifier }
+			}
+		}
+	}
+
+	PBZ_MAN_form_cossack_host_liaoning = {
+		allowed = { always = no }
+		
+		available = {
+			715 = { is_owned_and_controlled_by = ROOT } #Liaoning
+		}
+
+		custom_cost_text = PBZ_command_power_20
+		custom_cost_trigger = { command_power > 19.99 }
+		days_remove = 60
+		fire_only_once = yes
+		
+		state_target = yes
+		
+		ai_will_do = {
+			factor = 50
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 715 } #Liaoning
+		}
+		complete_effect = {
+			add_command_power = -20	
+		}
+		remove_effect = {
+			715 = {
+				add_dynamic_modifier = { modifier = MAN_cossack_host_modifier }
+			}
+		}
+	}
+
+	PBZ_MAN_form_cossack_host_jehol = {
+		allowed = { always = no }
+		
+		available = {
+			610 = { is_owned_and_controlled_by = ROOT } #Jehol
+		}
+
+		custom_cost_text = PBZ_command_power_20
+		custom_cost_trigger = { command_power > 19.99 }
+		days_remove = 60
+		fire_only_once = yes
+		
+		state_target = yes
+		
+		ai_will_do = {
+			factor = 50
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 610 } #Jehol
+		}
+		complete_effect = {
+			add_command_power = -20	
+		}
+		remove_effect = {
+			610 = {
+				add_dynamic_modifier = { modifier = MAN_cossack_host_modifier }
+			}
+		}
+	}
+}
+PBZ_MAN_war_plans_decisions = {
+
+	PBZ_MAN_war_plan_cherry_orchard = {
+		
+		available = {
+			has_war = yes
+			any_enemy_country = {
+				original_tag = JAP
+			}
+		}
+
+		days_remove = 1
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		remove_effect = {
+			add_timed_idea = {
+				idea = PBZ_MAN_cherry_orchard
+				days = 75
+			}
+		}
+	}
+
+	PBZ_MAN_war_plan_red_chamber = {
+
+		available = {
+			has_war = yes
+			any_enemy_country = {
+				original_tag = ROC
+			}
+		}
+
+		days_remove = 1
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		remove_effect = {
+			add_timed_idea = {
+				idea = PBZ_MAN_red_chamber
+				days = 75
+			}
+		}
+	}
+
+	PBZ_MAN_war_plan_golden_lotus = {
+
+		available = {
+			has_war = yes
+			any_enemy_country = {
+				original_tag = CHI
+			}
+		}
+
+		days_remove = 1
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		remove_effect = {
+			add_timed_idea = {
+				idea = PBZ_MAN_golden_lotus
+				days = 75
+			}
+		}
+	}
+
+	PBZ_MAN_war_plan_broken_heart = {
+
+		available = {
+			has_war = yes
+			any_enemy_country = {
+				original_tag = VIN
+			}
+		}
+
+		days_remove = 1
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		remove_effect = {
+			add_timed_idea = {
+				idea = PBZ_MAN_broken_heart
+				days = 75
+			}
+		}
+	}
+
+	PBZ_MAN_war_plan_western_journey = {
+
+		available = {
+			has_war = yes
+			any_enemy_country = {
+				original_tag = XSM
+			}
+		}
+
+		days_remove = 1
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		remove_effect = {
+			add_timed_idea = {
+				idea = PBZ_MAN_western_journey
+				days = 75
+			}
+		}
+	}
+
+	PBZ_MAN_war_plan_shanghai_noon = {
+
+		available = {
+			has_war = yes
+			any_enemy_country = {
+				original_tag = SGH
+			}
+		}
+		
+		visible = {
+			has_completed_focus = PBZ_War_With_Commission
+		}
+
+		days_remove = 1
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		remove_effect = {
+			add_timed_idea = {
+				idea = PBZ_MAN_shanghai_noon
+				days = 75
+			}
+		}
+	}
+}
+
+PBZ_MAN_core_chinese_states_decisions = {
+
+	PBZ_MAN_integrate_hebei_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 608 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				608 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				960 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				614 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 608
+			has_full_control_of_state = 960
+			has_full_control_of_state = 614
+		}
+		cost = 75
+		fire_only_once = yes
+		days_remove = 90
+		remove_effect = {
+			add_state_core = 608
+			add_state_core = 960
+			add_state_core = 614
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	PBZ_MAN_integrate_chahar_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 621 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				611 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				621 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				746 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 611
+			has_full_control_of_state = 621
+			has_full_control_of_state = 746
+		}
+		cost = 75
+		fire_only_once = yes
+		days_remove = 90
+		remove_effect = {
+			add_state_core = 611
+			add_state_core = 621
+			add_state_core = 746
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	PBZ_MAN_integrate_shanxi_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 615 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				615 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				622 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 615
+			has_full_control_of_state = 622
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 75
+		remove_effect = {
+			add_state_core = 615
+			add_state_core = 622
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	PBZ_MAN_integrate_jiangsu_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 598 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				597 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				598 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 597
+			has_full_control_of_state = 598
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 75
+		remove_effect = {
+			add_state_core = 597
+			add_state_core = 598
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	PBZ_MAN_integrate_tianjing_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 959 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				959 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 959
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = 50
+		remove_effect = {
+			add_state_core = 959
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	PBZ_MAN_integrate_huangshan_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 749 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				749 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				606 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				596 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 749
+			has_full_control_of_state = 606
+			has_full_control_of_state = 596
+		}
+		cost = 75
+		fire_only_once = yes
+		days_remove = 90
+		remove_effect = {
+			add_state_core = 749
+			add_state_core = 606
+			add_state_core = 596
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	PBZ_MAN_integrate_hubei_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 620 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				620 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				607 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				744 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 620
+			has_full_control_of_state = 607
+			has_full_control_of_state = 744
+		}
+		cost = 75
+		fire_only_once = yes
+		days_remove = 90
+		remove_effect = {
+			add_state_core = 620
+			add_state_core = 607
+			add_state_core = 744
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	PBZ_MAN_integrate_sichuan_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 605 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				605 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				750 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				748 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 605
+			has_full_control_of_state = 750
+			has_full_control_of_state = 748
+		}
+		cost = 75
+		fire_only_once = yes
+		days_remove = 90
+		remove_effect = {
+			add_state_core = 605
+			add_state_core = 750
+			add_state_core = 748
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	PBZ_MAN_integrate_jiangxi_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 602 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				602 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				600 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 602
+			has_full_control_of_state = 600
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 75
+		remove_effect = {
+			add_state_core = 602
+			add_state_core = 600
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	PBZ_MAN_integrate_guangdong_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 593 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				593 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				595 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 593
+			has_full_control_of_state = 595
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 75
+		remove_effect = {
+			add_state_core = 593
+			add_state_core = 595
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	PBZ_MAN_integrate_guangxi_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 599 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				599 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				603 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				594 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 599
+			has_full_control_of_state = 603
+			has_full_control_of_state = 594
+		}
+		cost = 50
+		fire_only_once = yes
+		days_remove = 75
+		remove_effect = {
+			add_state_core = 599
+			add_state_core = 603
+			add_state_core = 594
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	PBZ_MAN_integrate_hainan_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 591 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				591 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 591
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = 50
+		remove_effect = {
+			add_state_core = 591
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	PBZ_MAN_integrate_commission_province = {
+		icon = border_war
+		highlight_states = { highlight_state_targets = { state = 743 } }
+		allowed = {
+			tag = MAN
+		}
+		visible = {
+			OR = {
+				743 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				961 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				609 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+				613 = { is_fully_controlled_by_ROOT_and_is_not_core_of_ROOT = yes }
+			}
+		}
+		available = {
+			has_full_control_of_state = 743
+			has_full_control_of_state = 961
+			has_full_control_of_state = 609
+			has_full_control_of_state = 613
+			
+		}
+		cost = 100
+		fire_only_once = yes
+		days_remove = 90
+		remove_effect = {
+			add_state_core = 743
+			add_state_core = 961
+			add_state_core = 609
+			add_state_core = 613
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}

@@ -1,0 +1,47 @@
+technologies = {
+
+	irregular_infantry_tech = {
+
+		research_cost = 1
+
+		allow = {
+			always = no
+		}
+
+		enable_subunits = {
+			irregular_infantry
+		}
+	}
+
+	pbz_improved_aug_units = {
+
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1933
+
+		razormaidens = {
+			soft_attack = 0.1
+			maximum_speed = 0.05
+		}
+
+		hardsuits = {
+			soft_attack = 0.1
+			breakthrough = 0.05
+		}
+		
+		categories = {
+			cat_augmented_infantry
+			cat_razormaidens
+			cat_hardsuits
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+
+}
+

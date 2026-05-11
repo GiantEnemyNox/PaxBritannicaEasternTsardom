@@ -1,0 +1,7 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_trait_russophile"
+		texturefile = "gfx/interface/traits/personal/trait_SOV_monarchist_sympathizer.dds"
+	}
+}

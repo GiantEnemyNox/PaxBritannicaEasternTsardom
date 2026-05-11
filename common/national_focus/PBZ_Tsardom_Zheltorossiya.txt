@@ -1,0 +1,3805 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_ARMY}
+### search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+### search_filters = {FOCUS_FILTER_NAVY}
+### search_filters = {FOCUS_FILTER_AIR}
+### search_filters = {FOCUS_FILTER_CULTURE}
+
+focus_tree = {
+	id = zheltorossiya_focus
+	
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = MAN
+		}
+
+	}
+	initial_show_position = {
+		focus = PBZ_MAN_New_East_Tsardom
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 300 y = 300 }
+
+	###Initial focuses###
+
+	focus = {
+		id = PBZ_MAN_New_East_Tsardom
+		icon = GFX_focus_SOV_the_true_tsars
+		x = 15
+		y = 0
+		cost = 7
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			country_event = {
+				id = PBZ_zheltorossiya.1
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Rebuff_Attack
+		icon = GFX_focus_prc_infiltration
+		x = 0
+		y = 1
+		cost = 14
+
+		relative_position_id = PBZ_MAN_New_East_Tsardom
+
+		prerequisite = {
+			focus = PBZ_MAN_New_East_Tsardom
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = PBZ_MAN_planned_emergency
+				days = 60
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Stabilise_Situation
+		icon = GFX_focus_another_public_control
+		x = 0
+		y = 1
+		cost = 21
+
+		relative_position_id = PBZ_MAN_Rebuff_Attack
+
+		prerequisite = {
+			focus = PBZ_MAN_Rebuff_Attack
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Pacify_Bandits
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 2
+		cost = 21
+
+		relative_position_id = PBZ_MAN_Rebuff_Attack
+
+		prerequisite = {
+			focus = PBZ_MAN_Stabilise_Situation
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_STABILITY}
+		search_filters = {FOCUS_FILTER_ARMY}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_stability = 0.05
+			add_political_power = 25
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.2
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Reinforcement_From_Russia
+		icon = GFX_focus_generic_truck
+		x = 2
+		y = 1
+		cost = 21
+
+		relative_position_id = PBZ_MAN_Rebuff_Attack
+
+		prerequisite = {
+			focus = PBZ_MAN_Rebuff_Attack
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 100
+				producer = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+				producer = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = field_kits_equipment_0
+				amount = 400
+				producer = RUS
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Help_From_Russia
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 2
+		y = 2
+		cost = 21
+
+		relative_position_id = PBZ_MAN_Rebuff_Attack
+
+		prerequisite = {
+			focus = PBZ_MAN_Reinforcement_From_Russia
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Open_Grain_Granaries
+		icon = GFX_focus_generic_price_controls
+		x = -2
+		y = 1
+		cost = 21
+
+		relative_position_id = PBZ_MAN_Rebuff_Attack
+
+		prerequisite = {
+			focus = PBZ_MAN_Rebuff_Attack
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_political_power = -10
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Agreement_With_Nobles
+		icon = GFX_focus_piece_alliance
+		x = -2
+		y = 2
+		cost = 21
+
+		relative_position_id = PBZ_MAN_Rebuff_Attack
+
+		prerequisite = {
+			focus = PBZ_MAN_Open_Grain_Granaries
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_political_power = -5
+			add_ideas = PBZ_MAN_local_nobles_support_0
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.3
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Victory_Achieved
+		icon = GFX_focus_victory_for_crown
+		x = 0
+		y = 3
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Rebuff_Attack
+
+		prerequisite = { focus = PBZ_MAN_Pacify_Bandits focus = PBZ_MAN_Agreement_With_Nobles focus = PBZ_MAN_Help_From_Russia }
+
+		available = {
+			GAN = {
+				OR = {
+					has_capitulated = yes
+					is_subject = yes
+					exists = no
+				}
+			}
+		}
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+			custom_effect_tooltip = PB_spacing_tt
+			297 = {
+				add_core_of = MON
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.4
+			}
+		}
+	}
+
+	###Political stuff###
+
+	focus = {
+		id = PBZ_MAN_Report_Internal_Arena
+		icon = GFX_focus_generic_treaty
+		x = 15
+		y = 6
+		cost = 28
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			has_completed_focus = PBZ_MAN_Victory_Achieved
+        }
+		
+		available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			country_event = {
+				id = PBZ_zheltorossiya.5
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Support_Radical_Wing
+		icon = GFX_focus_SOV_expand_the_army
+		x = -1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Report_Internal_Arena
+
+		prerequisite = {
+			focus = PBZ_MAN_Report_Internal_Arena
+		}
+		
+		mutually_exclusive = {
+			focus = PBZ_MAN_Support_Moderate_Wing
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_ideas = PBZ_MAN_Harbin_Faction_1
+			custom_effect_tooltip = PB_spacing_tt
+			add_popularity = {
+				ideology = ni
+				popularity = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Hunt_For_Dissidents
+		icon = GFX_focus_BRA_end_the_state_of_emergency
+		x = 0
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Support_Radical_Wing
+
+		prerequisite = {
+			focus = PBZ_MAN_Support_Radical_Wing
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_popularity = {
+				ideology = lb
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = an
+				popularity = -0.05
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.6
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Ramp_Up_Propaganda
+		icon = GFX_goal_generic_propaganda
+		x = 0
+		y = 2
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Support_Radical_Wing
+
+		prerequisite = {
+			focus = PBZ_MAN_Hunt_For_Dissidents
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_war_support = 0.1
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Harbin_Faction_1
+				add_idea = PBZ_MAN_Harbin_Faction_2
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			if = {
+				limit = {
+					OR = {
+						has_idea = isolation
+						has_idea = civilian_economy
+					}
+				}
+				add_ideas = low_economic_mobilisation
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Declare_Mobilisation
+		icon = GFX_focus_generic_limited_social_mobilization
+		x = -2
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Support_Radical_Wing
+
+		prerequisite = {
+			focus = PBZ_MAN_Support_Radical_Wing
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_war_support = 0.1
+			custom_effect_tooltip = PB_spacing_tt
+			if = {
+				limit = {
+					OR = {
+						has_idea = volunteer_only
+						has_idea = limited_conscription
+					}
+				}
+				add_ideas = extensive_conscription
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Toughen_Citizenship_Laws
+		icon = GFX_focus_AUS_lawmaking_leniency
+		x = 0
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Declare_Mobilisation
+
+		prerequisite = {
+			focus = PBZ_MAN_Declare_Mobilisation
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		search_filters = {FOCUS_FILTER_MANPOWER}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_stability = -0.05
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PB_Racial_Segregation
+				add_idea = PB_Racial_Hierarchy
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Privileges_Through_Blood
+		icon = GFX_focus_ITA_banda_carita
+		x = 1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Toughen_Citizenship_Laws
+
+		prerequisite = {
+			focus = PBZ_MAN_Toughen_Citizenship_Laws
+		}
+		
+		prerequisite = {
+			focus = PBZ_MAN_Ramp_Up_Propaganda
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		search_filters = {FOCUS_FILTER_ARMY}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			set_technology = { irregular_infantry_tech = 1 popup = no }
+			custom_effect_tooltip = PB_spacing_tt
+			division_template = {
+				name = "Kitaiskie Chasti"
+				division_names_group = SOV_PEN_01
+
+				regiments = {
+					irregular_infantry = { x = 0 y = 0 }
+					irregular_infantry = { x = 0 y = 1 }
+					irregular_infantry = { x = 0 y = 2 }
+					irregular_infantry = { x = 1 y = 0 }
+					irregular_infantry = { x = 1 y = 1 }
+					irregular_infantry = { x = 1 y = 2 }
+					irregular_infantry = { x = 2 y = 0 }
+					irregular_infantry = { x = 2 y = 1 }
+					irregular_infantry = { x = 2 y = 2 }
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Kitaiskie Chasti\" start_experience_factor = 0.2 start_equipment_factor = 1.0"
+					owner = ROOT
+					count = 4
+				}
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Harbin_Faction_2
+				add_idea = PBZ_MAN_Harbin_Faction_3
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Support_Moderate_Wing
+		icon = GFX_focus_MAN_flipped_expand_the_fleet
+		x = 1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Report_Internal_Arena
+
+		prerequisite = {
+			focus = PBZ_MAN_Report_Internal_Arena
+		}
+		
+		mutually_exclusive = {
+			focus = PBZ_MAN_Support_Radical_Wing
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_ideas = PBZ_MAN_Navy_Clique_1
+			custom_effect_tooltip = PB_spacing_tt
+			set_politics = {
+				ruling_party = ds
+				elections_allowed = no
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PB_NI_Order
+				add_idea = PB_NI_Imperialism
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Decrease_Radicals_Power
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 0
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Support_Moderate_Wing
+
+		prerequisite = {
+			focus = PBZ_MAN_Support_Moderate_Wing
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_popularity = {
+				ideology = ds
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = ni
+				popularity = -0.05
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PB_CHI_Ultramilitarist_Stronghold
+				add_idea = PBZ_MAN_Ultramilitarist_Notso_Stronghold
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Divert_Resources
+		icon = GFX_focus_generic_industrialists
+		x = 0
+		y = 2
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Support_Moderate_Wing
+
+		prerequisite = {
+			focus = PBZ_MAN_Decrease_Radicals_Power
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_stability = 0.1
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Navy_Clique_1
+				add_idea = PBZ_MAN_Navy_Clique_2
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Change_Rhetoric
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 2
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Support_Moderate_Wing
+
+		prerequisite = {
+			focus = PBZ_MAN_Support_Moderate_Wing
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = ds
+				popularity = 0.05
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PB_Ultranationalist_Monarchy 
+				add_idea = PB_Absolute_Monarchy 
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Ease_Up_Citizenship_Laws
+		icon = GFX_focus_MAN_ratify_law
+		x = 0
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Change_Rhetoric
+
+		prerequisite = {
+			focus = PBZ_MAN_Change_Rhetoric
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_STABILITY}
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PB_Racial_Segregation
+				add_idea = PB_Limited_Autonomy
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Volunteer_Forces
+		icon = GFX_focus_ETH_peacekeeping_forces
+		x = 1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Divert_Resources
+
+		prerequisite = {
+			focus = PBZ_MAN_Ease_Up_Citizenship_Laws
+		}
+		
+		prerequisite = {
+			focus = PBZ_MAN_Divert_Resources
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Navy_Clique_2
+				add_idea = PBZ_MAN_Navy_Clique_3
+			}
+			add_timed_idea = {
+				idea = PBZ_MAN_volunteer_forces
+				days = 365
+			}
+		}
+	}
+	
+	focus = {
+		id = PBZ_MAN_Finish_Political_Stuff
+		icon = GFX_focus_POL_complete_april_constitution
+		x = 1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Ramp_Up_Propaganda
+
+		prerequisite = {
+			focus = PBZ_MAN_Ramp_Up_Propaganda
+			focus = PBZ_MAN_Divert_Resources
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_political_power = 100
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.7
+			}
+		}
+	}
+
+	###Economical stuff###
+
+	focus = {
+		id = PBZ_MAN_Ministry_Of_Trade
+		icon = GFX_focus_generic_improve_the_administration
+		x = 0
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Finish_Political_Stuff
+
+		prerequisite = {
+			focus = PBZ_MAN_Finish_Political_Stuff
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			PB_Industry_Moderate_Progress_Increase = yes
+			custom_effect_tooltip = PB_spacing_tt
+			add_ideas = PBZ_MAN_Ministry_Of_Trade_0
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.8
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Central_Planning_Bureau
+		icon = GFX_focus_generic_full_employment
+		x = -1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Ministry_Of_Trade
+
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Trade
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			PB_Poverty_Moderate_Progress_Increase = yes
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_Of_Trade_0
+				add_idea = PBZ_MAN_Ministry_Of_Trade_1
+			}
+			swap_ideas = {
+				remove_idea = PB_No_Limit_Workday 
+				add_idea = PB_12_Hour_Workday
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Chamber_Of_Commerce
+		icon = GFX_focus_generic_monetary_union
+		x = 1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Ministry_Of_Trade
+
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Trade
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			custom_effect_tooltip = FRA_available_tech_team
+			show_ideas_tooltip = PBZ_MAN_Trade_Chamber
+			custom_effect_tooltip =  PB_spacing_tt
+			716 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Department_Of_Mining
+		icon = GFX_focus_generic_mining_industry
+		x = 1
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Central_Planning_Bureau
+
+		prerequisite = {
+			focus = PBZ_MAN_Central_Planning_Bureau
+		}
+		
+		prerequisite = {
+			focus = PBZ_MAN_Chamber_Of_Commerce
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_Of_Trade_1
+				add_idea = PBZ_MAN_Ministry_Of_Trade_2
+			}
+			add_tech_bonus = {
+				name = PBZ_MAN_Industry_Bonus
+				bonus = 0.75
+				uses = 2
+				category = excavation_tech
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			custom_effect_tooltip = PBZ_MAN_resource_prospecting_tt
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Department_Of_Construction
+		icon = GFX_focus_spa_the_spanish_miracle
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Department_Of_Mining
+
+		prerequisite = {
+			focus = PBZ_MAN_Department_Of_Mining
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_Of_Trade_2
+				add_idea = PBZ_MAN_Ministry_Of_Trade_3
+			}
+			add_tech_bonus = {
+				name = PBZ_MAN_Industry_Bonus
+				bonus = 0.75
+				uses = 2
+				category = construction_tech
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Department_Of_Roads
+		icon = GFX_focus_POL_warsaw_main_station
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Department_Of_Construction
+
+		prerequisite = {
+			focus = PBZ_MAN_Department_Of_Construction
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_Of_Trade_3
+				add_idea = PBZ_MAN_Ministry_Of_Trade_4
+			}
+			add_tech_bonus = {
+				name = PBZ_MAN_Industry_Bonus
+				bonus = 0.75
+				uses = 1
+				category = train_tech
+			}
+			add_tech_bonus = {
+				name = PBZ_MAN_Industry_Bonus
+				bonus = 0.75
+				uses = 1
+				category = construction_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = PBZ_MAN_Expand_The_Civil_Industry
+		icon = GFX_focus_generic_currency_reforms
+		x = -1
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Central_Planning_Bureau
+
+		prerequisite = {
+			focus = PBZ_MAN_Central_Planning_Bureau
+			focus = PBZ_MAN_Chamber_Of_Commerce
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			328 = {
+				set_state_category = large_city
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			716 = {
+				set_state_category = large_city
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			717 = {
+				set_state_category = city
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_tech_bonus = {
+				name = PBZ_MAN_Industry_Bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Scale_Up_Farming_Industry
+		icon = GFX_focus_generic_farmland
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Expand_The_Civil_Industry
+
+		prerequisite = {
+			focus = PBZ_MAN_Expand_The_Civil_Industry
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			715 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_resource = {
+					type = grain
+					amount = 16
+				}		
+			}
+			714 = {
+				set_state_category = town
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_resource = {
+					type = grain
+					amount = 22
+				}		
+			}
+			610 = {
+				set_state_category = town
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+				add_resource = {
+					type = grain
+					amount = 12
+				}		
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.9
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Electrify_The_Countryside
+		icon = GFX_focus_ARG_develop_the_electricity_sector
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Scale_Up_Farming_Industry
+
+		prerequisite = {
+			focus = PBZ_MAN_Scale_Up_Farming_Industry
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			761 = {
+				set_state_category = rural
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = tesla_tower
+					level = 1
+					instant_build = yes
+				}
+			}
+			612 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = tesla_tower
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_tech_bonus = {
+				name = PBZ_MAN_Industry_Bonus
+				bonus = 1.0
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Build_The_Suiho_Dam
+		icon = GFX_focus_generic_hydroelectric_energy
+		x = 1
+		y = 1
+		cost = 56
+
+		relative_position_id = PBZ_MAN_Electrify_The_Countryside
+
+		prerequisite = {
+			focus = PBZ_MAN_Electrify_The_Countryside
+		}
+		
+		prerequisite = {
+			focus = PBZ_MAN_Department_Of_Roads
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			328 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 9848
+					}
+				}
+				custom_effect_tooltip = {
+					localization_key = building_state_modifier|dam
+					INDENT = "    "
+				}				
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.10
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Expand_The_Military_Industry
+		icon = GFX_focus_generic_military_industry
+		x = 3
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Central_Planning_Bureau
+
+		prerequisite = {
+			focus = PBZ_MAN_Central_Planning_Bureau
+			focus = PBZ_MAN_Chamber_Of_Commerce
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			715 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			716 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			717 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_tech_bonus = {
+				name = PBZ_MAN_Industry_Bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Deal_With_Rubber_Shortage
+		icon = GFX_focus_generic_rubber
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Expand_The_Military_Industry
+
+		prerequisite = {
+			focus = PBZ_MAN_Expand_The_Military_Industry
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			modify_building_resources = {
+				building = synthetic_refinery
+				resource = rubber
+				amount = 1
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_tech_bonus = {
+				name = PBZ_MAN_Industry_Bonus
+				bonus = 1
+				uses = 2
+				category = synth_resources
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Develop_Roads
+		icon = GFX_focus_generic_road_investment
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Deal_With_Rubber_Shortage
+
+		prerequisite = {
+			focus = PBZ_MAN_Deal_With_Rubber_Shortage
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			PB_Poverty_Small_Progress_Increase = yes
+			custom_effect_tooltip = PB_spacing_tt
+			717 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			715 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			610 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Build_Railway_In_Chahar
+		icon = GFX_focus_BEL_engine_of_the_economy
+		x = -1
+		y = 1
+		cost = 56
+
+		relative_position_id = PBZ_MAN_Develop_Roads
+
+		prerequisite = {
+			focus = PBZ_MAN_Develop_Roads
+		}
+		
+		prerequisite = {
+			focus = PBZ_MAN_Department_Of_Roads
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			PB_Economy_Small_Progress_Increase = yes
+			custom_effect_tooltip = PB_spacing_tt
+			612 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			612 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 7648
+				}
+			}
+			build_railway = {
+				path = { 1558 12469 7578 12554 7648 }
+				level = 1
+			}
+			build_railway = {
+				path = { 10426 3978 10363 7648 }
+				level = 1
+			}
+		}
+	}
+
+	###International relations###
+
+	focus = {
+		id = PBZ_MAN_Ministry_Of_Foreign_Affairs
+		icon = GFX_focus_ARG_strengthening_the_concordancia
+		x = 7
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Finish_Political_Stuff
+
+		prerequisite = {
+			focus = PBZ_MAN_Finish_Political_Stuff
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = PB_spacing_tt
+			add_ideas = PBZ_MAN_Ministry_Of_Foreign_Affairs_0
+			custom_effect_tooltip = PB_spacing_tt
+			add_opinion_modifier = {
+				target = RUS
+				modifier = diplomatic_outreach
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_European_Department
+		icon = GFX_focus_MAN_focus_on_europe
+		x = -2
+		y = 1
+		cost = 35
+	
+		relative_position_id = PBZ_MAN_Ministry_Of_Foreign_Affairs
+		
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Foreign_Affairs
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+		
+		available = {
+			OR = {
+				FRA = {
+					exists = yes
+					is_subject = no
+				}
+				SPR = {
+					exists = yes
+					is_subject = no
+				}
+			}
+		}
+		bypass = {
+			FRA = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+			SPR = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+		}
+		
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = diplomatic_outreach
+			}
+			add_opinion_modifier = {
+				target = SPR
+				modifier = diplomatic_outreach
+			}
+			FRA = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+			SPR = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.11
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Contact_Fellow_Orthodox_Nations
+		icon = GFX_focus_GRE_an_orthodox_state
+		x = 0
+		y = 1
+		cost = 35
+	
+		relative_position_id = PBZ_MAN_European_Department
+		
+		prerequisite = {
+			focus = PBZ_MAN_European_Department
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+		
+		available = {
+			OR = {
+				SER = {
+					exists = yes
+					is_subject = no
+				}
+				BUL = {
+					exists = yes
+					is_subject = no
+				}
+				GRE = {
+					exists = yes
+					is_subject = no
+				}
+			}
+		}
+		
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = SER
+				modifier = diplomatic_outreach
+			}
+			add_opinion_modifier = {
+				target = BUL
+				modifier = diplomatic_outreach
+			}
+			add_opinion_modifier = {
+				target = GRE
+				modifier = diplomatic_outreach
+			}
+			SER = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+			BUL = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+			GRE = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Further_Overtures_Towards_Europe
+		icon = GFX_focus_SOV_russian_corporate_state
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Contact_Fellow_Orthodox_Nations
+
+		prerequisite = {
+			focus = PBZ_MAN_Contact_Fellow_Orthodox_Nations
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+
+        available = {
+			MAN = {
+				is_subject = no
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+					FRA = {
+						exists = yes
+						is_subject = no
+					}
+				}	
+				custom_effect_tooltip = MAN_market_access_FRA_tt
+				hidden_effect = {
+					FRA = {
+						give_market_access = MAN
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+					SPR = {
+						exists = yes
+						is_subject = no
+					}
+				}	
+				custom_effect_tooltip = MAN_market_access_SPR_tt
+				hidden_effect = {
+					SPR = {
+						give_market_access = MAN
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+					SER = {
+						exists = yes
+						is_subject = no
+					}
+				}	
+				custom_effect_tooltip = MAN_market_access_SER_tt
+				hidden_effect = {
+					SER = {
+						give_market_access = MAN
+					}
+				}
+			}
+			else = {
+				add_political_power = 100
+			}
+		}
+	}
+	
+	focus = {
+		id = PBZ_MAN_Asian_Department
+		icon = GFX_focus_MAN_focus_on_asia
+		x = 0
+		y = 1
+		cost = 35
+	
+		relative_position_id = PBZ_MAN_Ministry_Of_Foreign_Affairs
+		
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Foreign_Affairs
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+		
+		available = {
+			OR = {
+				KOR = {
+					exists = yes
+					is_subject = no
+				}
+				SIK = {
+					exists = yes
+					is_subject = no
+				}
+			}
+		}
+		bypass = {
+			KOR = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+			SIK = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+		}
+		
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = KOR
+				modifier = diplomatic_outreach
+			}
+			add_opinion_modifier = {
+				target = SIK
+				modifier = diplomatic_outreach
+			}
+			KOR = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+			SIK = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.12
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Help_Xinjiang_Forces
+		icon = GFX_focus_generic_annex_country
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Asian_Department
+
+		prerequisite = {
+			focus = PBZ_MAN_Asian_Department
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+
+        available = {
+			SIK = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		bypass = {
+			SIK = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			MAN = {
+				set_autonomy = {
+					target = SIK
+					autonomous_state = autonomy_PB_Autonomous_Puppet
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = PBZ_MAN_Friendship_With_Korea
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Help_Xinjiang_Forces
+
+		prerequisite = {
+			focus = PBZ_MAN_Help_Xinjiang_Forces
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+
+        available = {
+			KOR = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		bypass = {
+			KOR = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = PB_spacing_tt
+			give_military_access = KOR
+			KOR = { give_military_access = MAN }
+			diplomatic_relation = {
+				country = KOR
+				relation = non_aggression_pact
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Contact_Plutocrats
+		icon = GFX_focus_generic_gather_funds
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Friendship_With_Korea
+
+		prerequisite = {
+			focus = PBZ_MAN_Friendship_With_Korea
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+
+        available = {
+			SGH = {
+				exists = yes
+				OR = {
+					NOT = {
+						has_war_with = ROOT
+						has_completed_focus = PBZ_War_With_Commission
+					}
+				}
+			}
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_political_power = -15
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_0
+				add_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_1
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_American_Department
+		icon = GFX_focus_MAN_focus_on_americas
+		x = 2
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Ministry_Of_Foreign_Affairs
+
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Foreign_Affairs
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+
+        available = {
+			OR = {
+				MEX = {
+					exists = yes
+					is_subject = no
+				}
+				NWG = {
+					exists = yes
+					is_subject = no
+				}
+			}
+		}
+		bypass = {
+			MEX = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+			NWG = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+		}
+		
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = MEX
+				modifier = diplomatic_outreach
+			}
+			add_opinion_modifier = {
+				target = NWG
+				modifier = diplomatic_outreach
+			}
+			MEX = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+			NWG = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.13
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Heading_Further_South
+		icon = GFX_focus_generic_south_america
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_American_Department
+
+		prerequisite = {
+			focus = PBZ_MAN_American_Department
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+
+        available = {
+			CHL = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		bypass = {
+			CHL = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+		}
+		
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = CHL
+				modifier = diplomatic_outreach
+			}
+			CHL = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+			diplomatic_relation = {
+				country = CHL
+				relation = non_aggression_pact
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Sign_Lucrative_Deals
+		icon = GFX_focus_mex_privatisation
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Heading_Further_South
+
+		prerequisite = {
+			focus = PBZ_MAN_Heading_Further_South
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+
+        available = {
+			MEX = {
+				exists = yes
+				is_subject = no
+			}
+			NWG = {
+				exists = yes
+				is_subject = no
+			}
+			CHL = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+					MEX = {
+						exists = yes
+						is_subject = no
+					}
+				}	
+				custom_effect_tooltip = MAN_market_access_MEX_tt
+				hidden_effect = {
+					MEX = {
+						give_market_access = MAN
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+					NWG = {
+						exists = yes
+						is_subject = no
+					}
+				}	
+				custom_effect_tooltip = MAN_market_access_NWG_tt
+				hidden_effect = {
+					NWG = {
+						give_market_access = MAN
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+					CHL = {
+						exists = yes
+						is_subject = no
+					}
+				}	
+				custom_effect_tooltip = MAN_market_access_CHL_tt
+				hidden_effect = {
+					CHL = {
+						give_market_access = MAN
+					}
+				}
+			}
+			else = {
+				add_political_power = 150
+			}
+		}
+	}
+
+	###Culture thingies###
+
+	focus = {
+		id = PBZ_MAN_Ministry_Of_Culture
+		icon = GFX_focus_AFG_parliamentary_democracy
+		x = -7
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Finish_Political_Stuff
+
+		prerequisite = {
+			focus = PBZ_MAN_Finish_Political_Stuff
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = PB_spacing_tt
+			add_ideas = PBZ_MAN_Ministry_Of_Culture_0
+			custom_effect_tooltip = PB_spacing_tt
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Open_Publicly_Funded_Schools
+		icon = GFX_focus_PER_national_bank
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Ministry_Of_Culture
+
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Culture
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_political_power = -25
+			PB_SocDev_Improve_Literacy_Rate = yes
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PB_Basic_Education
+				add_idea = PB_Universal_Basic
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Organize_Night_Schools
+		icon = GFX_focus_generic_military_academy
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Open_Publicly_Funded_Schools
+
+		prerequisite = {
+			focus = PBZ_MAN_Open_Publicly_Funded_Schools
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			PB_Literacy_Moderate_Progress_Increase = yes
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_Of_Culture_0
+				add_idea = PBZ_MAN_Ministry_Of_Culture_1
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Expand_Harbin_University
+		icon = GFX_focus_generic_university_3
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Organize_Night_Schools
+
+		prerequisite = {
+			focus = PBZ_MAN_Organize_Night_Schools
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			custom_effect_tooltip = FRA_available_tech_team
+			show_ideas_tooltip = PBZ_MAN_Harbin_Institute
+			custom_effect_tooltip = PB_spacing_tt
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Contact_Area_Zero
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Expand_Harbin_University
+
+		prerequisite = {
+			focus = PBZ_MAN_Expand_Harbin_University
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_political_power = -25
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.14
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Meeting_Qing_Nobles_Again
+		icon = GFX_focus_BRA_reach_out_to_military_dem
+		x = -2
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Ministry_Of_Culture
+
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Culture
+		}
+		
+		available = {
+			has_completed_focus = PBZ_MAN_Agreement_With_Nobles
+        }
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Local_Nobles_Support_0
+				add_idea = PBZ_MAN_Local_Nobles_Support_1
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Friends_From_Among_Manchu
+		icon = GFX_focus_jap_manchurian_project
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Meeting_Qing_Nobles_Again
+
+		prerequisite = {
+			focus = PBZ_MAN_Meeting_Qing_Nobles_Again
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			country_event = {
+				id = PBZ_zheltorossiya.15
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			effect_tooltip = {
+				add_corps_commander_role = {
+					character = MAN_Aisin_Gioro_Xianyu
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Unexpected_Question
+		icon = GFX_focus_generic_women_in_military
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Friends_From_Among_Manchu
+
+		prerequisite = {
+			focus = PBZ_MAN_Friends_From_Among_Manchu
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_STABILITY}
+		search_filters = {FOCUS_FILTER_MANPOWER}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			country_event = {
+				id = PBZ_zheltorossiya.16
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Orthodox_Church_In_Manchuria
+		icon = GFX_focus_SOV_rebuild_the_savior_cathedral
+		x = 2
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Ministry_Of_Culture
+
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Culture
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_CULTURE}
+		search_filters = {FOCUS_FILTER_MANPOWER}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			761 = {
+				set_temp_variable = { temp_culture = token:russoasiatic }
+				PB_Cultures_change_culture_of_state = yes
+			}
+			612 = {
+				set_temp_variable = { temp_culture = token:russoasiatic }
+				PB_Cultures_change_culture_of_state = yes
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ethnic_Tensions_0
+				add_idea = PBZ_MAN_Ethnic_Tensions_1
+			}
+		}
+	}
+	
+	focus = {
+		id = PBZ_MAN_Cultural_Rennovation_Program
+		icon = GFX_focus_PER_fund_imperial_excellency
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Orthodox_Church_In_Manchuria
+
+		prerequisite = {
+			focus = PBZ_MAN_Orthodox_Church_In_Manchuria
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_CULTURE}
+		search_filters = {FOCUS_FILTER_MANPOWER}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			717 = {
+				set_temp_variable = { temp_culture = token:russoasiatic }
+				PB_Cultures_change_culture_of_state = yes
+			}
+			714 = {
+				set_temp_variable = { temp_culture = token:russoasiatic }
+				PB_Cultures_change_culture_of_state = yes
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ethnic_Tensions_1
+				add_idea = PBZ_MAN_Ethnic_Tensions_2
+			}
+			custom_effect_tooltip = PBZ_MAN_Change_Chinese_Names_tt
+			hidden_effect = {
+				set_province_name = {
+					id = 4572
+					name = Novo-Andreevsk
+				}
+			}
+			hidden_effect = {
+				set_province_name = {
+					id = 4633
+					name = Ninsin
+				}
+			}
+			hidden_effect = {
+				set_province_name = {
+					id = 3815
+					name = Pogranichny
+				}
+			}
+			hidden_effect = {
+				set_province_name = {
+					id = 934
+					name = Chayan
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Intensify_Manchu_Russification
+		icon = GFX_focus_MAN_russian_education_centers
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Cultural_Rennovation_Program
+
+		prerequisite = {
+			focus = PBZ_MAN_Cultural_Rennovation_Program
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_CULTURE}
+		search_filters = {FOCUS_FILTER_MANPOWER}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			716 = {
+				set_temp_variable = { temp_culture = token:russoasiatic }
+				PB_Cultures_change_culture_of_state = yes
+			}
+			715 = {
+				set_temp_variable = { temp_culture = token:russoasiatic }
+				PB_Cultures_change_culture_of_state = yes
+			}
+			610 = {
+				set_temp_variable = { temp_culture = token:russoasiatic }
+				PB_Cultures_change_culture_of_state = yes
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ethnic_Tensions_2
+				add_idea = PBZ_MAN_Ethnic_Tensions_3
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Public_Health_Office
+		icon = GFX_focus_generic_field_hostpital
+		x = -3
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Finish_Political_Stuff
+
+		prerequisite = {
+			focus = PBZ_MAN_Finish_Political_Stuff
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PB_Basic_Healthcare
+				add_idea = PB_Trinket_Healthcare
+			}
+		}
+	}
+	
+	focus = {
+		id = PBZ_MAN_Public_Security_Office
+		icon = GFX_focus_AFG_work_with_german_inteligence
+		x = 3
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Finish_Political_Stuff
+
+		prerequisite = {
+			focus = PBZ_MAN_Finish_Political_Stuff
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			country_event = {
+				id = PBZ_zheltorossiya.18
+			}
+		}
+	}
+
+	###Military focuses###
+	###Army focuses###
+
+	focus = {
+		id = PBZ_MAN_Ministry_Of_Defence
+		icon = GFX_focus_SOV_my_brothers_keeper
+		x = 26
+		y = 0
+		cost = 28
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+        available = {
+			has_completed_focus = PBZ_MAN_Victory_Achieved
+        }
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			clr_country_flag = PB_Disable_Military_Decisions
+			unlock_decision_category_tooltip = PB_Military_Decisions
+			PB_MilitaryReform_Moderate_Progress_Increase = yes
+			custom_effect_tooltip = PB_spacing_tt
+			country_event = {
+				id = PBZ_zheltorossiya.17
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Army_Department
+		icon = GFX_focus_ARG_march_to_la_casa_rosada
+		x = 0
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Ministry_Of_Defence
+
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Defence
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			army_experience = 50
+			custom_effect_tooltip = PB_spacing_tt
+			add_ideas = PBZ_MAN_Ministry_of_Defence_Initial
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Infantry_Doctrine
+		icon = GFX_focus_generic_full_social_mobilization
+		x = -2
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Army_Department
+
+		prerequisite = {
+			focus = PBZ_MAN_Army_Department
+		}
+		
+		mutually_exclusive = {
+			focus = PBZ_MAN_Mobile_Forces_Doctrine
+			focus = PBZ_MAN_Special_Forces_Doctrine
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = PBZ_MAN_Doctrine_Cost
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_of_Defence_Initial
+				add_idea = PBZ_MAN_Ministry_of_Defence_Infantry_0
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Infantry_Development
+		icon = GFX_focus_AFG_scavenging
+		x = 0
+		y = 2
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Infantry_Doctrine
+
+		prerequisite = {
+			focus = PBZ_MAN_Infantry_Doctrine
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_of_Defence_Infantry_0
+				add_idea = PBZ_MAN_Ministry_of_Defence_Infantry_1
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Infantry_Trenches
+		icon = GFX_focus_BEL_better_than_maginot
+		x = 0
+		y = 2
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Infantry_Development
+
+		prerequisite = {
+			focus = PBZ_MAN_Infantry_Development
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_of_Defence_Infantry_1
+				add_idea = PBZ_MAN_Ministry_of_Defence_Infantry_2
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Mobile_Forces_Doctrine
+		icon = GFX_focus_generic_tank_assembly
+		x = 0
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Army_Department
+
+		prerequisite = {
+			focus = PBZ_MAN_Army_Department
+		}
+
+		mutually_exclusive = {
+			focus = PBZ_MAN_Infantry_Doctrine
+			focus = PBZ_MAN_Special_Forces_Doctrine
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = PBZ_MAN_Doctrine_Cost
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_of_Defence_Initial
+				add_idea = PBZ_MAN_Ministry_of_Defence_Mobile_0
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Mobile_Forces_School
+		icon = GFX_focus_GER_german_army_invincible
+		x = 0
+		y = 2
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Mobile_Forces_Doctrine
+
+		prerequisite = {
+			focus = PBZ_MAN_Mobile_Forces_Doctrine
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 1
+				uses = 1
+				category = cat_mechanized_equipment
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_of_Defence_Mobile_0
+				add_idea = PBZ_MAN_Ministry_of_Defence_Mobile_1
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Mobile_Landship_Maneuvers
+		icon = GFX_focus_generic_tank_assault
+		x = 0
+		y = 2
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Mobile_Forces_School
+
+		prerequisite = {
+			focus = PBZ_MAN_Mobile_Forces_School
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_of_Defence_Mobile_1
+				add_idea = PBZ_MAN_Ministry_of_Defence_Mobile_2
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Special_Forces_Doctrine
+		icon = GFX_focus_eng_special_air_service
+		x = 2
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Army_Department
+
+		prerequisite = {
+			focus = PBZ_MAN_Army_Department
+		}
+		
+		mutually_exclusive = {
+			focus = PBZ_MAN_Infantry_Doctrine
+			focus = PBZ_MAN_Mobile_Forces_Doctrine
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = PBZ_MAN_Doctrine_Cost
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 1
+				uses = 2
+				category = mountaineers_tech
+				category = marine_tech
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_of_Defence_Initial
+				add_idea = PBZ_MAN_Ministry_of_Defence_Special_0
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Special_Augmented_Units
+		icon = GFX_focus_RAJ_a_private_military
+		x = 0
+		y = 2
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Special_Forces_Doctrine
+
+		prerequisite = {
+			focus = PBZ_MAN_Special_Forces_Doctrine
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 1
+				uses = 2
+				category = cat_augmented_infantry
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			set_technology = {
+				pbz_improved_aug_units = 1
+				popup = no
+			}
+			custom_effect_tooltip = PBZ_MAN_aug_units_tech_tt
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_of_Defence_Special_0
+				add_idea = PBZ_MAN_Ministry_of_Defence_Special_1
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Special_From_Skies
+		icon = GFX_focus_generic_paratrooper
+		x = 0
+		y = 2
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Special_Augmented_Units
+
+		prerequisite = {
+			focus = PBZ_MAN_Special_Augmented_Units
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 1
+				uses = 2
+				category = cat_jet_troopers
+				category = para_tech
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_of_Defence_Special_1
+				add_idea = PBZ_MAN_Ministry_of_Defence_Special_2
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_New_Cossack_Host
+		icon = GFX_focus_MAN_cossack_host
+		x = -1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Mobile_Forces_Doctrine
+
+		prerequisite = {
+			focus = PBZ_MAN_Infantry_Doctrine
+			focus = PBZ_MAN_Mobile_Forces_Doctrine
+			focus = PBZ_MAN_Special_Forces_Doctrine
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			effect_tooltip = {
+				add_corps_commander_role = {
+					character = MAN_Ivan_Gamov
+				}
+			}
+			effect_tooltip = {
+				add_corps_commander_role = {
+					character = MAN_Faddei_Glebov
+				}
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			custom_effect_tooltip = PBZ_MAN_form_new_cossacks_host_tt
+			hidden_effect = {
+				activate_targeted_decision = { target = ROOT decision = PBZ_MAN_form_cossack_host_jilin }
+				activate_targeted_decision = { target = ROOT decision = PBZ_MAN_form_cossack_host_sungkiang }
+				activate_targeted_decision = { target = ROOT decision = PBZ_MAN_form_cossack_host_liaoning }
+				activate_targeted_decision = { target = ROOT decision = PBZ_MAN_form_cossack_host_jehol }
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Cossack_Frontier_Spirit
+		icon = GFX_focus_generic_horse_studs
+		x = 0
+		y = 2
+		cost = 28
+
+		relative_position_id = PBZ_MAN_New_Cossack_Host
+
+		prerequisite = {
+			focus = PBZ_MAN_New_Cossack_Host
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			army_experience = 25
+			custom_effect_tooltip = PB_spacing_tt
+			add_ideas = PBZ_MAN_Cossack_Spirit
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Revise_War_Plans
+		icon = GFX_goal_generic_position_armies
+		x = 1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Mobile_Forces_Doctrine
+
+		prerequisite = {
+			focus = PBZ_MAN_Infantry_Doctrine
+			focus = PBZ_MAN_Mobile_Forces_Doctrine
+			focus = PBZ_MAN_Special_Forces_Doctrine
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			custom_effect_tooltip = PBZ_MAN_draft_war_plans_tt
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_War_Games
+		icon = GFX_focus_generic_combined_arms
+		x = 0
+		y = 2
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Revise_War_Plans
+
+		prerequisite = {
+			focus = PBZ_MAN_Revise_War_Plans
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			army_experience = 15
+			navy_experience = 15
+			air_experience = 15
+			custom_effect_tooltip = PB_spacing_tt
+			if = {
+				limit = {
+						has_completed_focus = PBZ_MAN_Infantry_Doctrine
+				}
+				every_army_leader = {
+					add_defense = 1
+					add_planning = 1
+				}
+			}
+			else_if = {
+				limit = {
+						has_completed_focus = PBZ_MAN_Mobile_Forces_Doctrine
+				}
+				every_army_leader = {
+					add_attack = 1
+					add_logistics = 1
+				}
+			}
+			else_if = {
+				limit = {
+						has_completed_focus = PBZ_MAN_Special_Forces_Doctrine
+				}
+				every_army_leader = {
+					add_attack = 1
+					add_planning = 1
+				}
+			}
+			else = {
+				custom_effect_tooltip = PBZ_MAN_if_infantry_doctrine
+				every_army_leader = {
+					add_defense = 1
+					add_planning = 1
+				}
+				custom_effect_tooltip = PB_spacing_tt
+				custom_effect_tooltip = PBZ_MAN_if_mobile_doctrine
+				every_army_leader = {
+					add_attack = 1
+					add_logistics = 1
+				}
+				custom_effect_tooltip = PB_spacing_tt
+				custom_effect_tooltip = PBZ_MAN_if_special_doctrine
+				every_army_leader = {
+					add_attack = 1
+					add_planning = 1
+				}
+			}
+		}
+	}
+
+	###Air focuses###
+
+	focus = {
+		id = PBZ_MAN_Air_Force_Department
+		icon = GFX_focus_PER_raf_planes
+		x = -5
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Ministry_Of_Defence
+
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Defence
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_AIR}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			air_experience = 25
+			custom_effect_tooltip = PB_spacing_tt
+			add_doctrine_cost_reduction = {
+				name = PBZ_MAN_Doctrine_Cost
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_equipment_to_stockpile = {
+				type = small_plane_airframe
+				amount = 100
+				producer = RUS
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_ideas = PBZ_MAN_Air_Department_0
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Build_Aircraft_Industry
+		icon = GFX_focus_generic_aircraft_production
+		x = -1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Air_Force_Department
+
+		prerequisite = {
+			focus = PBZ_MAN_Air_Force_Department
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_AIR}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 0.5
+				uses = 1
+				category = air_equipment	
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Develop_Aviation
+		icon = GFX_focus_generic_air_research_boost
+		x = 1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Air_Force_Department
+
+		prerequisite = {
+			focus = PBZ_MAN_Air_Force_Department
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_AIR}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					controls_province = 7652
+					328 = { #Heilungkiang
+						is_owned_and_controlled_by = ROOT
+						can_construct_building = air_facility
+					}
+				}
+				328 = { #Heilungkiang
+					add_building_construction = {
+						type = air_facility
+						level = 1
+						province = 7652
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					prioritize = { 715 }
+					limit = {
+						is_core_of = ROOT
+						can_construct_building = air_facility
+					}
+					construct_building_in_random_province = { air_facility = 1 }
+				}
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_breakthrough_points = {
+				specialization = specialization_air
+				value = 1
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 0.5
+				uses = 1
+				category = air_equipment	
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Pilot_Academy
+		icon = GFX_focus_generic_copy_plane_designs
+		x = 1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Build_Aircraft_Industry
+
+		prerequisite = {
+			focus = PBZ_MAN_Build_Aircraft_Industry
+			focus = PBZ_MAN_Develop_Aviation
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_AIR}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			air_experience = 25
+			custom_effect_tooltip = PB_spacing_tt
+			add_doctrine_cost_reduction = {
+				name = PBZ_MAN_Doctrine_Cost
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Air_Department_0
+				add_idea = PBZ_MAN_Air_Department_1
+			}
+		}
+	}
+	
+	focus = {
+		id = PBZ_MAN_CAS_Planes
+		icon = GFX_focus_generic_tank_air_support
+		x = -1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Pilot_Academy
+
+		prerequisite = {
+			focus = PBZ_MAN_Pilot_Academy
+		}
+
+		mutually_exclusive = {
+			focus = PBZ_MAN_Tactical_Bombers
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_AIR}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Air_Department_1
+				add_idea = PBZ_MAN_Air_Department_2
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Tactical_Bombers
+		icon = GFX_focus_SWE_marauder_bombers
+		x = 1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Pilot_Academy
+
+		prerequisite = {
+			focus = PBZ_MAN_Pilot_Academy
+		}
+		
+		mutually_exclusive = {
+			focus = PBZ_MAN_CAS_Planes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_AIR}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Air_Department_1
+				add_idea = PBZ_MAN_Air_Department_3
+			}
+		}
+	}
+
+	###Navy focuses###
+
+	focus = {
+		id = PBZ_MAN_Navy_Department
+		icon = GFX_focus_generic_merchant_fleet
+		x = 5
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Ministry_Of_Defence
+
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Defence
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_NAVY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			navy_experience = 50
+			custom_effect_tooltip = PB_spacing_tt
+			add_doctrine_cost_reduction = {
+				name = PBZ_MAN_Doctrine_Cost
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+			custom_effect_tooltip = PB_spacing_tt
+			add_ideas = PBZ_MAN_Navy_Department_0
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Expand_Dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Navy_Department
+
+		prerequisite = {
+			focus = PBZ_MAN_Navy_Department
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_NAVY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			716 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_facility
+					level = 1
+					instant_build = yes
+					province = 9835
+				}
+			}
+			add_ideas = PBZ_MAN_Building_Fleet_Faster
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Naval_Training
+		icon = GFX_focus_generic_naval_discipline
+		x = 0
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Expand_Dockyards
+
+		prerequisite = {
+			focus = PBZ_MAN_Expand_Dockyards
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_NAVY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			navy_experience = 25
+			custom_effect_tooltip = PB_spacing_tt
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Navy_Department_0
+				add_idea = PBZ_MAN_Navy_Department_1
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Submarine_Fleet
+		icon = GFX_goal_generic_navy_submarine
+		x = -1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Naval_Training
+
+		prerequisite = {
+			focus = PBZ_MAN_Naval_Training
+		}
+
+		mutually_exclusive = {
+			focus = PBZ_MAN_Destroyer_Fleet
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_NAVY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Navy_Department_1
+				add_idea = PBZ_MAN_Navy_Department_2
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Destroyer_Fleet
+		icon = GFX_focus_generic_destroyer
+		x = 1
+		y = 1
+		cost = 28
+
+		relative_position_id = PBZ_MAN_Naval_Training
+
+		prerequisite = {
+			focus = PBZ_MAN_Naval_Training
+		}
+
+		mutually_exclusive = {
+			focus = PBZ_MAN_Submarine_Fleet
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_NAVY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Navy_Department_1
+				add_idea = PBZ_MAN_Navy_Department_3
+			}
+		}
+	}
+	
+	###China Unification###
+
+	focus = {
+		id = PBZ_MAN_China_United
+		icon = GFX_focus_chi_one_china_policy
+		x = 26
+		y = 8
+		cost = 28
+		
+		available = {
+			ROC = {
+				exists = no
+			}
+			CHI = {
+				exists = no
+			}
+			MAN = {
+				owns_state = 608
+				owns_state = 959
+			}
+
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			country_event = {
+				id = PBZ_zheltorossiya.20
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_Pacify_Northern_China
+		icon = GFX_focus_piece_alliance
+		x = -1
+		y = 1
+		cost = 35
+		
+		relative_position_id = PBZ_MAN_China_United
+		
+		prerequisite = {
+			focus = PBZ_MAN_China_United
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_stability = 0.025
+			every_controlled_state = {
+				limit = {
+					is_core_of = ROC
+				}
+				add_compliance = 10
+				add_resistance = -15
+			}
+		}
+	}
+	
+	focus = {
+		id = PBZ_Pacify_Southern_China
+		icon = GFX_focus_piece_alliance
+		x = 1
+		y = 1
+		cost = 35
+		
+		relative_position_id = PBZ_MAN_China_United
+		
+		prerequisite = {
+			focus = PBZ_MAN_China_United
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_stability = 0.025
+			every_controlled_state = {
+				limit = {
+					is_core_of = CHI
+				}
+				add_compliance = 10
+				add_resistance = -15
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_Claim_Dragon_Throne
+		icon = GFX_focus_man_claim_the_mandate_of_heaven
+		x = 1
+		y = 1
+		cost = 35
+		
+		relative_position_id = PBZ_Pacify_Northern_China
+		
+		prerequisite = {
+			focus = PBZ_Pacify_Northern_China
+		}
+		
+		prerequisite = {
+			focus = PBZ_Pacify_Southern_China
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			custom_effect_tooltip = PBZ_MAN_core_chinese_states_tt
+			custom_effect_tooltip = PB_spacing_tt
+			every_controlled_state = {
+				limit = {
+					is_core_of = ROC
+					is_core_of = CHI
+				}
+				add_compliance = 15
+				add_resistance = -20
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_War_With_Commission
+		icon = GFX_focus_generic_target_china
+		x = 0
+		y = 1
+		cost = 35
+		
+		relative_position_id = PBZ_Claim_Dragon_Throne
+		
+		prerequisite = {
+			focus = PBZ_Claim_Dragon_Throne
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			country_event = {
+				id = PBZ_zheltorossiya.21
+			}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_dynamic_mod_modifiers_man_cossack_host"
+		texturefile = "gfx/interface/dynamic_modifiers/modifiers_man_cossack_host.png"
+	}
+}

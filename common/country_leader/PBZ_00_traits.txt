@@ -1,0 +1,29 @@
+leader_traits = {
+
+	PBZ_MAN_Trade_Chamber_Company = {
+
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PBZ_MAN_KVZhD_Company = {
+
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PBZ_MAN_Harbin_Institute_Company = {
+
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

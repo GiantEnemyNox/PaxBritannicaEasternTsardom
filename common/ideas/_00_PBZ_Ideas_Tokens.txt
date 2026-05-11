@@ -1,0 +1,10 @@
+ideas = {
+##########################
+##  CULTURES
+##########################
+
+	culture_tokens = {
+        russoasiatic = { allowed = { always = no } }
+    }
+
+}

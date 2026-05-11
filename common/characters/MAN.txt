@@ -1,0 +1,441 @@
+characters={
+	############
+	####Army####
+	############
+	MAN_Dmitry_Horvat={
+		name=MAN_Dmitry_Horvat
+		portraits={
+			army={
+				small="GFX_Portrait_MAN_Dmitry_Horvat_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Dmitry_Horvat.dds"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = MAN_Dmitry_Horvat
+			allowed = {
+				original_tag = MAN
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={ Siberian_Front_Veteran old_guard war_hero trait_engineer }
+			skill=4
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=4
+		}
+	}
+	
+	MAN_Mihail_Diterihs={
+		name=MAN_Mihail_Diterihs
+		portraits={
+			army={
+				small="GFX_Portrait_MAN_Mihail_Diterihs_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Mihail_Diterihs.dds"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = MAN_Mihail_Diterihs
+			allowed = {
+				original_tag = MAN
+			}
+			traits = {
+				army_chief_planning_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={ Siberian_Front_Veteran infantry_officer war_hero }
+			skill=4
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+		}
+	}
+
+	MAN_Konstantin_Nechaev={
+		name=MAN_Konstantin_Nechaev
+		portraits={
+			army={
+				small="GFX_Portrait_MAN_Konstantin_Nechaev_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Konstantin_Nechaev.dds"
+			}
+		}
+		corps_commander={
+			traits={ Siberian_Front_Veteran infantry_officer career_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+
+	MAN_Joseph_Ilyin={
+		name=MAN_Joseph_Ilyin
+		portraits={
+			army={
+				small="GFX_Portrait_Asia_Generic_land_1_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Joseph_Ilyin.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer trait_cautious }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=3
+		}
+	}
+
+	MAN_Pavel_Ivanov_Rinov={
+		name=MAN_Pavel_Ivanov_Rinov
+		portraits={
+			army={
+				small="GFX_Portrait_Asia_Generic_land_1_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Pavel_Ivanov_Rinov.dds"
+			}
+		}
+		corps_commander={
+			traits={ Siberian_Front_Veteran commando }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=2
+		}
+	}
+
+	MAN_Pyotr_Ivanov_Mumzhiev={
+		name=MAN_Pyotr_Ivanov_Mumzhiev
+		portraits={
+			army={
+				small="GFX_Portrait_Asia_Generic_land_1_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Pyotr_Ivanov_Mumzhiev.dds"
+			}
+		}
+		corps_commander={
+			traits={ Siberian_Front_Veteran armor_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+
+	MAN_Vladimir_Golitsyn={
+		name=MAN_Vladimir_Golitsyn
+		portraits={
+			army={
+				small="GFX_Portrait_Asia_Generic_land_1_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Vladimir_Golitsyn.dds"
+			}
+		}
+		corps_commander={
+			traits={ armor_officer trait_cautious }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=3
+		}
+	}
+
+	MAN_Ivan_Mandryka={
+		name=MAN_Ivan_Mandryka
+		portraits={
+			army={
+				small="GFX_Portrait_Asia_Generic_land_1_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Ivan_Mandryka.dds"
+			}
+		}
+		corps_commander={
+			traits={ Siberian_Front_Veteran old_guard }
+			skill=2
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+
+	MAN_Leon_Dusimetier={
+		name=MAN_Leon_Dusimetier
+		portraits={
+			army={
+				small="GFX_Portrait_MAN_Leon_Dusimetier_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Leon_Dusimetier.dds"
+			}
+		}
+		advisor = {
+			allowed = {
+				original_tag = MAN
+			}
+			cost = 100
+			slot = air_chief
+			idea_token = MAN_Leon_Dusimetier
+			traits = { air_chief_safety_2 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ war_hero trickster }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+
+	MAN_Pyotr_Mezhak={
+		name=MAN_Pyotr_Mezhak
+		portraits={
+			army={
+				small="GFX_Portrait_MAN_Pyotr_Mezhak_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Pyotr_Mezhak.dds"
+			}
+		}
+		advisor = {
+			allowed = {
+				original_tag = MAN
+			}
+			cost = 100
+			slot = theorist
+			idea_token = MAN_Pyotr_Mezhak
+			traits = { military_theorist }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ Siberian_Front_Veteran old_guard }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+
+	MAN_Ivan_Gamov={
+		name=MAN_Ivan_Gamov
+		portraits={
+			army={
+				small="GFX_Portrait_Asia_Generic_land_1_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Ivan_Gamov.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer cossack_heritage }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+			visible = {
+				has_completed_focus = PBZ_MAN_New_Cossack_Host
+			}
+		}
+	}
+
+	MAN_Faddei_Glebov={
+		name=MAN_Faddei_Glebov
+		portraits={
+			army={
+				small="GFX_Portrait_Asia_Generic_land_1_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Faddei_Glebov.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer cossack_heritage }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=1
+			visible = {
+				has_completed_focus = PBZ_MAN_New_Cossack_Host
+			}
+		}
+	}
+
+	MAN_Aisin_Gioro_Xianyu={
+		name=MAN_Aisin_Gioro_Xianyu
+		portraits={
+			army={
+				small="GFX_Portrait_Asia_Generic_land_1_small"
+			}
+			army={
+				large="gfx/leaders/MAN/Portrait_MAN_Aisin_Gioro_Xianyu.dds"
+			}
+		}
+		corps_commander={
+			traits={ media_personality cavalry_officer russophile }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			visible = {
+				has_completed_focus = PBZ_MAN_Friends_From_Among_Manchu
+			}
+		}
+	}
+
+	############
+	####Navy####
+	############
+
+	MAN_Mihail_Fedorovich={
+		name=MAN_Mihail_Fedorovich
+		portraits={
+			navy={
+				small="GFX_idea_RUS_leo_julius_philipp_von_haller"
+			}
+			navy={
+				large="gfx/leaders/MAN/Portrait_MAN_Mihail_Fedorovich.dds"
+			}
+		}
+		navy_leader={
+			traits={ fleet_protector naval_lineage spotter }
+			skill=3
+	        attack_skill = 3
+	        defense_skill = 2
+	        maneuvering_skill = 2
+	        coordination_skill = 3
+		}
+	}
+
+	############
+	####Advisors####
+	############
+
+	MAN_Nikolai_Azariev={
+		name=MAN_Nikolai_Azariev
+		portraits={
+			army={
+				small="GFX_Portrait_MAN_Nikolai_Azariev_small"
+			}
+		}
+		advisor = {
+			allowed = {
+				original_tag = MAN
+			}
+			cost = 100
+			slot = navy_chief
+			idea_token = MAN_Nikolai_Azariev
+			traits = { navy_chief_reform_2 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	MAN_Veniamin_Rychkov={
+		name=MAN_Veniamin_Rychkov
+		portraits={
+			army={
+				small="GFX_Portrait_MAN_Veniamin_Rychkov_small"
+			}
+		}
+		advisor = {
+			allowed = {
+				original_tag = MAN
+			}
+			cost = 100
+			slot = high_command
+			idea_token = MAN_Veniamin_Rychkov
+			traits = { army_regrouping_2 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	MAN_Alexander_Andogskiy={
+		name=MAN_Alexander_Andogskiy
+		portraits={
+			army={
+				small="GFX_Portrait_MAN_Alexander_Andogskiy_small"
+			}
+		}
+		advisor = {
+			allowed = {
+				original_tag = MAN
+			}
+			cost = 100
+			slot = high_command
+			idea_token = MAN_Alexander_Andogskiy
+			traits = { army_logistics_2 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	MAN_Nikolai_Volodchenko={
+		name=MAN_Nikolai_Volodchenko
+		portraits={
+			army={
+				small="GFX_Portrait_MAN_Nikolai_Volodchenko_small"
+			}
+		}
+		advisor = {
+			allowed = {
+				original_tag = MAN
+			}
+			cost = 100
+			slot = high_command
+			idea_token = MAN_Nikolai_Volodchenko
+			traits = { army_radio_intelligence_2 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+}
+
+
+

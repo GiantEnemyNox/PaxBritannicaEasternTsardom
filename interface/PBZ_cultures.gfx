@@ -1,0 +1,9 @@
+## Bernie was here
+
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_PB_Culture_russoasiatic"
+		texturefile = "gfx/interface/culture/Russia/PB_Culture_Russoasiatic.dds"
+	}
+}

@@ -1,0 +1,331 @@
+##################
+# Zheltorossiya Events
+##################
+
+add_namespace = PBZ_zheltorossiya
+
+country_event = {
+	id = PBZ_zheltorossiya.1 #Lore dump
+	title = PBZ_zheltorossiya.1.t
+	desc = PBZ_zheltorossiya.1.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.1.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.2 #Bandits purged
+	title = PBZ_zheltorossiya.2.t
+	desc = PBZ_zheltorossiya.2.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.2.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.3 #Meet Qing Nobility
+	title = PBZ_zheltorossiya.3.t
+	desc = PBZ_zheltorossiya.3.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.3.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.4 #Victory Parade yay
+	title = PBZ_zheltorossiya.4.t
+	desc = PBZ_zheltorossiya.4.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.4.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.5 #Internal politics report
+	title = PBZ_zheltorossiya.5.t
+	desc = PBZ_zheltorossiya.5.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.5.a
+		complete_national_focus = PBZ_MAN_Support_Radical_Wing
+	}
+	option = {
+		name = PBZ_zheltorossiya.5.b
+		complete_national_focus = PBZ_MAN_Support_Moderate_Wing
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.6 #Dissident hunt
+	title = PBZ_zheltorossiya.6.t
+	desc = PBZ_zheltorossiya.6.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.6.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.7 #Finish political stuff
+	title = PBZ_zheltorossiya.7.t
+	desc = PBZ_zheltorossiya.7.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.7.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.8 #current affairs with economy
+	title = PBZ_zheltorossiya.8.t
+	desc = PBZ_zheltorossiya.8.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.8.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.9 #Wonders of modern combines and golden fields
+	title = PBZ_zheltorossiya.9.t
+	desc = PBZ_zheltorossiya.9.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.9.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.10 #Roar of progress, dam online!
+	title = PBZ_zheltorossiya.10.t
+	desc = PBZ_zheltorossiya.10.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.10.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.11 #Tasty french soup
+	title = PBZ_zheltorossiya.11.t
+	desc = PBZ_zheltorossiya.11.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.11.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.12 #Too spicy
+	title = PBZ_zheltorossiya.12.t
+	desc = PBZ_zheltorossiya.12.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.12.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.13 #Good colombian food
+	title = PBZ_zheltorossiya.13.t
+	desc = PBZ_zheltorossiya.13.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.13.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.14 #Contact area zero
+	title = PBZ_zheltorossiya.14.t
+	desc = PBZ_zheltorossiya.14.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.14.a
+		714 = {
+			add_building_construction = {
+				type = land_facility
+				level = 1
+				instant_build = yes
+				province = 1588
+			}
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.14.b
+		714 = {
+			add_building_construction = {
+				type = nuclear_facility
+				level = 1
+				instant_build = yes
+				province = 1588
+			}
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.14.c
+		714 = {
+			add_building_construction = {
+				type = biochem_facility
+				level = 1
+				instant_build = yes
+				province = 1588
+			}
+		}
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.15 #Aisin Gioro short biography
+	title = PBZ_zheltorossiya.15.t
+	desc = PBZ_zheltorossiya.15.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.15.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.16 #Women rights unexpectedly
+	title = PBZ_zheltorossiya.16.t
+	desc = PBZ_zheltorossiya.16.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.16.a
+		swap_ideas = {
+			remove_idea = PB_Patriarchal_Society 
+			add_idea = PB_Limited_Womens_Rights 
+		}
+		set_rule = {
+			can_generate_female_aces = yes
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.16.b
+		swap_ideas = {
+			remove_idea = PB_Patriarchal_Society 
+			add_idea = PB_No_Womens_Legal_Protections
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.16.c
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.17 #Military situation
+	title = PBZ_zheltorossiya.17.t
+	desc = PBZ_zheltorossiya.17.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.17.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.18 #Public Security
+	title = PBZ_zheltorossiya.18.t
+	desc = PBZ_zheltorossiya.18.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.18.a
+		swap_ideas = {
+			remove_idea = PB_Law_Secret_Police  
+			add_idea = PB_Law_Standard_Policing   
+		}
+		hidden_effect = {
+			country_event = {
+				id = PBZ_zheltorossiya.19
+				days = 7
+			}			
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.18.b
+		swap_ideas = {
+			remove_idea = PB_Law_Secret_Police  
+			add_idea = PB_Law_Intimidation_Policing  
+		}
+		hidden_effect = {
+			country_event = {
+				id = PBZ_zheltorossiya.19
+				days = 7
+			}			
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.18.c
+		hidden_effect = {
+			country_event = {
+				id = PBZ_zheltorossiya.19
+				days = 7
+			}			
+		}
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.19 #Public Meetings
+	title = PBZ_zheltorossiya.19.t
+	desc = PBZ_zheltorossiya.19.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.19.a
+		swap_ideas = {
+			remove_idea = PB_Public_Meetings_Banned  
+			add_idea = PB_Public_Meetings_Monitored   
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.19.b
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.20 #All your Middle Kingdom are belong to us
+	title = PBZ_zheltorossiya.20.t
+	desc = PBZ_zheltorossiya.20.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.20.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.21 #War with Commission?
+	title = PBZ_zheltorossiya.21.t
+	desc = PBZ_zheltorossiya.21.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.21.a
+		if = {
+			limit = {
+				has_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_1
+			}
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_1
+				add_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_2
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_0
+			}
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_0
+				add_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_2
+			}
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.21.b
+		declare_war_on = {
+			target = SGH
+			type = annex_everything
+		}
+	}
+}

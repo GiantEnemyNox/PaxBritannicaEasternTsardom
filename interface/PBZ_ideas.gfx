@@ -1,0 +1,122 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_idea_MAN_PBZ_Georgiy_Guins_HOG"
+		texturefile = "gfx/interface/ideas/Government_Ideas/Head_of_Government/MAN_PBZ_Georgiy_Guins_HOG.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_MAN_PBZ_Ivan_Mikhailov_ECM"
+		texturefile = "gfx/interface/ideas/Government_Ideas/Economy_Minister/MAN_PBZ_Ivan_Mikhailov_ECM.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_MAN_PBZ_Viktor_Grosse_FAM"
+		texturefile = "gfx/interface/ideas/Government_Ideas/Foreign_Minister/MAN_PBZ_Viktor_Grosse_FAM.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_MAN_PBZ_Viktor_Pepelyayev_IM"
+		texturefile = "gfx/interface/ideas/Government_Ideas/Internal_Minister/MAN_PBZ_Viktor_Pepelyayev_IM.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_PBZ_MAN_trade_chamber"
+		texturefile = "gfx/interface/ideas/MAN/PBZ_MAN_trade_chamber.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_cze_planning_bonus"
+		texturefile = "gfx/interface/ideas/idea_cze_planning_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ICE_general_strike"
+		texturefile = "gfx/interface/ideas/idea_ICE_general_strike.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ROM_king_carol_ii_hedonist"
+		texturefile = "gfx/interface/ideas/idea_rom_carol_ii_hedonist.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_eng_imperial_conscription"
+		texturefile = "gfx/interface/ideas/idea_eng_imperial_conscription.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_interservice_rivalry_balanced"
+		texturefile = "gfx/interface/ideas/idea_jap_interservice_rivalry_balanced.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_interservice_rivalry_army_strengthened"
+		texturefile = "gfx/interface/ideas/idea_jap_interservice_rivalry_army_strengthened.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_interservice_rivalry_army_dominant"
+		texturefile = "gfx/interface/ideas/idea_jap_interservice_rivalry_army_dominant.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_interservice_rivalry_navy_strengthened"
+		texturefile = "gfx/interface/ideas/idea_jap_interservice_rivalry_navy_strengthened.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_interservice_rivalry_navy_dominant"
+		texturefile = "gfx/interface/ideas/idea_jap_interservice_rivalry_navy_dominant.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_improved_industries"
+		texturefile = "gfx/interface/ideas/idea_generic_improved_industries.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_flexible_foreign_policy"
+		texturefile = "gfx/interface/ideas/idea_generic_flexible_foreign_policy.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_SOV_the_true_tsars"
+		texturefile = "gfx/interface/ideas/idea_SOV_the_true_tsars.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_HUN_secret_rearmament"
+		texturefile = "gfx/interface/ideas/idea_hun_secret_rearmament.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_fortify_the_borders"
+		texturefile = "gfx/interface/ideas/idea_generic_fortify_the_borders.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_acquire_tanks"
+		texturefile = "gfx/interface/ideas/idea_generic_acquire_tanks.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_eng_special_air_service"
+		texturefile = "gfx/interface/ideas/idea_eng_special_air_service.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ETH_national_studs"
+		texturefile = "gfx/interface/ideas/idea_ETH_national_studs.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_air_fighter"
+		texturefile = "gfx/interface/ideas/idea_generic_air_fighter.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_aircraft_support"
+		texturefile = "gfx/interface/ideas/idea_generic_aircraft_support.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_SWE_marauder_bombers"
+		texturefile = "gfx/interface/ideas/idea_SWE_marauder_bombers.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_sea_focused_navy"
+		texturefile = "gfx/interface/ideas/idea_generic_sea_focused_navy.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_AUS_streamline_cruiser_production_idea"
+		texturefile = "gfx/interface/ideas/idea_AUS_streamline_cruiser_production_idea.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_navy_submarines"
+		texturefile = "gfx/interface/ideas/idea_generic_navy_submarines.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_coastal_navy"
+		texturefile = "gfx/interface/ideas/idea_generic_coastal_navy.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_MAN_russification_completed"
+		texturefile = "gfx/interface/ideas/idea_MAN_russification_completed.dds"
+	}
+}

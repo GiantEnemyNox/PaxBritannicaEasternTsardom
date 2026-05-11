@@ -1,0 +1,32 @@
+
+state={
+	id=610
+	name="STATE_610" # Jehol
+	manpower = 2000000
+	
+	state_category = pastoral
+
+	history={
+		owner = MAN
+		add_core_of = MAN
+		buildings = {
+			infrastructure = 3
+			air_base = 2
+		}
+		
+		victory_points = {
+			10426 3
+		}
+		victory_points = {
+			934 3
+		}
+		victory_points = {
+			6837 1
+		}
+
+	}
+
+	provinces={
+		11886 3814 3881 11855 3828 10426 4514 6852 934 6898 6837 3934 9927
+	}
+}

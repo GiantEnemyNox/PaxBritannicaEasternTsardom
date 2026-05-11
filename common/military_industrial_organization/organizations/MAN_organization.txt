@@ -1,0 +1,202 @@
+###################
+### Armour MIOs ###
+###################
+PBZ_MAN_harbin_plant_organization = {
+	include = generic_medium_tank_organization
+	icon = GFX_idea_generic_tank_manufacturer_2
+	
+	allowed = {	 
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+
+	}
+}
+
+PBZ_MAN_kvzhd_organization = {
+	include = generic_tank_refurbishment_plant_organization
+	icon = GFX_idea_generic_tank_manufacturer_3
+	
+	allowed = {	 
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+
+	}
+}
+
+PBZ_MAN_tesla_armor_organization = {
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_PB_RUS_Tesla_Armor
+	
+	allowed = {	
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+##################
+### Naval MIOs ###
+##################
+PBZ_MAN_yellowsea_shipyard_organization = {
+	include = generic_escort_ship_organization
+	icon = GFX_idea_generic_naval_manufacturer_1
+	
+	allowed = {	
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+PBZ_MAN_liaodong_shipyard_organization = {
+	include = generic_submarine_organization
+	icon = GFX_idea_maizuru_naval_arsenal
+	
+	allowed = {	
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+#####################
+### Airplane MIOs ###
+#####################
+PBZ_MAN_general_aircraft_organization = {
+	include = generic_general_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_1
+
+	allowed = {	
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+PBZ_MAN_medium_aircraft_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_2
+
+	allowed = {	
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+	}
+
+	add_trait = {
+		token = MAN_mio_trait_mechanized_production
+		name = USA_mio_trait_mechanized_production
+		icon = GFX_generic_mio_department_icon_plane_medium_technology
+		special_trait_background = yes
+		
+		position = { x = 0 y = 1 }  
+		relative_position_id = generic_mio_trait_narrow_build
+		
+		any_parent = { generic_mio_trait_narrow_build }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_plane }
+		
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		} 
+	}
+}
+
+PBZ_MAN_cas_aircraft_organization = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_3
+
+	allowed = {	
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+#####################
+### Materiel MIOs ###
+#####################
+PBZ_MAN_tesla_guns_organisation = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_PB_RUS_Tesla_Guns
+	
+	allowed = {	 
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+
+	}
+}
+
+PBZ_MAN_mukden_arsenal_organisation = {
+	include = generic_artillery_organization
+	icon = GFX_idea_generic_artillery_manufacturer_2
+	
+	allowed = {	 
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+
+	}
+}
+
+PBZ_MAN_mukden_support_organisation = {
+	include = generic_support_equipment_organization
+	icon = GFX_idea_generic_infantry_equipment_manufacturer_3
+	
+	allowed = {	 
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+
+	}
+
+	add_trait = { 
+		token = MAN_mio_trait_danuvia_two_part_lever_delayed_blowback_bolt
+		name = HUN_mio_trait_danuvia_two_part_lever_delayed_blowback_bolt
+		icon = GFX_generic_mio_department_icon_infantry_quality
+		special_trait_background = yes
+
+		relative_position_id = generic_mio_trait_anti_tank_rifle
+
+		all_parents = { generic_mio_trait_anti_tank_rifle }
+
+		position = { x = -1 y = 1 }
+
+		available = {
+		}
+
+		limit_to_equipment_type = { infantry_equipment }
+		
+		equipment_bonus = {
+			reliability = 0.05
+			soft_attack = 0.05
+			breakthrough = 0.05
+		}
+
+	}
+
+	add_trait = {
+		token = HUN_mio_trait_danuvia_motorcycles
+		name = HUN_mio_trait_danuvia_motorcycles
+		icon = GFX_generic_mio_department_icon_support_production
+		special_trait_background = yes
+
+		relative_position_id = generic_mio_trait_pontoons
+
+		all_parents = { generic_mio_trait_pontoons }
+
+		position = { x = 0 y = 1 }
+		
+		available = {
+		}
+
+		limit_to_equipment_type = { support_equipment }
+		
+		equipment_bonus = {
+			build_cost_ic = -0.15
+		}
+
+	}
+}
+
+PBZ_MAN_phreze_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_generic_motorized_equipment_manufacturer_3
+	
+	allowed = {	
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+	}
+}	

@@ -1,0 +1,650 @@
+##################
+# RUSSIA IDEAS
+##################
+
+ideas = {
+
+	country = {
+		PBZ_MAN_planned_emergency = {
+			picture = cze_planning_bonus
+			removal_cost = -1
+			targeted_modifier = {
+				tag = GAN
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+		}
+
+		PBZ_MAN_Local_Nobles_Support_0 = {
+			picture = ROM_king_carol_ii_hedonist
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.02
+				party_popularity_stability_factor = 0.03
+			}
+		}
+	
+		PBZ_MAN_Local_Nobles_Support_1 = {
+			picture = ROM_king_carol_ii_hedonist
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.04
+				party_popularity_stability_factor = 0.05
+			}
+		}
+
+		PBZ_MAN_volunteer_forces = {
+			picture = eng_imperial_conscription
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 800
+			}
+		}
+
+		PBZ_MAN_Harbin_Faction_1 = {
+			picture = jap_interservice_rivalry_balanced
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.03
+				resistance_target = -0.05
+			}
+		}
+
+		PBZ_MAN_Harbin_Faction_2 = {
+			picture = jap_interservice_rivalry_army_strengthened
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				resistance_target = -0.07
+				command_power_gain_mult = 0.1
+			}
+		}
+
+		PBZ_MAN_Harbin_Faction_3 = {
+			picture = jap_interservice_rivalry_army_dominant
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				resistance_target = -0.1
+				command_power_gain_mult = 0.1
+				mobilization_speed = 0.1
+			}
+		}
+
+		PBZ_MAN_Navy_Clique_1 = {
+			picture = jap_interservice_rivalry_balanced
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				compliance_growth = 0.05
+			}
+		}
+
+		PBZ_MAN_Navy_Clique_2 = {
+			picture = jap_interservice_rivalry_navy_strengthened
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.07
+				compliance_growth = 0.05
+				command_abilities_cost_factor = -0.1
+			}
+		}
+
+		PBZ_MAN_Navy_Clique_3 = {
+			picture = jap_interservice_rivalry_navy_dominant
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.1
+				compliance_growth = 0.1
+				command_abilities_cost_factor = -0.1
+				recruitable_population_factor = 0.1
+			}
+		}
+
+		PBZ_MAN_Ultramilitarist_Notso_Stronghold = {
+			picture = PB_CHI_Ultramilitarist_Stronghold
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = -0.2
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Trade_0 = {
+			picture = generic_improved_industries
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.03
+				production_factory_start_efficiency_factor = 0.03
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Trade_1 = {
+			picture = generic_improved_industries
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Trade_2 = {
+			picture = generic_improved_industries
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.07
+				production_factory_start_efficiency_factor = 0.07
+				line_change_production_efficiency_factor = 0.07
+				production_lack_of_resource_penalty_factor = -0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Trade_3 = {
+			picture = generic_improved_industries
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+				production_lack_of_resource_penalty_factor = -0.07
+				consumer_goods_factor = -0.07
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Trade_4 = {
+			picture = generic_improved_industries
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+				production_lack_of_resource_penalty_factor = -0.1
+				consumer_goods_factor = -0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Foreign_Affairs_0 = {
+			picture = generic_flexible_foreign_policy
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.07
+				opinion_gain_monthly_factor = 0.1
+				trade_opinion_factor = 0.1
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Foreign_Affairs_1 = {
+			picture = generic_flexible_foreign_policy
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.04
+				opinion_gain_monthly_factor = 0.1
+				trade_opinion_factor = 0.1
+				consumer_goods_factor = -0.02
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Foreign_Affairs_2 = {
+			picture = generic_flexible_foreign_policy
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.06
+				opinion_gain_monthly_factor = 0.1
+				trade_opinion_factor = 0.1
+				consumer_goods_factor = -0.04
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Culture_0 = {
+			picture = SOV_the_true_tsars
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.02
+				research_speed_factor = 0.02
+				drift_defence_factor = 0.02
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Culture_1 = {
+			picture = SOV_the_true_tsars
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				research_speed_factor = 0.05
+				drift_defence_factor = 0.05
+			}
+		}
+
+		PBZ_MAN_Ethnic_Tensions_0 = {
+			picture = ICE_general_strike
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.15
+			}
+		}
+
+		PBZ_MAN_Ethnic_Tensions_1 = {
+			picture = ICE_general_strike
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.1
+			}
+		}
+
+		PBZ_MAN_Ethnic_Tensions_2 = {
+			picture = ICE_general_strike
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.05
+			}
+		}
+
+		PBZ_MAN_Ethnic_Tensions_3 = {
+			picture = MAN_russification_completed
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.05
+			}
+		}
+
+		PBZ_MAN_Ministry_of_Defence_Initial = {
+			picture = HUN_secret_rearmament
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.03
+				max_command_power = 5
+			}
+		}
+
+		PBZ_MAN_Ministry_of_Defence_Infantry_0 = {
+			picture = generic_fortify_the_borders
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.05
+				max_command_power = 10
+				conscription = 0.02
+				training_time_army_factor = -0.15
+			}
+		}
+
+		PBZ_MAN_Ministry_of_Defence_Infantry_1 = {
+			picture = generic_fortify_the_borders
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.07
+				max_command_power = 20
+				command_power_gain_mult = 0.05
+				conscription = 0.02
+				training_time_army_factor = -0.15
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			
+		}
+
+		PBZ_MAN_Ministry_of_Defence_Infantry_2 = {
+			picture = generic_fortify_the_borders
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.15
+				max_command_power = 30
+				command_power_gain_mult = 0.1
+				conscription = 0.02
+				training_time_army_factor = -0.15
+				max_dig_in = 6
+				dig_in_speed_factor = 0.2
+				production_speed_bunker_factor = 0.15
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		PBZ_MAN_Ministry_of_Defence_Mobile_0 = {
+			picture = generic_acquire_tanks
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.05
+				max_command_power = 10
+			}
+			equipment_bonus = {
+				armor = {
+					maximum_speed = 0.1
+					reliability = 0.05
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				automat = {
+					maximum_speed = 0.1
+					reliability = 0.05
+					instant = yes
+				}
+			}
+		}
+
+		PBZ_MAN_Ministry_of_Defence_Mobile_1 = {
+			picture = generic_acquire_tanks
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.07
+				max_command_power = 20
+				command_power_gain_mult = 0.05
+			}
+			equipment_bonus = {
+				armor = {
+					maximum_speed = 0.1
+					reliability = 0.05
+					breakthrough = 0.1
+					hard_attack = 0.1
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				automat = {
+					maximum_speed = 0.1
+					reliability = 0.05
+					breakthrough = 0.1
+					soft_attack = 0.1
+					instant = yes
+				}
+			}
+		}
+
+		PBZ_MAN_Ministry_of_Defence_Mobile_2 = {
+			picture = generic_acquire_tanks
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.15
+				max_command_power = 30
+				command_power_gain_mult = 0.1
+				army_fuel_consumption_factor = -0.05
+				truck_attrition_factor = -0.1
+			}
+			equipment_bonus = {
+				armor = {
+					maximum_speed = 0.1
+					reliability = 0.05
+					breakthrough = 0.1
+					hard_attack = 0.1
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				automat = {
+					maximum_speed = 0.1
+					reliability = 0.05
+					breakthrough = 0.1
+					soft_attack = 0.1
+					instant = yes
+				}
+			}
+		}
+
+		PBZ_MAN_Ministry_of_Defence_Special_0 = {
+			picture = eng_special_air_service
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.05
+				max_command_power = 10
+				special_forces_training_time_factor = -0.1
+				special_forces_min = 25
+			}
+		}
+
+		PBZ_MAN_Ministry_of_Defence_Special_1 = {
+			picture = eng_special_air_service
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.07
+				max_command_power = 20
+				command_power_gain_mult = 0.05
+				special_forces_training_time_factor = -0.1
+				special_forces_min = 75
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+			}
+		}
+
+		PBZ_MAN_Ministry_of_Defence_Special_2 = {
+			picture = eng_special_air_service
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.15
+				max_command_power = 30
+				command_power_gain_mult = 0.1
+				special_forces_training_time_factor = -0.1
+				special_forces_min = 150
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+				extra_paratrooper_supply_grace = 120
+				special_forces_out_of_supply_factor = -0.2
+			}
+		}
+
+		PBZ_MAN_Cossack_Spirit = {
+			picture = ETH_national_studs
+			removal_cost = -1
+			modifier = {
+				cavalry_attack_factor = 0.1
+				cavalry_defence_factor = 0.1
+			}
+		}
+
+		PBZ_MAN_cherry_orchard = {
+			picture = cze_planning_bonus
+			removal_cost = -1
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+		}
+
+		PBZ_MAN_red_chamber = {
+			picture = cze_planning_bonus
+			removal_cost = -1
+			targeted_modifier = {
+				tag = ROC
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+		}
+
+		PBZ_MAN_golden_lotus = {
+			picture = cze_planning_bonus
+			removal_cost = -1
+			targeted_modifier = {
+				tag = CHI
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+		}
+
+		PBZ_MAN_broken_heart = {
+			picture = cze_planning_bonus
+			removal_cost = -1
+			targeted_modifier = {
+				tag = VIN
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+		}
+
+		PBZ_MAN_western_journey = {
+			picture = cze_planning_bonus
+			removal_cost = -1
+			targeted_modifier = {
+				tag = XSM
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+		}
+
+		PBZ_MAN_shanghai_noon = {
+			picture = cze_planning_bonus
+			removal_cost = -1
+			targeted_modifier = {
+				tag = SGH
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+			}
+		}
+
+		PBZ_MAN_Air_Department_0 = {
+			picture = generic_air_fighter
+			removal_cost = -1
+			modifier = {
+				experience_gain_air = 0.05
+				air_weather_penalty = -0.1
+				air_night_penalty = -0.1
+			}
+		}
+
+		PBZ_MAN_Air_Department_1 = {
+			picture = generic_air_fighter
+			removal_cost = -1
+			modifier = {
+				experience_gain_air = 0.07
+				air_weather_penalty = -0.1
+				air_night_penalty = -0.1
+				air_ace_generation_chance_factor = 0.1
+				air_accidents_factor = -0.1
+			}
+		}
+
+		PBZ_MAN_Air_Department_2 = {
+			picture = generic_aircraft_support
+			removal_cost = -1
+			modifier = {
+				experience_gain_air = 0.1
+				air_weather_penalty = -0.15
+				air_night_penalty = -0.1
+				air_ace_generation_chance_factor = 0.1
+				air_accidents_factor = -0.1
+				ground_attack_factor = 0.1
+				air_agility_factor = 0.1
+			}
+		}
+
+		PBZ_MAN_Air_Department_3 = {
+			picture = SWE_marauder_bombers
+			removal_cost = -1
+			modifier = {
+				experience_gain_air = 0.1
+				air_weather_penalty = -0.1
+				air_night_penalty = -0.15
+				air_ace_generation_chance_factor = 0.1
+				air_accidents_factor = -0.1
+				air_defence_factor = 0.1
+				air_superiority_bonus_in_combat = 0.1
+			}
+		}
+
+		PBZ_MAN_Navy_Department_0 = {
+			picture = generic_sea_focused_navy
+			removal_cost = -1
+			modifier = {
+				experience_gain_navy = 0.05
+				navy_org_factor = 0.05
+				naval_speed_factor = 0.05
+				positioning = 0.05
+			}
+		}
+
+		PBZ_MAN_Building_Fleet_Faster = {
+			picture = AUS_streamline_cruiser_production_idea
+			removal_cost = -1
+			modifier = {
+				refit_ic_cost = -0.15
+				refit_speed = 0.15
+			}
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				submarine = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				screen_ship = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
+
+		PBZ_MAN_Navy_Department_1 = {
+			picture = generic_sea_focused_navy
+			removal_cost = -1
+			modifier = {
+				experience_gain_navy = 0.1
+				navy_org_factor = 0.1
+				naval_speed_factor = 0.1
+				positioning = 0.1
+				navy_weather_penalty = -0.1
+				naval_night_attack = 0.1
+			}
+		}
+
+		PBZ_MAN_Navy_Department_2 = {
+			picture = generic_navy_submarines
+			removal_cost = -1
+			modifier = {
+				experience_gain_navy = 0.15
+				navy_org_factor = 0.1
+				naval_speed_factor = 0.1
+				positioning = 0.1
+				navy_weather_penalty = -0.1
+				naval_night_attack = 0.1
+				naval_torpedo_reveal_chance_factor = -0.2
+				navy_submarine_attack_factor = 0.15
+			}
+		}
+
+		PBZ_MAN_Navy_Department_3 = {
+			picture = generic_coastal_navy
+			removal_cost = -1
+			modifier = {
+				experience_gain_navy = 0.15
+				navy_org_factor = 0.1
+				naval_speed_factor = 0.1
+				positioning = 0.1
+				navy_weather_penalty = -0.1
+				naval_night_attack = 0.1
+				navy_screen_attack_factor = 0.1
+				navy_screen_defence_factor = 0.1
+			}
+		}
+	}
+}
