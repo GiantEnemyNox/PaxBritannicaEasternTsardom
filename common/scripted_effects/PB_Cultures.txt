@@ -425,6 +425,11 @@ PB_Setup_Cultures = {
 	192 = { set_variable = { culture_token = token:ukrainian } }
 	196 = { set_variable = { culture_token = token:ukrainian } }
 	197 = { set_variable = { culture_token = token:ukrainian } }
+	196 = { set_variable = { culture_token = token:ukrainian } }
+	200 = { set_variable = { culture_token = token:ukrainian } }
+	226 = { set_variable = { culture_token = token:ukrainian } }
+	221 = { set_variable = { culture_token = token:ukrainian } }
+	259 = { set_variable = { culture_token = token:ukrainian } }
 	202 = { set_variable = { culture_token = token:ukrainian } }
 	201 = { set_variable = { culture_token = token:ukrainian } }
 	93 = { set_variable = { culture_token = token:ukrainian } }
@@ -437,15 +442,11 @@ PB_Setup_Cultures = {
 
 	### ---- Malorussian Culture ---- ###
 
-	226 = { set_variable = { culture_token = token:malorussian } }
 	227 = { set_variable = { culture_token = token:malorussian } }
-	221 = { set_variable = { culture_token = token:malorussian } }
-	200 = { set_variable = { culture_token = token:malorussian } }
 	228 = { set_variable = { culture_token = token:malorussian } }
 	225 = { set_variable = { culture_token = token:malorussian } }
-	193 = { set_variable = { culture_token = token:malorussian } }
-	196 = { set_variable = { culture_token = token:malorussian } }
-	259 = { set_variable = { culture_token = token:malorussian } }
+	193 = { set_variable = { culture_token = token:malorussian } }	
+	137 = { set_variable = { culture_token = token:malorussian } }	
 
 	### ---- Polish Culture ---- ###
 
@@ -1573,7 +1574,7 @@ PB_Setup_Cultures = {
 	761 = { set_variable = { culture_token = token:manchu } }
 	715 = { set_variable = { culture_token = token:manchu } }
 	716 = { set_variable = { culture_token = token:manchu } }
-	328 = { set_variable = { culture_token = token:russoasiatic } }
+	745 = { set_variable = { culture_token = token:russoasiatic } }
 	956 = { set_variable = { culture_token = token:manchu } }
 
 	### ---- Mongolian Culture ---- ###
