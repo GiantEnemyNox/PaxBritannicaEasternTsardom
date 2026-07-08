@@ -1,9 +1,7 @@
 ﻿starting_train_buffer = 2
-capital = 716
+capital = 328
 
 oob = "MAN_1933"
-
-set_country_flag = Tag_in_Russian_Sphere
 
 if = {
 	limit = {
@@ -14,6 +12,10 @@ if = {
 		set_naval_oob = "MAN_1933_Naval_Legacy"
 	}
 }
+
+set_country_flag = Tag_in_Russian_Sphere
+set_country_flag = Megacorp_Tesla_Dominant
+set_cosmetic_tag = MAN_RUS
 
 if = {
 	limit = { has_dlc = "By Blood Alone" }
@@ -50,7 +52,6 @@ set_research_slots = 3
 
 # Starting tech
 set_technology = { 
-	tech_automat_great_war = 1
 	field_kits1 = 1
 	basic_train = 1
 	great_war_infantry_weapons = 1
@@ -64,9 +65,25 @@ set_technology = {
 	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
-	fleet_in_being = 1
 	fuel_silos = 1
 	fuel_refining = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gw_automat = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gw_automat_chassis = 1
+
+	}
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
@@ -133,68 +150,43 @@ if = {
 	}
 }
 
-recruit_character = MAN_Dmitry_Horvat
-recruit_character = MAN_Mihail_Diterihs
-recruit_character = MAN_Konstantin_Nechaev
-recruit_character = MAN_Joseph_Ilyin
-recruit_character = MAN_Pavel_Ivanov_Rinov
-recruit_character = MAN_Pyotr_Ivanov_Mumzhiev
-recruit_character = MAN_Ivan_Mandryka
-recruit_character = MAN_Ivan_Gamov
-recruit_character = MAN_Vladimir_Golitsyn
-recruit_character = MAN_Faddei_Glebov
-recruit_character = MAN_Aisin_Gioro_Xianyu
-recruit_character = MAN_Mihail_Fedorovich
-recruit_character = MAN_Nikolai_Azariev
-recruit_character = MAN_Leon_Dusimetier
-recruit_character = MAN_Veniamin_Rychkov
-recruit_character = MAN_Alexander_Andogskiy
-recruit_character = MAN_Nikolai_Volodchenko
-recruit_character = MAN_Pyotr_Mezhak
-
 give_military_access = RUS
 
 add_ideas = {
-	MAN_PBZ_Georgiy_Guins_HOG
-	MAN_PBZ_Ivan_Mikhailov_ECM
-	MAN_PBZ_Viktor_Grosse_FAM
-	MAN_PBZ_Viktor_Pepelyayev_IM
 
+	PB_MAN_Ultramilitarist_Stronghold
+	PB_MAN_Far_from_Home
 	PB_RUS_Russian_Economic_Vassal
-	PB_CHI_Ultramilitarist_Stronghold
-	PB_CHI_Far_from_Home
 	PBZ_MAN_Ethnic_Tensions_0
 
-	PB_Augmentation_No_Legislation
-	PB_Single_Party_State
-	PB_Fully_Westernized
-	PB_Middling_Consumer_Confidence
-	PB_Govidea_State_Capitalism
-	PB_Basic_Education
-	PB_Ultranationalist_Monarchy
-	PB_Basic_Healthcare
-	PB_Semi_Industrialized
-	PB_No_Limit_Workday
-	PB_Rampant_Illiteracy
+	PB_augmentation_no_legislation
+	PB_single_party_system_voting
+	PB_socdev_moderately_westernized_nation
+	PB_socdev_stable_economy
+	PB_state_capitalism
+	PB_basic_education
+	PB_ultranationalist_monarchy
+	PB_basic_healthcare
+	PB_socdev_semi_industrialized
+	PB_no_limit_workday
+	PB_socdev_high_illiteracy
 	limited_conscription
-	PB_Great_War_Military
-	PB_Racial_Segregation
-	PB_NI_Order
-	PB_Widespread_Poverty
-	PB_State_Press
-	PB_Public_Meetings_Banned
-	PB_Law_Secret_Police
-	PB_Sociogenetics_Racial
-	PB_Basic_Welfare
-	PB_Patriarchal_Society
+	PB_socdev_great_war_military
+	PB_minority_ethnic_segregation
+	PB_NI_order
+	PB_socdev_rampant_poverty
+	PB_state_controlled_press
+	PB_public_meetings_banned
+	PB_secret_police_policing
+	PB_sociogenetics_system_undesirables
+	PB_basic_state_welfare
+	PB_patriarchal_society
 }
 
-set_variable = { PB_main_culture = token:russoasiatic }
-add_to_array = { PB_accepted_cultures = token:russoasiatic }
-add_to_array = { PB_accepted_cultures = token:manchu }
-
-set_country_flag = PB_Disable_Military_Decisions
-set_country_flag = PB_content_country
+set_variable = { PB_main_culture = 355 }
+add_to_array = { PB_accepted_cultures = 355 }
+add_to_array = { PB_accepted_cultures = 251 }
+add_to_array = { PB_accepted_cultures = 354 }
 
 set_autonomy = {
 	target = MON
@@ -220,22 +212,27 @@ MON = {
 		election_frequency = 48
 		elections_allowed = no
 	}
+
+	declare_war_on = {
+		target = GAN
+		type = annex_everything
+	}
 }
 
 set_stability = 0.5
 set_war_support = 0.2
 
-set_convoys = 30
+set_convoys = 20
 
 set_popularities = {
-	ni = 46
-	ds = 31
+	ni = 36
+	ds = 24
 	rc = 8
 	cn = 0
 	lb = 3
-	an = 12
-	ss = 0
-	jc = 0
+	an = 11
+	ss = 9
+	jc = 9
 }
 
 set_politics = { 
@@ -245,68 +242,42 @@ set_politics = {
 	elections_allowed = no
 }
 
-create_country_leader = {
-	name = "Andrei I"
-	desc = ""
-	picture = "gfx/leaders/MAN/Portrait_MAN_Andrei_Vladimirovich.dds"
-	ideology = NI_VARIANT_06
-}
+recruit_character = MAN_andrei_i
+recruit_character = MAN_PBZ_Georgiy_Guins
+recruit_character = MAN_PBZ_Ivan_Mikhailov
+recruit_character = MAN_PBZ_Viktor_Grosse
+recruit_character = MAN_PBZ_Viktor_Pepelyayev
+recruit_character = MAN_PBZ_Metropolitan_Anastasy
+recruit_character = MAN_Dmitry_Horvat
+recruit_character = MAN_Mihail_Diterihs
+recruit_character = MAN_Konstantin_Nechaev
+recruit_character = MAN_Joseph_Ilyin
+recruit_character = MAN_Pavel_Ivanov_Rinov
+recruit_character = MAN_Pyotr_Ivanov_Mumzhiev
+recruit_character = MAN_Ivan_Mandryka
+recruit_character = MAN_Ivan_Gamov
+recruit_character = MAN_Vladimir_Golitsyn
+recruit_character = MAN_Faddei_Glebov
+recruit_character = MAN_Aisin_Gioro_Xianyu
+recruit_character = MAN_Mihail_Fedorovich
+recruit_character = MAN_Nikolai_Azariev
+recruit_character = MAN_Leon_Dusimetier
+recruit_character = MAN_Veniamin_Rychkov
+recruit_character = MAN_Alexander_Andogskiy
+recruit_character = MAN_Nikolai_Volodchenko
+recruit_character = MAN_Pyotr_Mezhak
 
-create_country_leader = {
-	name = "Andrei I"
-	desc = ""
-	picture = "gfx/leaders/MAN/Portrait_MAN_Andrei_Vladimirovich.dds"
-	ideology = DS_VARIANT_02
-}
-
-create_country_leader = {
-	name = "No Leader"
-	desc = ""
-	picture = "gfx/leaders/No_Leader_Portrait/Portrait_No_Leader.dds"
-	ideology = RC_VARIANT_01
-}
-
-create_country_leader = {
-	name = "No Leader"
-	desc = ""
-	picture = "gfx/leaders/No_Leader_Portrait/Portrait_No_Leader.dds"
-	ideology = CN_VARIANT_01
-}
-
-
-create_country_leader = {
-	name = "No Leader"
-	desc = ""
-	picture = "gfx/leaders/No_Leader_Portrait/Portrait_No_Leader.dds"
-	ideology = AN_VARIANT_01
-}
-
-create_country_leader = {
-	name = "No Leader"
-	desc = ""
-	picture = "gfx/leaders/No_Leader_Portrait/Portrait_No_Leader.dds"
-	ideology = LB_VARIANT_01
-}
-
-create_country_leader = {
-	name = "No Leader"
-	desc = ""
-	picture = "gfx/leaders/No_Leader_Portrait/Portrait_No_Leader.dds"
-	ideology = SS_VARIANT_01
-}
-
-create_country_leader = {
-	name = "No Leader"
-	desc = ""
-	picture = "gfx/leaders/No_Leader_Portrait/Portrait_No_Leader.dds"
-	ideology = JC_VARIANT_01
-}
+# Starting Cabinet
+activate_advisor = MAN_PBZ_Georgiy_Guins_hog
+activate_advisor = MAN_PBZ_Ivan_Mikhailov_ecm
+activate_advisor = MAN_PBZ_Viktor_Grosse_fam
+activate_advisor = MAN_PBZ_Viktor_Pepelyayev_im
 
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	### Ship Variants ###
 	create_equipment_variant = {
-		name = "Series I Debakrist"
+		name = "Series I Akula"
 		type = submarine_1
 		upgrades = {
 			ship_reliability_upgrade = 1
@@ -354,7 +325,7 @@ if = {
 		obsolete = yes
 	}
 	create_equipment_variant = {
-		name = "Series I Debakrist"			# represents Debakrist, B class, L-55 sub
+		name = "Series I Akula"			# represents Debakrist, B class, L-55 sub
 		type = ship_hull_submarine_1
 		#name_group = SOV_SS_SHCHUKA
 		parent_version = 0
@@ -496,7 +467,7 @@ if = {
 		obsolete = yes
 	}
 	create_equipment_variant = {
-		name = "Chervona Ukraina Class"
+		name = "Tsarevich Class"
 		type = ship_hull_cruiser_1
 		#name_group = SOV_CL_HISTORICAL
 		parent_version = 0
