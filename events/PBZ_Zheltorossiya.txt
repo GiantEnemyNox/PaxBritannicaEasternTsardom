@@ -140,192 +140,261 @@ country_event = {
 }
 
 country_event = {
-	id = PBZ_zheltorossiya.14 #Contact area zero
+	id = PBZ_zheltorossiya.14 #Contact France
 	title = PBZ_zheltorossiya.14.t
 	desc = PBZ_zheltorossiya.14.d
 	is_triggered_only = yes
 	option = {
 		name = PBZ_zheltorossiya.14.a
-		714 = {
-			add_building_construction = {
-				type = land_facility
-				level = 1
-				instant_build = yes
-				province = 1588
-			}
+		ai_chance = {
+			base = 100
+		}
+		FRA = {
+            add_to_faction = MAN
+		}
+		hidden_effect = {
+			country_event = {
+				id = PBZ_zheltorossiya.140
+				days = 3
+			}			
 		}
 	}
 	option = {
 		name = PBZ_zheltorossiya.14.b
-		714 = {
-			add_building_construction = {
-				type = nuclear_facility
-				level = 1
-				instant_build = yes
-				province = 1588
-			}
+		ai_chance = {
+			factor = 0
 		}
-	}
-	option = {
-		name = PBZ_zheltorossiya.14.c
-		714 = {
-			add_building_construction = {
-				type = biochem_facility
-				level = 1
-				instant_build = yes
-				province = 1588
-			}
+		hidden_effect = {
+			country_event = {
+				id = PBZ_zheltorossiya.141
+				days = 3
+			}			
 		}
 	}
 }
 
 country_event = {
-	id = PBZ_zheltorossiya.15 #Aisin Gioro short biography
+	id = PBZ_zheltorossiya.140 #France agreed
+	title = PBZ_zheltorossiya.140.t
+	desc = PBZ_zheltorossiya.140.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.140.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.141 #France refused
+	title = PBZ_zheltorossiya.141.t
+	desc = PBZ_zheltorossiya.141.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.141.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.15 #Contact area zero
 	title = PBZ_zheltorossiya.15.t
 	desc = PBZ_zheltorossiya.15.d
 	is_triggered_only = yes
 	option = {
 		name = PBZ_zheltorossiya.15.a
+		715 = {
+			add_building_construction = {
+				type = nuclear_facility
+				level = 1
+				instant_build = yes
+				province = 930
+			}
+		}
+		add_breakthrough_points = {
+			specialization = specialization_nuclear
+			value = 1
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.15.b
+		715 = {
+			add_building_construction = {
+				type = biochem_facility
+				level = 1
+				instant_build = yes
+				province = 930
+			}
+		}
+		add_breakthrough_points = {
+			specialization = specialization_biochem
+			value = 1
+		}
 	}
 }
 
 country_event = {
-	id = PBZ_zheltorossiya.16 #Women rights unexpectedly
+	id = PBZ_zheltorossiya.16 #Aisin Gioro short biography
 	title = PBZ_zheltorossiya.16.t
 	desc = PBZ_zheltorossiya.16.d
 	is_triggered_only = yes
 	option = {
 		name = PBZ_zheltorossiya.16.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.17 #Women rights unexpectedly
+	title = PBZ_zheltorossiya.17.t
+	desc = PBZ_zheltorossiya.17.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.17.a
 		swap_ideas = {
-			remove_idea = PB_Patriarchal_Society 
-			add_idea = PB_Limited_Womens_Rights 
+			remove_idea = PB_patriarchal_society 
+			add_idea = PB_limited_womens_rights 
 		}
 		set_rule = {
 			can_generate_female_aces = yes
 		}
 	}
 	option = {
-		name = PBZ_zheltorossiya.16.b
+		name = PBZ_zheltorossiya.17.b
 		swap_ideas = {
-			remove_idea = PB_Patriarchal_Society 
-			add_idea = PB_No_Womens_Legal_Protections
+			remove_idea = PB_patriarchal_society 
+			add_idea = PB_no_womens_legal_protection
 		}
 	}
 	option = {
-		name = PBZ_zheltorossiya.16.c
+		name = PBZ_zheltorossiya.17.c
 	}
 }
 
 country_event = {
-	id = PBZ_zheltorossiya.17 #Military situation
-	title = PBZ_zheltorossiya.17.t
-	desc = PBZ_zheltorossiya.17.d
-	is_triggered_only = yes
-	option = {
-		name = PBZ_zheltorossiya.17.a
-	}
-}
-
-country_event = {
-	id = PBZ_zheltorossiya.18 #Public Security
+	id = PBZ_zheltorossiya.18 #Military situation
 	title = PBZ_zheltorossiya.18.t
 	desc = PBZ_zheltorossiya.18.d
 	is_triggered_only = yes
 	option = {
 		name = PBZ_zheltorossiya.18.a
-		swap_ideas = {
-			remove_idea = PB_Law_Secret_Police  
-			add_idea = PB_Law_Standard_Policing   
-		}
-		hidden_effect = {
-			country_event = {
-				id = PBZ_zheltorossiya.19
-				days = 7
-			}			
-		}
-	}
-	option = {
-		name = PBZ_zheltorossiya.18.b
-		swap_ideas = {
-			remove_idea = PB_Law_Secret_Police  
-			add_idea = PB_Law_Intimidation_Policing  
-		}
-		hidden_effect = {
-			country_event = {
-				id = PBZ_zheltorossiya.19
-				days = 7
-			}			
-		}
-	}
-	option = {
-		name = PBZ_zheltorossiya.18.c
-		hidden_effect = {
-			country_event = {
-				id = PBZ_zheltorossiya.19
-				days = 7
-			}			
-		}
 	}
 }
 
 country_event = {
-	id = PBZ_zheltorossiya.19 #Public Meetings
+	id = PBZ_zheltorossiya.19 #Public Security
 	title = PBZ_zheltorossiya.19.t
 	desc = PBZ_zheltorossiya.19.d
 	is_triggered_only = yes
 	option = {
 		name = PBZ_zheltorossiya.19.a
 		swap_ideas = {
-			remove_idea = PB_Public_Meetings_Banned  
-			add_idea = PB_Public_Meetings_Monitored   
+			remove_idea = PB_secret_police_policing
+			add_idea = PB_standard_policing
+		}
+		hidden_effect = {
+			country_event = {
+				id = PBZ_zheltorossiya.20
+				days = 7
+			}			
 		}
 	}
 	option = {
 		name = PBZ_zheltorossiya.19.b
+		swap_ideas = {
+			remove_idea = PB_secret_police_policing
+			add_idea = PB_state_intimidation_policing
+		}
+		hidden_effect = {
+			country_event = {
+				id = PBZ_zheltorossiya.20
+				days = 7
+			}			
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.19.c
+		hidden_effect = {
+			country_event = {
+				id = PBZ_zheltorossiya.20
+				days = 7
+			}			
+		}
 	}
 }
 
 country_event = {
-	id = PBZ_zheltorossiya.20 #All your Middle Kingdom are belong to us
+	id = PBZ_zheltorossiya.20 #Public Meetings
 	title = PBZ_zheltorossiya.20.t
 	desc = PBZ_zheltorossiya.20.d
 	is_triggered_only = yes
 	option = {
 		name = PBZ_zheltorossiya.20.a
+		swap_ideas = {
+			remove_idea = PB_public_meetings_banned
+			add_idea = PB_public_meetings_monitored
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.20.b
 	}
 }
 
 country_event = {
-	id = PBZ_zheltorossiya.21 #War with Commission?
+	id = PBZ_zheltorossiya.21 #Mass Media
 	title = PBZ_zheltorossiya.21.t
 	desc = PBZ_zheltorossiya.21.d
 	is_triggered_only = yes
 	option = {
 		name = PBZ_zheltorossiya.21.a
-		if = {
-			limit = {
-				has_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_1
-			}
-			swap_ideas = {
-				remove_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_1
-				add_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_2
-			}
-		}
-		else_if = {
-			limit = {
-				has_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_0
-			}
-			swap_ideas = {
-				remove_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_0
-				add_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_2
-			}
+		swap_ideas = {
+			remove_idea = PB_state_controlled_press
+			add_idea = PB_censored_press   
 		}
 	}
 	option = {
 		name = PBZ_zheltorossiya.21.b
+		swap_ideas = {
+			remove_idea = PB_state_controlled_press  
+			add_idea = PB_monopolized_press  
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.21.c
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.22 #All your Middle Kingdom are belong to us
+	title = PBZ_zheltorossiya.22.t
+	desc = PBZ_zheltorossiya.22.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.22.a
+	}
+}
+
+country_event = {
+	id = PBZ_zheltorossiya.23 #War with Commission?
+	title = PBZ_zheltorossiya.23.t
+	desc = PBZ_zheltorossiya.23.d
+	is_triggered_only = yes
+	option = {
+		name = PBZ_zheltorossiya.23.a
+		if = {
+			limit = {
+				has_idea = PBZ_MAN_Commission_Deal_0
+			}
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Commission_Deal_0
+				add_idea = PBZ_MAN_Commission_Deal_1
+			}
+		}
+	}
+	option = {
+		name = PBZ_zheltorossiya.23.b
 		declare_war_on = {
 			target = SGH
 			type = annex_everything
+		}
+		MAN = {
+			remove_ideas = PBZ_MAN_Commission_Deal_0
 		}
 	}
 }
