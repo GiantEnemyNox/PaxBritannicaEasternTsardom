@@ -1,0 +1,75 @@
+ideas = {
+	
+	specialized_company = {
+		PBZ_MAN_KVZhD_Team = {
+			on_add = { log = "[GetLogRoot]: add idea PBZ_MAN_KVZhD_Team" }
+	    	picture = leningrad_polytechnical_institute
+			cost = 100
+	    	allowed = {
+	    		original_TAG = MAN
+	    	}
+	    	traits = {
+        		PBZ_MAN_KVZhD_Company
+        	}
+	    	research_bonus = {
+				industry = 0.05
+        	}
+			modifier = {
+				political_power_gain = 0.05
+                supply_combat_penalties_on_core_factor = -0.1
+				production_speed_supply_node_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+			}
+	    }
+
+		PBZ_MAN_Trade_Chamber = {
+			on_add = { log = "[GetLogRoot]: add idea PBZ_MAN_Trade_Chamber" }
+	    	picture = PBZ_MAN_trade_chamber
+			cost = 100
+	    	allowed = {
+	    		original_TAG = MAN
+	    	}
+	    	traits = {
+        		PBZ_MAN_Trade_Chamber_Company
+        	}
+	    	available = {
+				has_completed_focus = PBZ_MAN_Chamber_Of_Commerce
+			}
+	    	research_bonus = {
+				excavation_tech = 0.05
+        	}
+			modifier = {
+				political_power_gain = 0.05
+                local_resources_factor = 0.1
+				production_speed_industrial_complex_factor = 0.05
+				min_export = -0.05
+			}
+	    }
+
+		PBZ_MAN_Harbin_Institute = {
+			on_add = { log = "[GetLogRoot]: add idea PBZ_MAN_Trade_Chamber" }
+			picture = generic_industrial_concern_2
+	    	cost = 100
+	    	allowed = {
+	    		original_TAG = MAN
+	    	}
+	    	traits = {
+        		PBZ_MAN_Harbin_Institute_Company
+        	}
+	    	available = {
+				has_completed_focus = PBZ_MAN_Expand_Harbin_University
+			}
+	    	research_bonus = {
+				industry = 0.05
+				electronics = 0.05
+				train_tech = 0.05
+				cat_augmented_infantry = 0.05
+        	}
+			modifier = {
+			}
+	    }
+
+	}
+
+}
+	

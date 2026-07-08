@@ -260,13 +260,13 @@ MAN_ARM_01 = {
 }
 
 MAN_ARM_02 = {
-	name = "Tripod Division"
+	name = "Automat Division"
 
 	for_countries = { MAN }
 
 	can_use = { always = yes }
 
-	division_types = { "gw_basic_automat" "tripod_automat" "quadropod_automat" }
+	division_types = { "duopod_automat" "tripod_automat" "quadrupod_automat" "modern_automat" }
 
 	# Number reservation system will tie to another group.
 	#link_numbering_with = { MAN_INF_01 }
@@ -318,6 +318,8 @@ MAN_PAR_01 = {
 		8 = { "%dya Brigada Reaktivnykh Voysk" }
 		9 = { "%dya Brigada Reaktivnykh Voysk" }
 		10 = { "%dya Brigada Reaktivnykh Voysk" }
+		11 = { "%dya Brigada Reaktivnykh Voysk" }
+		12 = { "%dya Brigada Reaktivnykh Voysk" }
 	}
 }
 
@@ -349,6 +351,8 @@ MAN_MAR_01 = {
 		8 = { "%dya Diviziya Morskoi Pekhoty" }
 		9 = { "%dya Diviziya Morskoi Pekhoty" }
 		10 = { "%dya Diviziya Morskoi Pekhoty" }
+		11 = { "%dya Diviziya Morskoi Pekhoty" }
+		12 = { "%dya Diviziya Morskoi Pekhoty" }
 	}
 }
 
@@ -420,7 +424,9 @@ MAN_PRT_01 = {
 		7 = { "%dya Mukdenskaya Desantnaya Brigada" }
 		8 = { "%dya Harbinskaya Desantnaya Brigada" }
 		9 = { "%dya Harbinskaya Desantnaya Brigada" }
-		10 = { "%dya Harbinskaya Desantnaya Brigada" }	
+		10 = { "%dya Harbinskaya Desantnaya Brigada" }
+		11 = { "%dya Harbinskaya Desantnaya Brigada" }
+		12 = { "%dya Harbinskaya Desantnaya Brigada" }
 	}
 }
 
@@ -451,7 +457,9 @@ MAN_HRS_01 = {
 		7 = { "%dya Brigada Usilennoi Broni" }
 		8 = { "%dya Brigada Usilennoi Broni" }
 		9 = { "%dya Brigada Usilennoi Broni" }
-		10 = { "%dya Brigada Usilennoi Broni" }	
+		10 = { "%dya Brigada Usilennoi Broni" }
+		11 = { "%dya Brigada Usilennoi Broni" }
+		12 = { "%dya Brigada Usilennoi Broni" }
 	}
 }
 
@@ -483,6 +491,8 @@ MAN_RZM_01 = {
 		8 = { "%dya Brigada Smertonosnykh Dev" }
 		9 = { "%dya Brigada Smertonosnykh Dev" }
 		10 = { "%dya Brigada Smertonosnykh Dev" }	
+		11 = { "%dya Brigada Smertonosnykh Dev" }
+		12 = { "%dya Brigada Smertonosnykh Dev" }
 	}
 }
 
@@ -527,3 +537,54 @@ MAN_GAR_01 = {
 	}
 }
 
+MAN_PEN_01 = 
+{
+	name = "Penal Units"
+
+	for_countries = { MAN }
+
+	can_use = { has_completed_focus = PBZ_MAN_Privileges_Through_Blood }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { SOV_INF_01 }
+
+	fallback_name = "%dya Kitaiskaya Diviziya"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dya Kitaiskaya Diviziya" }
+		2 = { "%dya Kitaiskaya Diviziya" }
+		3 = { "%dya Kitaiskaya Diviziya" }
+		4 = { "%dya Kitaiskaya Diviziya" }
+		5 = { "%dya Kitaiskaya Diviziya" }
+		6 = { "%dya Kitaiskaya Diviziya" }
+		7 = { "%dya Kitaiskaya Diviziya" }
+		8 = { "%dya Kitaiskaya Diviziya" }
+		9 = { "%dya Kitaiskaya Diviziya" }
+		10 = { "%dya Kitaiskaya Diviziya" }
+		11 = { "%dya Kitaiskaya Diviziya" }
+		12 = { "%dya Kitaiskaya Diviziya" }
+		13 = { "%dya Kitaiskaya Diviziya" }
+		14 = { "%dya Kitaiskaya Diviziya" }
+		15 = { "%dya Kitaiskaya Diviziya" }
+		16 = { "%dya Kitaiskaya Diviziya" }
+		17 = { "%dya Kitaiskaya Diviziya" }
+		18 = { "%dya Kitaiskaya Diviziya" }
+		19 = { "%dya Kitaiskaya Diviziya" }
+		20 = { "%dya Kitaiskaya Diviziya" }
+		21 = { "%dya Kitaiskaya Diviziya" }
+		22 = { "%dya Kitaiskaya Diviziya" }
+		23 = { "%dya Kitaiskaya Diviziya" }
+		24 = { "%dya Kitaiskaya Diviziya" }
+		25 = { "%dya Kitaiskaya Diviziya" }
+		26 = { "%dya Kitaiskaya Diviziya" }
+		27 = { "%dya Kitaiskaya Diviziya" }
+		28 = { "%dya Kitaiskaya Diviziya" }
+		29 = { "%dya Kitaiskaya Diviziya" }
+		30 = { "%dya Kitaiskaya Diviziya" }
+	}
+}

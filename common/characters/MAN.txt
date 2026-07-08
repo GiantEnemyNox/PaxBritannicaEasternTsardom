@@ -1,7 +1,112 @@
 characters={
+
+	MAN_andrei_i = {
+		name = MAN_andrei_i
+		portraits = {
+			civilian = {
+				large = GFX_portrait_MAN_andrei_i_civilian_large
+			}
+		}
+		country_leader = {
+			ideology = NI_VARIANT_06
+		}
+		country_leader = {
+			ideology = DS_VARIANT_01
+		}
+		country_leader={
+			ideology = RC_VARIANT_01
+		}
+	}
+	############
+	####Cabinet####
+	############
+	MAN_PBZ_Georgiy_Guins = {
+		name = MAN_PBZ_Georgiy_Guins
+		portraits = {
+			civilian = {
+				small = GFX_Portrait_MAN_PBZ_Georgiy_Guins_small
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			ledger = civilian
+			idea_token = MAN_PBZ_Georgiy_Guins_hog
+			traits = { PB_ni_trait PBZ_Nationalist }
+			cost = 0
+			can_be_fired = no
+		}
+	}
+	MAN_PBZ_Ivan_Mikhailov = {
+		name = MAN_PBZ_Ivan_Mikhailov
+		portraits = {
+			civilian = {
+				small = GFX_Portrait_MAN_PBZ_Ivan_Mikhailov_small
+			}
+		}
+		advisor = {
+			slot = economics_minister
+			ledger = civilian
+			idea_token = MAN_PBZ_Ivan_Mikhailov_ecm
+			traits = { PB_ni_trait PB_Bean_Counter }
+			cost = 0
+			can_be_fired = no
+		}
+	}
+	MAN_PBZ_Viktor_Grosse = {
+		name = MAN_PBZ_Viktor_Grosse
+		portraits = {
+			civilian = {
+				small = GFX_Portrait_MAN_PBZ_Viktor_Grosse_small
+			}
+		}
+		advisor = {
+			slot = foreign_minister
+			ledger = civilian
+			idea_token = MAN_PBZ_Viktor_Grosse_fam
+			traits = { PB_ds_trait PB_Diplomatic_Strongman }
+			cost = 0
+			can_be_fired = no
+		}
+	}
+	MAN_PBZ_Viktor_Pepelyayev = {
+		name = MAN_PBZ_Viktor_Pepelyayev
+		portraits = {
+			civilian = {
+				small = GFX_Portrait_MAN_PBZ_Viktor_Pepelyayev_small
+			}
+		}
+		advisor = {
+			slot = internal_minister
+			ledger = civilian
+			idea_token = MAN_PBZ_Viktor_Pepelyayev_im
+			traits = { PB_ds_trait PB_Crime_Fighter }
+			cost = 0
+			can_be_fired = no
+		}
+	}
+	MAN_PBZ_Metropolitan_Anastasy = {
+		name = MAN_PBZ_Metropolitan_Anastasy
+		portraits = {
+			civilian = {
+				small = GFX_Portrait_MAN_PBZ_Metropolitan_Anastasy_small
+			}
+		}
+		advisor = {
+			slot = special_minister
+			ledger = civilian
+			idea_token = MAN_PBZ_VMetropolitan_Anastasy_sm
+			traits = { PBZ_Compassionate_Priest }
+			cost = 100
+			visible = {
+				has_completed_focus = PBZ_MAN_Orthodox_Church_In_Manchuria
+			}
+		}
+	}
+	
 	############
 	####Army####
 	############
+
 	MAN_Dmitry_Horvat={
 		name=MAN_Dmitry_Horvat
 		portraits={
@@ -311,7 +416,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ media_personality cavalry_officer russophile }
+			traits={ media_personality cavalry_officer PBZ_russophile }
 			skill=2
 			attack_skill=2
 			defense_skill=1

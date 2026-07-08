@@ -116,20 +116,11 @@ ideas = {
 			modifier = {
 				production_factory_efficiency_gain_factor = 0.03
 				production_factory_start_efficiency_factor = 0.03
+				line_change_production_efficiency_factor = 0.03
 			}
 		}
 
 		PBZ_MAN_Ministry_Of_Trade_1 = {
-			picture = generic_improved_industries
-			removal_cost = -1
-			modifier = {
-				production_factory_efficiency_gain_factor = 0.05
-				production_factory_start_efficiency_factor = 0.05
-				line_change_production_efficiency_factor = 0.05
-			}
-		}
-
-		PBZ_MAN_Ministry_Of_Trade_2 = {
 			picture = generic_improved_industries
 			removal_cost = -1
 			modifier = {
@@ -141,7 +132,7 @@ ideas = {
 			}
 		}
 
-		PBZ_MAN_Ministry_Of_Trade_3 = {
+		PBZ_MAN_Ministry_Of_Trade_2 = {
 			picture = generic_improved_industries
 			removal_cost = -1
 			modifier = {
@@ -155,7 +146,7 @@ ideas = {
 			}
 		}
 
-		PBZ_MAN_Ministry_Of_Trade_4 = {
+		PBZ_MAN_Ministry_Of_Trade_3 = {
 			picture = generic_improved_industries
 			removal_cost = -1
 			modifier = {
@@ -171,11 +162,44 @@ ideas = {
 			}
 		}
 
+		PBZ_MAN_Ministry_Of_Internal_Affairs_0 = {
+			picture = generic_spy_coup
+			removal_cost = -1
+			modifier = {
+				resistance_damage_to_garrison = -0.15
+				root_out_resistance_effectiveness_factor = 0.1
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Internal_Affairs_1 = {
+			picture = generic_spy_coup
+			removal_cost = -1
+			modifier = {
+				resistance_damage_to_garrison = -0.15
+				root_out_resistance_effectiveness_factor = 0.1
+				enemy_operative_detection_chance_factor = 0.1
+				operative_slot = 1
+				crypto_strength = 1
+				political_power_factor = 0.05
+			}
+		}
+
+		PBZ_MAN_Ministry_Of_Internal_Affairs_1_non_lar = {
+			picture = generic_spy_coup
+			removal_cost = -1
+			modifier = {
+				resistance_damage_to_garrison = -0.15
+				resistance_target = -0.05
+				encryption_factor = 0.15
+				political_power_factor = 0.05
+			}
+		}
+
 		PBZ_MAN_Ministry_Of_Foreign_Affairs_0 = {
 			picture = generic_flexible_foreign_policy
 			removal_cost = -1
 			modifier = {
-				political_power_factor = 0.07
+				political_power_factor = 0.05
 				opinion_gain_monthly_factor = 0.1
 				trade_opinion_factor = 0.1
 			}
@@ -185,21 +209,94 @@ ideas = {
 			picture = generic_flexible_foreign_policy
 			removal_cost = -1
 			modifier = {
-				political_power_factor = 0.04
+				political_power_factor = 0.05
 				opinion_gain_monthly_factor = 0.1
 				trade_opinion_factor = 0.1
-				consumer_goods_factor = -0.02
+				justify_war_goal_time = -0.25
 			}
 		}
 
-		PBZ_MAN_Ministry_Of_Foreign_Affairs_2 = {
-			picture = generic_flexible_foreign_policy
+		PBZ_MAN_Commission_Deal_0 = {
+			picture = spr_relocate_the_gold_reserves
 			removal_cost = -1
 			modifier = {
-				political_power_factor = 0.06
-				opinion_gain_monthly_factor = 0.1
-				trade_opinion_factor = 0.1
-				consumer_goods_factor = -0.04
+				political_power_gain = -0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		PBZ_MAN_Commission_Deal_1 = {
+			picture = spr_relocate_the_gold_reserves
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.02
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		PBZ_MAN_Sabotage = {
+			picture = AFG_parliament_building_damaged
+			removal_cost = -1
+			modifier = {
+				attrition = 0.1
+				out_of_supply_factor = 0.1
+				supply_consumption_factor = 0.05
+				army_org_regain = -0.05
+			}
+		}
+		
+		PBZ_MAN_Korean_Resources = {
+			picture = generic_free_trade
+			removal_cost = -1
+			targeted_modifier = {
+				tag = MAN
+				trade_cost_for_target_factor = -0.1
+				extra_trade_to_target_factor = 0.1
+			}
+		}
+
+		PBZ_MAN_Cheap_Sugar = {
+			picture = INS_cheap_sugar
+			removal_cost = -1
+			modifier = {
+				country_resource_grain = 2
+				food_consumption_factor_civilian = -0.025
+				food_consumption_factor_military = -0.025
+			}
+		}
+
+		PBZ_MAN_Batavian_Rubber = {
+			picture = can_wartime_prices_and_trade_board
+			removal_cost = -1
+			modifier = {
+				country_resource_rubber = 14
+			}
+		}
+
+		PBZ_MAN_Papua_Aluminium = {
+			picture = can_wartime_prices_and_trade_board
+			removal_cost = -1
+			modifier = {
+				country_resource_aluminium = 12
+			}
+		}
+
+		PBZ_MAN_Brunei_Oil = {
+			picture = can_wartime_prices_and_trade_board
+			removal_cost = -1
+			modifier = {
+				country_resource_oil = 8
+			}
+		}
+
+		PBZ_MAN_Helping_Russia = {
+			picture = generic_free_trade
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.05
+				army_org_regain = 0.05
+				weekly_manpower = 400
+				consumer_goods_factor = -0.02
 			}
 		}
 
@@ -210,6 +307,7 @@ ideas = {
 				stability_factor = 0.02
 				research_speed_factor = 0.02
 				drift_defence_factor = 0.02
+				political_power_cost = -0.02
 			}
 		}
 
@@ -220,6 +318,7 @@ ideas = {
 				stability_factor = 0.05
 				research_speed_factor = 0.05
 				drift_defence_factor = 0.05
+				political_power_cost = -0.05
 			}
 		}
 
@@ -272,6 +371,7 @@ ideas = {
 				max_command_power = 10
 				conscription = 0.02
 				training_time_army_factor = -0.15
+				land_mastery_gain_factor = 0.05
 			}
 		}
 
@@ -284,6 +384,7 @@ ideas = {
 				command_power_gain_mult = 0.05
 				conscription = 0.02
 				training_time_army_factor = -0.15
+				land_mastery_gain_factor = 0.1
 			}
 			equipment_bonus = {
 				infantry_equipment = {
@@ -302,13 +403,15 @@ ideas = {
 			picture = generic_fortify_the_borders
 			removal_cost = -1
 			modifier = {
-				experience_gain_army = 0.15
+				experience_gain_army = 0.1
 				max_command_power = 30
 				command_power_gain_mult = 0.1
 				conscription = 0.02
 				training_time_army_factor = -0.15
-				max_dig_in = 6
+				land_mastery_gain_factor = 0.15
+				max_dig_in = 7
 				dig_in_speed_factor = 0.2
+				land_bunker_effectiveness_factor = 0.15
 				production_speed_bunker_factor = 0.15
 			}
 			equipment_bonus = {
@@ -323,22 +426,46 @@ ideas = {
 			}
 		}
 
+		PBZ_MAN_Ministry_of_Defence_Infantry_3 = {
+			picture = generic_fortify_the_borders
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.1
+				max_command_power = 30
+				command_power_gain_mult = 0.1
+				conscription = 0.02
+				training_time_army_factor = -0.15
+				land_mastery_gain_factor = 0.15
+				max_dig_in = 7
+				dig_in_speed_factor = 0.2
+				railway_gun_bombardment_factor = 0.3
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				railway_gun_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+
 		PBZ_MAN_Ministry_of_Defence_Mobile_0 = {
 			picture = generic_acquire_tanks
 			removal_cost = -1
 			modifier = {
 				experience_gain_army = 0.05
 				max_command_power = 10
+				land_mastery_gain_factor = 0.05
 			}
 			equipment_bonus = {
 				armor = {
-					maximum_speed = 0.1
-					reliability = 0.05
-					instant = yes
-				}
-			}
-			equipment_bonus = {
-				automat = {
 					maximum_speed = 0.1
 					reliability = 0.05
 					instant = yes
@@ -353,20 +480,19 @@ ideas = {
 				experience_gain_army = 0.07
 				max_command_power = 20
 				command_power_gain_mult = 0.05
+				land_mastery_gain_factor = 0.1
 			}
 			equipment_bonus = {
 				armor = {
 					maximum_speed = 0.1
 					reliability = 0.05
 					breakthrough = 0.1
-					hard_attack = 0.1
+					soft_attack = 0.1
 					instant = yes
 				}
 			}
 			equipment_bonus = {
-				automat = {
-					maximum_speed = 0.1
-					reliability = 0.05
+				mechanized = {
 					breakthrough = 0.1
 					soft_attack = 0.1
 					instant = yes
@@ -378,25 +504,56 @@ ideas = {
 			picture = generic_acquire_tanks
 			removal_cost = -1
 			modifier = {
-				experience_gain_army = 0.15
+				experience_gain_army = 0.1
+				max_command_power = 30
+				command_power_gain_mult = 0.1
+				army_fuel_consumption_factor = -0.1
+				truck_attrition_factor = -0.15
+				land_mastery_gain_factor = 0.15
+			}
+			equipment_bonus = {
+				armor = {
+					maximum_speed = 0.15
+					reliability = 0.1
+					breakthrough = 0.1
+					soft_attack = 0.1
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				mechanized = {
+					breakthrough = 0.1
+					soft_attack = 0.1
+					maximum_speed = 0.1
+					instant = yes
+				}
+			}
+		}
+
+		PBZ_MAN_Ministry_of_Defence_Mobile_3 = {
+			picture = generic_acquire_tanks
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.1
 				max_command_power = 30
 				command_power_gain_mult = 0.1
 				army_fuel_consumption_factor = -0.05
 				truck_attrition_factor = -0.1
+				land_mastery_gain_factor = 0.15
 			}
 			equipment_bonus = {
 				armor = {
 					maximum_speed = 0.1
 					reliability = 0.05
 					breakthrough = 0.1
-					hard_attack = 0.1
+					soft_attack = 0.1
+					hard_attack = 0.15
+					ap_attack = 0.15
 					instant = yes
 				}
 			}
 			equipment_bonus = {
-				automat = {
-					maximum_speed = 0.1
-					reliability = 0.05
+				mechanized = {
 					breakthrough = 0.1
 					soft_attack = 0.1
 					instant = yes
@@ -410,8 +567,9 @@ ideas = {
 			modifier = {
 				experience_gain_army = 0.05
 				max_command_power = 10
-				special_forces_training_time_factor = -0.1
-				special_forces_min = 25
+				special_forces_training_time_factor = -0.05
+				special_forces_min = 50
+				land_mastery_gain_factor = 0.05
 			}
 		}
 
@@ -423,7 +581,9 @@ ideas = {
 				max_command_power = 20
 				command_power_gain_mult = 0.05
 				special_forces_training_time_factor = -0.1
-				special_forces_min = 75
+				special_forces_min = 100
+				land_mastery_gain_factor = 0.05
+				special_forces_mastery_gain_factor = 0.05
 				special_forces_attack_factor = 0.05
 				special_forces_defence_factor = 0.05
 			}
@@ -433,24 +593,45 @@ ideas = {
 			picture = eng_special_air_service
 			removal_cost = -1
 			modifier = {
-				experience_gain_army = 0.15
+				experience_gain_army = 0.1
 				max_command_power = 30
 				command_power_gain_mult = 0.1
 				special_forces_training_time_factor = -0.1
-				special_forces_min = 150
+				special_forces_min = 250
+				land_mastery_gain_factor = 0.1
+				special_forces_mastery_gain_factor = 0.1
 				special_forces_attack_factor = 0.1
 				special_forces_defence_factor = 0.1
 				extra_paratrooper_supply_grace = 120
 				special_forces_out_of_supply_factor = -0.2
+				paratroopers_special_forces_contribution_factor = -0.15
 			}
 		}
 
-		PBZ_MAN_Cossack_Spirit = {
-			picture = ETH_national_studs
+		PBZ_MAN_Ministry_of_Defence_Special_3 = {
+			picture = eng_special_air_service
 			removal_cost = -1
 			modifier = {
-				cavalry_attack_factor = 0.1
-				cavalry_defence_factor = 0.1
+				experience_gain_army = 0.15
+				max_command_power = 30
+				command_power_gain_mult = 0.1
+				special_forces_training_time_factor = -0.1
+				special_forces_min = 250
+				land_mastery_gain_factor = 0.1
+				special_forces_mastery_gain_factor = 0.1
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+			}
+		}
+
+		PBZ_MAN_osoboe_deloproizvodstvo_idea = {
+			picture = generic_spy_political
+			removal_cost = -1
+			modifier = {
+				operative_slot = 1
+				intel_from_operatives_factor = 0.1
+				intel_network_gain_factor = 0.2
+				own_operative_detection_chance_factor = -0.15
 			}
 		}
 
@@ -491,7 +672,7 @@ ideas = {
 			picture = cze_planning_bonus
 			removal_cost = -1
 			targeted_modifier = {
-				tag = VIN
+				tag = HNK
 				attack_bonus_against = 0.1
 				defense_bonus_against = 0.1
 				breakthrough_bonus_against = 0.1
@@ -527,6 +708,26 @@ ideas = {
 				experience_gain_air = 0.05
 				air_weather_penalty = -0.1
 				air_night_penalty = -0.1
+				air_mastery_gain_factor = 0.05
+			}
+		}
+
+		PBZ_MAN_Air_Production = {
+			picture = generic_air_research
+			removal_cost = -1
+			equipment_bonus = {
+				small_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				medium_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				large_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
 			}
 		}
 
@@ -537,6 +738,7 @@ ideas = {
 				experience_gain_air = 0.07
 				air_weather_penalty = -0.1
 				air_night_penalty = -0.1
+				air_mastery_gain_factor = 0.1
 				air_ace_generation_chance_factor = 0.1
 				air_accidents_factor = -0.1
 			}
@@ -547,8 +749,9 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				experience_gain_air = 0.1
-				air_weather_penalty = -0.15
+				air_weather_penalty = -0.1
 				air_night_penalty = -0.1
+				air_mastery_gain_factor = 0.15
 				air_ace_generation_chance_factor = 0.1
 				air_accidents_factor = -0.1
 				ground_attack_factor = 0.1
@@ -562,7 +765,8 @@ ideas = {
 			modifier = {
 				experience_gain_air = 0.1
 				air_weather_penalty = -0.1
-				air_night_penalty = -0.15
+				air_night_penalty = -0.1
+				air_mastery_gain_factor = 0.15
 				air_ace_generation_chance_factor = 0.1
 				air_accidents_factor = -0.1
 				air_defence_factor = 0.1
@@ -578,6 +782,7 @@ ideas = {
 				navy_org_factor = 0.05
 				naval_speed_factor = 0.05
 				positioning = 0.05
+				naval_mastery_gain_factor = 0.05
 			}
 		}
 
@@ -612,6 +817,7 @@ ideas = {
 				navy_org_factor = 0.1
 				naval_speed_factor = 0.1
 				positioning = 0.1
+				naval_mastery_gain_factor = 0.1
 				navy_weather_penalty = -0.1
 				naval_night_attack = 0.1
 			}
@@ -625,6 +831,7 @@ ideas = {
 				navy_org_factor = 0.1
 				naval_speed_factor = 0.1
 				positioning = 0.1
+				naval_mastery_gain_factor = 0.15
 				navy_weather_penalty = -0.1
 				naval_night_attack = 0.1
 				naval_torpedo_reveal_chance_factor = -0.2
@@ -640,6 +847,7 @@ ideas = {
 				navy_org_factor = 0.1
 				naval_speed_factor = 0.1
 				positioning = 0.1
+				naval_mastery_gain_factor = 0.15
 				navy_weather_penalty = -0.1
 				naval_night_attack = 0.1
 				navy_screen_attack_factor = 0.1

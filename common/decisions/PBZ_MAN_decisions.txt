@@ -1,6 +1,6 @@
 PBZ_MAN_resource_decisions = {
 
-	PBZ_MAN_Liaotung_Expand_Iron_Mines = {
+	PBZ_MAN_Liaotung_Expand_Iron_Mines_1 = {
 		icon = steel
 
 		available = {
@@ -21,16 +21,89 @@ PBZ_MAN_resource_decisions = {
 		}
 
 		ai_will_do = {
-			factor = 50
+			base = 5
+			modifier = {  #low PP
+				factor = 0.3
+					has_political_power < 80
+			}
+			modifier = { #plenty PP
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = { #need steel
+				factor = 5
+				has_resources_in_country = {
+					resource = steel
+					amount < 1
+				}
+			}
 		}
 		highlight_states = {
 			highlight_state_targets = { state = 716 } #Liaotung
 		}
 		remove_effect = {
+			716 = { set_state_flag = liaotung_steel_developed }
 			716 = {
 				add_resource = {
 					type = steel
-					amount = 10
+					amount = 12
+				}
+			}
+		}
+	}
+
+	PBZ_MAN_Liaotung_Expand_Iron_Mines_2 = {
+		icon = steel
+
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = {
+			716 = { is_owned_and_controlled_by = ROOT } #Liaotung
+			716 = {
+				NOT = {
+					has_state_flag = liaotung_steel_developed
+				}
+			}
+		}
+
+		cost = 25
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			base = 5
+			modifier = {  #low PP
+				factor = 0.3
+					has_political_power < 80
+			}
+			modifier = { #plenty PP
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = { #need steel
+				factor = 5
+				has_resources_in_country = {
+					resource = steel
+					amount < 1
+				}
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 716 } #Liaotung
+		}
+		remove_effect = {
+			716 = { set_state_flag = liaotung_steel_developed }
+			716 = {
+				add_resource = {
+					type = steel
+					amount = 12
 				}
 			}
 		}
@@ -57,7 +130,22 @@ PBZ_MAN_resource_decisions = {
 		}
 
 		ai_will_do = {
-			factor = 50
+			base = 5
+			modifier = {  #low PP
+				factor = 0.3
+					has_political_power < 80
+			}
+			modifier = { #plenty PP
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = { #need tungsten
+				factor = 5
+				has_resources_in_country = {
+					resource = tungsten
+					amount < 1
+				}
+			}
 		}
 		highlight_states = {
 			highlight_state_targets = { state = 328 } #Jilin
@@ -66,7 +154,7 @@ PBZ_MAN_resource_decisions = {
 			328 = {
 				add_resource = {
 					type = tungsten
-					amount = 16
+					amount = 14
 				}
 			}
 		}
@@ -93,7 +181,22 @@ PBZ_MAN_resource_decisions = {
 		}
 
 		ai_will_do = {
-			factor = 50
+			base = 5
+			modifier = {  #low PP
+				factor = 0.3
+					has_political_power < 80
+			}
+			modifier = { #plenty PP
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = { #need aluminium
+				factor = 5
+				has_resources_in_country = {
+					resource = aluminium
+					amount < 1
+				}
+			}
 		}
 		highlight_states = {
 			highlight_state_targets = { state = 610 } #Jehol
@@ -103,6 +206,57 @@ PBZ_MAN_resource_decisions = {
 				add_resource = {
 					type = aluminium
 					amount = 10
+				}
+			}
+		}
+	}
+
+	PBZ_MAN_Jehol_Expand_Coal_Industry = {
+		icon = coal
+
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = {
+			610 = { is_owned_and_controlled_by = ROOT } #Jehol
+		}
+
+		cost = 25
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			base = 5
+			modifier = {  #low PP
+				factor = 0.3
+					has_political_power < 80
+			}
+			modifier = { #plenty PP
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = { #need coal
+				factor = 5
+				has_resources_in_country = {
+					resource = coal
+					amount < 1
+				}
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 610 } #Jehol
+		}
+		remove_effect = {
+			610 = {
+				add_resource = {
+					type = coal
+					amount = 12
 				}
 			}
 		}
@@ -129,7 +283,22 @@ PBZ_MAN_resource_decisions = {
 		}
 
 		ai_will_do = {
-			factor = 50
+			base = 5
+			modifier = {  #low PP
+				factor = 0.3
+					has_political_power < 80
+			}
+			modifier = { #plenty PP
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = { #need chromium
+				factor = 5
+				has_resources_in_country = {
+					resource = chromium
+					amount < 1
+				}
+			}
 		}
 		highlight_states = {
 			highlight_state_targets = { state = 714 } #Heilungkiang
@@ -169,7 +338,22 @@ PBZ_MAN_resource_decisions = {
 		}
 
 		ai_will_do = {
-			factor = 50
+			base = 5
+			modifier = {  #low PP
+				factor = 0.3
+					has_political_power < 80
+			}
+			modifier = { #plenty PP
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = { #need oil
+				factor = 5
+				has_resources_in_country = {
+					resource = oil
+					amount < 1
+				}
+			}
 		}
 		highlight_states = {
 			highlight_state_targets = { state = 715 } #Liaoning
@@ -178,15 +362,11 @@ PBZ_MAN_resource_decisions = {
 			715 = {
 				add_resource = {
 					type = oil
-					amount = 20
-				}
-				add_resource = {
-					type = chromium
-					amount = 12
+					amount = 10
 				}
 				add_resource = {
 					type = aluminium
-					amount = 10
+					amount = 8
 				}
 			}
 		}
@@ -393,7 +573,7 @@ PBZ_MAN_war_plans_decisions = {
 		available = {
 			has_war = yes
 			any_enemy_country = {
-				original_tag = VIN
+				original_tag = HNK
 			}
 		}
 
@@ -460,6 +640,272 @@ PBZ_MAN_war_plans_decisions = {
 			add_timed_idea = {
 				idea = PBZ_MAN_shanghai_noon
 				days = 75
+			}
+		}
+	}
+}
+
+PBZ_MAN_foreign_affairs_decisions = {
+
+	PBZ_MAN_Korean_Suhoi_Dam_decision = {
+		icon = generic_construction
+		allowed = { always = no }
+		visible = {
+			527 = { is_owned_and_controlled_by = KOR }
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 527 }
+		}
+		state_target = yes
+		fire_only_once = yes
+		cost = 20
+		days_remove = 200
+		ai_will_do = {
+			factor = 5
+		}
+
+		remove_effect = {
+			527 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = 9848
+				}
+				custom_effect_tooltip = {
+					localization_key = building_state_modifier|dam
+					INDENT = "    "
+				}				
+			}
+			KOR = {
+				add_ideas = PBZ_MAN_Korean_Resources
+			}
+		}
+	}
+
+	PBZ_MAN_smuggle_rubber_from_batavian_junta = {
+		icon = eng_trade_unions_support
+		visible = {
+			has_completed_focus = PBZ_MAN_Smuggle_Resources
+		}
+		available = {
+			NOT = {
+				has_country_flag = PBZ_MAN_smuggling_batavian_rubber_flag
+			}
+		}
+		cost = 20
+		days_remove = 150
+		ai_will_do = {
+			factor = 5
+		}
+		
+		complete_effect = {
+			set_country_flag = {
+				flag = PBZ_MAN_smuggling_batavian_rubber_flag
+			}
+			add_ideas = PBZ_MAN_Batavian_Rubber
+		}
+
+		remove_effect = {
+			clr_country_flag = PBZ_MAN_smuggling_batavian_rubber_flag
+			remove_ideas = PBZ_MAN_Batavian_Rubber
+		}
+	}
+
+	PBZ_MAN_smuggle_aluminium_from_papua = {
+		icon = eng_trade_unions_support
+		visible = {
+			has_completed_focus = PBZ_MAN_Smuggle_Resources
+		}
+		available = {
+			NOT = {
+				has_country_flag = PBZ_MAN_smuggle_aluminium_from_papua_flag
+			}
+		}
+		cost = 20
+		days_remove = 150
+		ai_will_do = {
+			factor = 5
+		}
+		
+		complete_effect = {
+			set_country_flag = {
+				flag = PBZ_MAN_smuggle_aluminium_from_papua_flag
+			}
+			add_ideas = PBZ_MAN_Papua_Aluminium
+		}
+
+		remove_effect = {
+			clr_country_flag = PBZ_MAN_smuggle_aluminium_from_papua_flag
+			remove_ideas = PBZ_MAN_Papua_Aluminium
+		}
+	}
+
+	PBZ_MAN_smuggle_oil_from_brunei = {
+		icon = eng_trade_unions_support
+		visible = {
+			has_completed_focus = PBZ_MAN_Smuggle_Resources
+		}
+		available = {
+			NOT = {
+				has_country_flag = PBZ_MAN_smuggle_oil_from_brunei_flag
+			}
+		}
+		cost = 20
+		days_remove = 150
+		ai_will_do = {
+			factor = 5
+		}
+		
+		complete_effect = {
+			set_country_flag = {
+				flag = PBZ_MAN_smuggle_oil_from_brunei_flag
+			}
+			add_ideas = PBZ_MAN_Brunei_Oil
+		}
+
+		remove_effect = {
+			clr_country_flag = PBZ_MAN_smuggle_oil_from_brunei_flag
+			remove_ideas = PBZ_MAN_Brunei_Oil
+		}
+	}
+
+	PBZ_MAN_Attack_Jacobinist_China = {
+
+		icon = generic_decision
+		allowed = { original_tag = MAN }
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				add = -100
+				OR = {
+					has_war_with = JAP
+					has_war_with = CHI
+					has_war_with = XSM
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = PBZ_MAN_Agressive_Negotiations
+		}
+
+		available = {
+			has_border_war_with = ROC
+			NOT = { has_non_aggression_pact_with = ROC }
+		}
+
+		war_with_on_remove = ROC
+
+		days_remove = 14
+
+		remove_effect = {
+			MAN = {
+				declare_war_on = {
+					target = ROC
+					type = annex_everything
+				}
+			}
+		}
+	}
+
+	PBZ_MAN_Attack_Taiping_China = {
+
+		icon = generic_decision
+		allowed = { original_tag = MAN }
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				add = -100
+				OR = {
+					has_war_with = JAP
+					has_war_with = ROC
+					has_war_with = XSM
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = PBZ_MAN_Agressive_Negotiations
+		}
+
+		available = {
+			has_border_war_with = CHI
+			NOT = { has_non_aggression_pact_with = CHI }
+		}
+
+		war_with_on_remove = CHI
+
+		days_remove = 14
+
+		remove_effect = {
+			MAN = {
+				declare_war_on = {
+					target = CHI
+					type = annex_everything
+				}
+			}
+		}
+	}
+
+	PBZ_MAN_Attack_Islam_China = {
+
+		icon = generic_decision
+		allowed = { original_tag = MAN }
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				add = -100
+				OR = {
+					has_war_with = JAP
+					has_war_with = ROC
+					has_war_with = CHI
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = PBZ_MAN_Agressive_Negotiations
+		}
+
+		available = {
+			has_border_war_with = XSM
+			NOT = { has_non_aggression_pact_with = XSM }
+		}
+
+		war_with_on_remove = XSM
+
+		days_remove = 14
+
+		remove_effect = {
+			MAN = {
+				declare_war_on = {
+					target = XSM
+					type = annex_everything
+				}
 			}
 		}
 	}

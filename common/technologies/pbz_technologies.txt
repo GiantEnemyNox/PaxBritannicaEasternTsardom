@@ -1,45 +1,127 @@
 technologies = {
 
 	irregular_infantry_tech = {
-
 		research_cost = 1
-
 		allow = {
 			always = no
 		}
-
 		enable_subunits = {
 			irregular_infantry
 		}
 	}
 
 	pbz_improved_aug_units = {
-
+		research_cost = 1
 		allow = {
 			always = no
 		}
-
-		research_cost = 1
-		start_year = 1933
-
 		razormaidens = {
 			soft_attack = 0.1
 			maximum_speed = 0.05
 		}
-
 		hardsuits = {
 			soft_attack = 0.1
 			breakthrough = 0.05
 		}
-		
 		categories = {
 			cat_augmented_infantry
 			cat_razormaidens
 			cat_hardsuits
 		}
-		
-		ai_will_do = {
-			factor = 0.7
+
+	}
+	
+	improved_logistics_tech = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+		logistics_company = {
+			supply_consumption_factor = -0.1
+			fuel_consumption_factor = -0.05
+		}
+	}
+
+	improved_recon_units_tech = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+		category_recon = {
+			recon = 1
+			breakthrough = 1
+		}
+	}
+	
+	improved_field_hospitals_tech = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+		field_hospital = {
+			casualty_trickleback = 0.20
+			experience_loss_factor = -0.10
+		}
+	}
+
+	improved_engineer_corps_tech = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+		engineer = {
+			entrenchment = 2
+			fort = {
+				defence = 0.10
+				attack = 0.10
+			}
+		}
+		pioneer_support = {
+			entrenchment = 2
+			fort = {
+				defence = 0.10
+				attack = 0.10
+			}
+		}
+		jungle_pioneers_support = {
+			entrenchment = 2
+			fort = {
+				defence = 0.10
+				attack = 0.10
+			}
+		}
+		assault_engineer = {
+			entrenchment = 2
+			fort = {
+				defence = 0.10
+				attack = 0.10
+			}
+		}
+		armored_engineer = {
+			entrenchment = 2
+			fort = {
+				defence = 0.10
+				attack = 0.10
+			}
+		}
+	}
+
+	mountain_warfare_tech = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+		category_special_forces = {
+			hills = {
+				attack = 0.05
+				defence = 0.05
+				movement = 0.05
+			}
+			mountain = {
+				attack = 0.05
+				defence = 0.05
+				movement = 0.1
+			}
 		}
 	}
 

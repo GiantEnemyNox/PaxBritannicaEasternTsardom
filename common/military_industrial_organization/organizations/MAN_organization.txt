@@ -13,8 +13,8 @@ PBZ_MAN_harbin_plant_organization = {
 }
 
 PBZ_MAN_kvzhd_organization = {
-	include = generic_tank_refurbishment_plant_organization
-	icon = GFX_idea_generic_tank_manufacturer_3
+	include = generic_train_organization
+	icon = GFX_idea_generic_build_infrastructure
 	
 	allowed = {	 
 		tag = MAN
@@ -60,7 +60,7 @@ PBZ_MAN_liaodong_shipyard_organization = {
 ### Airplane MIOs ###
 #####################
 PBZ_MAN_general_aircraft_organization = {
-	include = generic_general_aircraft_organization
+	include = generic_light_aircraft_organization
 	icon = GFX_idea_generic_air_manufacturer_1
 
 	allowed = {	
@@ -70,30 +70,12 @@ PBZ_MAN_general_aircraft_organization = {
 }
 
 PBZ_MAN_medium_aircraft_organization = {
-	include = generic_medium_aircraft_organization
+	include = generic_range_focused_aircraft_organization
 	icon = GFX_idea_generic_air_manufacturer_2
 
 	allowed = {	
 		tag = MAN
 		has_dlc = "Arms Against Tyranny"
-	}
-
-	add_trait = {
-		token = MAN_mio_trait_mechanized_production
-		name = USA_mio_trait_mechanized_production
-		icon = GFX_generic_mio_department_icon_plane_medium_technology
-		special_trait_background = yes
-		
-		position = { x = 0 y = 1 }  
-		relative_position_id = generic_mio_trait_narrow_build
-		
-		any_parent = { generic_mio_trait_narrow_build }
-		
-		limit_to_equipment_type = { mio_cat_eq_all_medium_plane }
-		
-		production_bonus = {
-			production_efficiency_cap_factor = 0.05
-		} 
 	}
 }
 
@@ -101,6 +83,16 @@ PBZ_MAN_cas_aircraft_organization = {
 	include = generic_cas_aircraft_organization
 	icon = GFX_idea_generic_air_manufacturer_3
 
+	allowed = {	
+		tag = MAN
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+PBZ_MAN_Kamov_organization = {
+	include = generic_helicopter_organization
+	icon = GFX_idea_PB_RUS_Kamov
+	
 	allowed = {	
 		tag = MAN
 		has_dlc = "Arms Against Tyranny"
@@ -139,54 +131,6 @@ PBZ_MAN_mukden_support_organisation = {
 	allowed = {	 
 		tag = MAN
 		has_dlc = "Arms Against Tyranny"
-
-	}
-
-	add_trait = { 
-		token = MAN_mio_trait_danuvia_two_part_lever_delayed_blowback_bolt
-		name = HUN_mio_trait_danuvia_two_part_lever_delayed_blowback_bolt
-		icon = GFX_generic_mio_department_icon_infantry_quality
-		special_trait_background = yes
-
-		relative_position_id = generic_mio_trait_anti_tank_rifle
-
-		all_parents = { generic_mio_trait_anti_tank_rifle }
-
-		position = { x = -1 y = 1 }
-
-		available = {
-		}
-
-		limit_to_equipment_type = { infantry_equipment }
-		
-		equipment_bonus = {
-			reliability = 0.05
-			soft_attack = 0.05
-			breakthrough = 0.05
-		}
-
-	}
-
-	add_trait = {
-		token = HUN_mio_trait_danuvia_motorcycles
-		name = HUN_mio_trait_danuvia_motorcycles
-		icon = GFX_generic_mio_department_icon_support_production
-		special_trait_background = yes
-
-		relative_position_id = generic_mio_trait_pontoons
-
-		all_parents = { generic_mio_trait_pontoons }
-
-		position = { x = 0 y = 1 }
-		
-		available = {
-		}
-
-		limit_to_equipment_type = { support_equipment }
-		
-		equipment_bonus = {
-			build_cost_ic = -0.15
-		}
 
 	}
 }
