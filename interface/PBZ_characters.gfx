@@ -36,4 +36,24 @@ spriteTypes = {
 		name = "GFX_Portrait_MAN_Pyotr_Mezhak_small"
 		texturefile = "gfx/interface/ideas/MAN/Portrait_MAN_Pyotr_Mezhak_small.dds"
 	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_PBZ_Georgiy_Guins_small"
+		texturefile = "gfx/leaders/MAN/small_portraits/MAN_PBZ_Georgiy_Guins_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_PBZ_Ivan_Mikhailov_small"
+		texturefile = "gfx/leaders/MAN/small_portraits/MAN_PBZ_Ivan_Mikhailov_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_PBZ_Viktor_Grosse_small"
+		texturefile = "gfx/leaders/MAN/small_portraits/MAN_PBZ_Viktor_Grosse_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_PBZ_Viktor_Pepelyayev_small"
+		texturefile = "gfx/leaders/MAN/small_portraits/MAN_PBZ_Georgiy_Guins_small.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_MAN_PBZ_Metropolitan_Anastasy_small"
+		texturefile = "gfx/leaders/MAN/small_portraits/MAN_PBZ_Metropolitan_Anastasy_small.dds"
+	}
 } 

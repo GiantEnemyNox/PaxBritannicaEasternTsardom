@@ -1,0 +1,7 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_decision_coal"
+		texturefile = "gfx/interface/decisions/decision_coal.dds"
+	}
+}

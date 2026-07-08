@@ -119,4 +119,24 @@ spriteTypes = {
 		name = "GFX_idea_MAN_russification_completed"
 		texturefile = "gfx/interface/ideas/idea_MAN_russification_completed.dds"
 	}
+	spriteType = {
+		name = "GFX_idea_AFG_parliament_building_damaged"
+		texturefile = "gfx/interface/ideas/idea_AFG_parliament_building_damaged.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_free_trade"
+		texturefile = "gfx/interface/ideas/idea_generic_free_trade.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_can_wartime_prices_and_trade_board"
+		texturefile = "gfx/interface/ideas/idea_can_wartime_prices_and_trade_board.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_spr_relocate_the_gold_reserves"
+		texturefile = "gfx/interface/ideas/spr_relocate_the_gold_reserves.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_INS_cheap_sugar"
+		texturefile = "gfx/interface/ideas/idea_INS_cheap_sugar.dds"
+	}
 }
