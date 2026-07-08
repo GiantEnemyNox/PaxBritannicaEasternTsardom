@@ -5,7 +5,8 @@ tags={
 	"National Focuses"
 }
 name="Pax Britannica: Eastern Tsardom"
-supported_version="1.16.*"
+supported_version="1.19.*"
 dependencies={
     "PaxBritannicaRedux-master"
+	"PaxBritannicaRedux Dev Build"
 }
