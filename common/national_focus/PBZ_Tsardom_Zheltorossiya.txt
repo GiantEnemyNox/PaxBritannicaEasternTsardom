@@ -87,7 +87,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_timed_idea = {
-				idea = PBZ_MAN_planned_emergency
+				idea = PBZ_MAN_Planned_Emergency
 				days = 60
 			}
 		}
@@ -187,18 +187,18 @@ focus_tree = {
 
 		completion_reward = {
 			add_equipment_to_stockpile = {
-				type = motorized_equipment
-				amount = 100
+				type = infantry_equipment
+				amount = 1000
 				producer = RUS
 			}
 			add_equipment_to_stockpile = {
 				type = support_equipment
-				amount = 200
+				amount = 400
 				producer = RUS
 			}
 			add_equipment_to_stockpile = {
 				type = field_kits_equipment_0
-				amount = 400
+				amount = 800
 				producer = RUS
 			}
 		}
@@ -334,11 +334,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_stability = 0.05
-			add_political_power = 50
-			custom_effect_tooltip = tooltip_white_line
-			297 = {
-				add_core_of = MON
-			}
+			add_political_power = 25
 			custom_effect_tooltip = tooltip_white_line
 			country_event = {
 				id = PBZ_zheltorossiya.4
@@ -937,7 +933,7 @@ focus_tree = {
 				add_idea = PBZ_MAN_Navy_Clique_3
 			}
 			add_timed_idea = {
-				idea = PBZ_MAN_volunteer_forces
+				idea = PBZ_MAN_Volunteer_Forces_idea
 				days = 365
 			}
 		}
@@ -971,10 +967,6 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 100
-			custom_effect_tooltip = tooltip_white_line
-			country_event = {
-				id = PBZ_zheltorossiya.7
-			}
 		}
 	}
 
@@ -985,7 +977,7 @@ focus_tree = {
 		icon = GFX_focus_generic_improve_the_administration
 		x = -4
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Finish_Political_Stuff
 
@@ -1118,11 +1110,48 @@ focus_tree = {
 	}
 
 	focus = {
+		id = PBZ_MAN_Expand_KVZHD
+		icon = GFX_focus_BEL_engine_of_the_economy
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Department_Of_Roads
+
+		prerequisite = {
+			focus = PBZ_MAN_Department_Of_Roads
+		}
+		
+		available = {
+			has_idea = PBZ_MAN_KVZhD_Team
+        }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			hidden_effect = {
+				set_country_flag = PBZ_MAN_KVZhD_Expanded_flag
+			}
+			swap_ideas = {
+				remove_idea = PBZ_MAN_KVZhD_Team
+				add_idea = PBZ_MAN_KVZhD_Expanded_Team
+			}
+		}
+	}
+
+	focus = {
 		id = PBZ_MAN_Chamber_Of_Commerce
 		icon = GFX_focus_generic_monetary_union
-		x = -4
+		x = -6
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Ministry_Of_Trade
 
@@ -1137,18 +1166,25 @@ focus_tree = {
 		cancel_if_invalid = yes
 
 		completion_reward = {
-			custom_effect_tooltip = PBZ_MAN_available_tech_team
+			SD_ECON_growth_progress_monthly_small = yes
+			custom_effect_tooltip =  tooltip_white_line
+			custom_effect_tooltip = PBZ_MAN_available_tech_team_tt
 			show_ideas_tooltip = PBZ_MAN_Trade_Chamber
 			custom_effect_tooltip =  tooltip_white_line
 			716 = {
 				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 			}
 		}
 	}
 
 	focus = {
-		id = PBZ_MAN_Scale_Up_Farming_Industry
-		icon = GFX_focus_generic_farmland
+		id = PBZ_MAN_Expand_Textile_Industry
+		icon = GFX_focus_CHL_enlarge_the_textile_industries
 		x = -2
 		y = 1
 		cost = 35
@@ -1157,6 +1193,107 @@ focus_tree = {
 
 		prerequisite = {
 			focus = PBZ_MAN_Ministry_Of_Trade
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			SD_IND_growth_progress_moderate = yes
+			custom_effect_tooltip = tooltip_white_line
+			328 = {
+				set_state_category = city
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			716 = {
+				set_state_category = large_city
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				name = PBZ_MAN_Industry_Bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Tea_Industry
+		icon = GFX_focus_RAJ_tea_exports
+		x = -4
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Ministry_Of_Trade
+
+		prerequisite = {
+			focus = PBZ_MAN_Ministry_Of_Trade
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			SD_IND_growth_progress_moderate = yes
+			custom_effect_tooltip = tooltip_white_line
+			715 = {
+				set_state_category = large_town
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			610 = {
+				set_state_category = town
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_tech_bonus = {
+				name = PBZ_MAN_Industry_Bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Scale_Up_Farming_Industry
+		icon = GFX_focus_generic_farmland
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Expand_Textile_Industry
+
+		prerequisite = {
+			focus = PBZ_MAN_Expand_Textile_Industry
+			focus = PBZ_MAN_Tea_Industry
 		}
 
 		available_if_capitulated = no
@@ -1216,14 +1353,15 @@ focus_tree = {
 	focus = {
 		id = PBZ_MAN_Central_Planning_Bureau
 		icon = GFX_focus_generic_full_employment
-		x = 0
+		x = -2
 		y = 1
 		cost = 35
 
-		relative_position_id = PBZ_MAN_Scale_Up_Farming_Industry
+		relative_position_id = PBZ_MAN_Expand_Textile_Industry
 
 		prerequisite = {
-			focus = PBZ_MAN_Scale_Up_Farming_Industry
+			focus = PBZ_MAN_Expand_Textile_Industry
+			focus = PBZ_MAN_Tea_Industry
 		}
 
 		available_if_capitulated = no
@@ -1258,7 +1396,7 @@ focus_tree = {
 	focus = {
 		id = PBZ_MAN_Develop_Roads
 		icon = GFX_focus_generic_public_works
-		x = 0
+		x = 1
 		y = 1
 		cost = 35
 
@@ -1266,6 +1404,7 @@ focus_tree = {
 
 		prerequisite = {
 			focus = PBZ_MAN_Central_Planning_Bureau
+			focus = PBZ_MAN_Scale_Up_Farming_Industry
 		}
 
 		available_if_capitulated = no
@@ -1278,24 +1417,29 @@ focus_tree = {
 			SD_POV_growth_progress_moderate = yes
 			custom_effect_tooltip = tooltip_white_line
 			610 = {
-				set_state_category = town
-			}
-			custom_effect_tooltip = tooltip_white_line
-			715 = {
-				add_extra_state_shared_building_slots = 2
-			}
-			custom_effect_tooltip = tooltip_white_line
-			715 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
-			610 = {
+			custom_effect_tooltip = tooltip_white_line
+			715 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1304,8 +1448,8 @@ focus_tree = {
 
 	focus = {
 		id = PBZ_MAN_Build_Railway_In_Chahar
-		icon = GFX_focus_BEL_engine_of_the_economy
-		x = 1
+		icon = GFX_focus_PER_feat_of_engineering
+		x = 0
 		y = 1
 		cost = 56
 
@@ -1343,17 +1487,17 @@ focus_tree = {
 			}
 			build_railway = {
 				path = { 1558 12469 7578 12554 7648 }
-				level = 1
+				level = 2
 			}
 			build_railway = {
 				path = { 10426 3978 10363 7648 }
-				level = 1
+				level = 2
 			}
 		}
 	}
 
 	focus = {
-		id = PBZ_MAN_Expand_The_Military_Industry
+		id = PBZ_MAN_Expand_Military_Industry_Harbin
 		icon = GFX_focus_generic_military_industry
 		x = 2
 		y = 1
@@ -1382,27 +1526,19 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			716 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
 			custom_effect_tooltip = tooltip_white_line
 			add_tech_bonus = {
-				name = PBZ_MAN_Industry_Bonus
+				name = PBZ_MAN_Military_Research
 				bonus = 1.0
 				uses = 1
-				category = industry
+				category = infantry_weapons
 			}
 		}
 	}
 
 	focus = {
-		id = PBZ_MAN_Expand_The_Civil_Industry
-		icon = GFX_focus_generic_currency_reforms
+		id = PBZ_MAN_Expand_Military_Industry_Mukden
+		icon = GFX_focus_generic_military_industry
 		x = 4
 		y = 1
 		cost = 35
@@ -1422,30 +1558,11 @@ focus_tree = {
 		completion_reward = {
 			SD_IND_growth_progress_moderate = yes
 			custom_effect_tooltip = tooltip_white_line
-			328 = {
-				set_state_category = city
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			715 = {
-				set_state_category = large_town
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
 			716 = {
-				set_state_category = large_city
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = industrial_complex
-					level = 1
+					type = arms_factory
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1454,7 +1571,7 @@ focus_tree = {
 				name = PBZ_MAN_Industry_Bonus
 				bonus = 1.0
 				uses = 1
-				category = industry
+				category = electronics
 			}
 		}
 	}
@@ -1466,11 +1583,11 @@ focus_tree = {
 		y = 1
 		cost = 35
 
-		relative_position_id = PBZ_MAN_Expand_The_Military_Industry
+		relative_position_id = PBZ_MAN_Expand_Military_Industry_Harbin
 
 		prerequisite = {
-			focus = PBZ_MAN_Expand_The_Military_Industry
-			focus = PBZ_MAN_Expand_The_Civil_Industry
+			focus = PBZ_MAN_Expand_Military_Industry_Harbin
+			focus = PBZ_MAN_Expand_Military_Industry_Mukden
 		}
 
 		available_if_capitulated = no
@@ -1524,14 +1641,11 @@ focus_tree = {
 		cancel_if_invalid = yes
 
 		completion_reward = {
+			SD_IND_growth_progress_moderate = yes
+			custom_effect_tooltip = tooltip_white_line
 			761 = {
 				set_state_category = rural
 				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
 				add_building_construction = {
 					type = tesla_tower
 					level = 1
@@ -1540,11 +1654,6 @@ focus_tree = {
 			}
 			612 = {
 				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
 				add_building_construction = {
 					type = tesla_tower
 					level = 1
@@ -1555,7 +1664,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = PBZ_MAN_Industry_Bonus
 				bonus = 1.0
-				uses = 2
+				uses = 1
 				category = electronics
 			}
 		}
@@ -1564,7 +1673,7 @@ focus_tree = {
 	focus = {
 		id = PBZ_MAN_Build_The_Suiho_Dam
 		icon = GFX_focus_generic_hydroelectric_energy
-		x = -1
+		x = 0
 		y = 1
 		cost = 56
 
@@ -1585,7 +1694,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 
 		completion_reward = {
-			SD_IND_growth_progress_moderate = yes
+			SD_IND_growth_progress_high = yes
 			custom_effect_tooltip = tooltip_white_line
 			328 = {
 				add_extra_state_shared_building_slots = 2
@@ -1622,9 +1731,9 @@ focus_tree = {
 	focus = {
 		id = PBZ_MAN_Ministry_Of_Internal_Affairs
 		icon = GFX_focus_AST_a_democratic_bulwark
-		x = 4
+		x = 5
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Finish_Political_Stuff
 
@@ -1760,6 +1869,7 @@ focus_tree = {
 				limit = { has_dlc = "La Resistance" }
 				create_intelligence_agency = yes
 				upgrade_intelligence_agency = upgrade_passive_defense
+				custom_effect_tooltip = tooltip_white_line
 				swap_ideas = {
 					remove_idea = PBZ_MAN_Ministry_Of_Internal_Affairs_0
 					add_idea = PBZ_MAN_Ministry_Of_Internal_Affairs_1
@@ -1807,6 +1917,30 @@ focus_tree = {
 	}
 
 	focus = {
+		id = PBZ_MAN_Fight_Opium_Trade
+		icon = GFX_focus_MAN_ban_opium
+		x = 0
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Funnel_Funds_Into_Okhrana
+
+		prerequisite = {
+			focus = PBZ_MAN_Funnel_Funds_Into_Okhrana
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_OKHRANA}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			remove_ideas = PBZ_MAN_Illegal_Opium_Market
+		}
+	}
+
+	focus = {
 		id = PBZ_MAN_Mass_Media_Matters
 		icon = GFX_focus_SWE_radiotjanst
 		x = -1
@@ -1836,13 +1970,13 @@ focus_tree = {
 		id = PBZ_MAN_Public_Security_Office
 		icon = GFX_focus_SIA_the_midnight_meeting
 		x = 1
-		y = 1
+		y = 2
 		cost = 35
 
 		relative_position_id = PBZ_MAN_Mass_Media_Matters
 
 		prerequisite = {
-			focus = PBZ_MAN_Funnel_Funds_Into_Okhrana
+			focus = PBZ_MAN_Fight_Opium_Trade
 		}
 
 		prerequisite = {
@@ -1928,7 +2062,7 @@ focus_tree = {
 	focus = {
 		id = PBZ_MAN_Unexpected_Question
 		icon = GFX_focus_SIA_defenders_of_constitutional_liberty
-		x = -1
+		x = 0
 		y = 1
 		cost = 35
 
@@ -1957,9 +2091,9 @@ focus_tree = {
 	focus = {
 		id = PBZ_MAN_Ministry_Of_Foreign_Affairs
 		icon = GFX_focus_ARG_strengthening_the_concordancia
-		x = 13
+		x = 15
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Finish_Political_Stuff
 
@@ -2008,6 +2142,87 @@ focus_tree = {
 		
 		prerequisite = {
 			focus = PBZ_MAN_Ministry_Of_Foreign_Affairs
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+		
+		available = {
+			OR = {
+				SER = {
+					exists = yes
+					is_subject = no
+				}
+				BUL = {
+					exists = yes
+					is_subject = no
+				}
+				GRE = {
+					exists = yes
+					is_subject = no
+				}
+			}
+		}
+		
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			custom_effect_tooltip = PBZ_MAN_diplomacy_with_balkans_tt
+			custom_effect_tooltip = tooltip_white_line
+			GRE = {
+				add_ideas = PBZ_MAN_Korean_Resources
+			}
+			custom_effect_tooltip = tooltip_white_line
+			country_event = {
+				id = PBZ_zheltorossiya.11
+			}
+			hidden_effect = {
+				add_opinion_modifier = {
+					target = SER
+					modifier = diplomatic_outreach
+				}
+				add_opinion_modifier = {
+					target = BUL
+					modifier = diplomatic_outreach
+				}
+				add_opinion_modifier = {
+					target = GRE
+					modifier = diplomatic_outreach
+				}
+				SER = {
+					add_opinion_modifier = {
+						target = MAN
+						modifier = diplomatic_outreach
+					}
+				}
+				BUL = {
+					add_opinion_modifier = {
+						target = MAN
+						modifier = diplomatic_outreach
+					}
+				}
+				GRE = {
+					add_opinion_modifier = {
+						target = MAN
+						modifier = diplomatic_outreach
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Contact_Fellow_Anglogerman_Detesters
+		icon = GFX_focus_AST_never_gallipoli
+		x = -1
+		y = 2
+		cost = 35
+	
+		relative_position_id = PBZ_MAN_European_Department
+		
+		prerequisite = {
+			focus = PBZ_MAN_European_Department
 		}
 
 		available_if_capitulated = no
@@ -2065,85 +2280,9 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
-			country_event = {
-				id = PBZ_zheltorossiya.11
-			}
-		}
-	}
-
-	focus = {
-		id = PBZ_MAN_Contact_Fellow_Orthodox_Nations
-		icon = GFX_focus_BUL_restore_the_bulgarian_patriarchate
-		x = -1
-		y = 2
-		cost = 35
-	
-		relative_position_id = PBZ_MAN_European_Department
-		
-		prerequisite = {
-			focus = PBZ_MAN_European_Department
-		}
-
-		available_if_capitulated = no
-
-		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
-		
-		available = {
-			OR = {
-				SER = {
-					exists = yes
-					is_subject = no
-				}
-				BUL = {
-					exists = yes
-					is_subject = no
-				}
-				GRE = {
-					exists = yes
-					is_subject = no
-				}
-			}
-		}
-		
-		cancel_if_invalid = yes
-
-		completion_reward = {
-			custom_effect_tooltip = PBZ_MAN_diplomacy_with_balkans
-			custom_effect_tooltip = tooltip_white_line
-			GRE = {
-				add_ideas = PBZ_MAN_Korean_Resources
-			}
-			hidden_effect = {
-				add_opinion_modifier = {
-					target = SER
-					modifier = diplomatic_outreach
-				}
-				add_opinion_modifier = {
-					target = BUL
-					modifier = diplomatic_outreach
-				}
-				add_opinion_modifier = {
-					target = GRE
-					modifier = diplomatic_outreach
-				}
-				SER = {
-					add_opinion_modifier = {
-						target = MAN
-						modifier = diplomatic_outreach
-					}
-				}
-				BUL = {
-					add_opinion_modifier = {
-						target = MAN
-						modifier = diplomatic_outreach
-					}
-				}
-				GRE = {
-					add_opinion_modifier = {
-						target = MAN
-						modifier = diplomatic_outreach
-					}
-				}
+			diplomatic_relation = {
+				country = FRA
+				relation = non_aggression_pact
 			}
 		}
 	}
@@ -2151,14 +2290,14 @@ focus_tree = {
 	focus = {
 		id = PBZ_MAN_Further_Overtures_Towards_Europe
 		icon = GFX_focus_SOV_russian_corporate_state
-		x = -1
+		x = 1
 		y = 1
 		cost = 35
 
-		relative_position_id = PBZ_MAN_Contact_Fellow_Orthodox_Nations
+		relative_position_id = PBZ_MAN_Contact_Fellow_Anglogerman_Detesters
 
 		prerequisite = {
-			focus = PBZ_MAN_Contact_Fellow_Orthodox_Nations
+			focus = PBZ_MAN_Contact_Fellow_Anglogerman_Detesters
 		}
 
 		available_if_capitulated = no
@@ -2173,6 +2312,14 @@ focus_tree = {
 				is_in_faction_with = FRA
 			}
         }
+		bypass = {
+			FRA = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+		}
 
 		cancel_if_invalid = yes
 
@@ -2189,14 +2336,14 @@ focus_tree = {
 	focus = {
 		id = PBZ_MAN_Help_Motherland
 		icon = GFX_focus_generic_supply_line
-		x = 1
+		x = -1
 		y = 1
 		cost = 35
 
-		relative_position_id = PBZ_MAN_Contact_Fellow_Orthodox_Nations
+		relative_position_id = PBZ_MAN_Contact_Fellow_Anglogerman_Detesters
 
 		prerequisite = {
-			focus = PBZ_MAN_Contact_Fellow_Orthodox_Nations
+			focus = PBZ_MAN_Contact_Fellow_Anglogerman_Detesters
 		}
 
 		available = {
@@ -2204,18 +2351,13 @@ focus_tree = {
 			RUS = {
 				exists = yes
 				is_subject = no
+				has_war = yes
 			}
 		}
 
 		available_if_capitulated = no
 
 		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
-
-        available = {
-			MAN = {
-				is_subject = no
-			}
-        }
 
 		cancel_if_invalid = yes
 
@@ -2338,7 +2480,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 
 		completion_reward = {
-			custom_effect_tooltip = PBZ_MAN_build_dam_for_korea
+			custom_effect_tooltip = PBZ_MAN_build_dam_for_korea_tt
 			custom_effect_tooltip = tooltip_white_line
 			give_military_access = KOR
 			KOR = { give_military_access = MAN }
@@ -2372,7 +2514,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 
 		completion_reward = {
-			custom_effect_tooltip = PBZ_MAN_build_forts
+			custom_effect_tooltip = PBZ_MAN_build_forts_tt
 			hidden_effect = {
 				716 = {
 					add_building_construction = {
@@ -2483,7 +2625,7 @@ focus_tree = {
 		icon = GFX_focus_generic_target_china
 		x = 0
 		y = 2
-		cost = 28
+		cost = 21
 
 		relative_position_id = PBZ_MAN_Add_Fuel_To_Fire
 
@@ -2503,7 +2645,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 
 		completion_reward = {
-			custom_effect_tooltip = PBZ_MAN_declare_wars_woohoo
+			custom_effect_tooltip = PBZ_MAN_declare_wars_woohoo_tt
 			custom_effect_tooltip = tooltip_white_line
 			swap_ideas = {
 				remove_idea = PBZ_MAN_Ministry_Of_Foreign_Affairs_0
@@ -2511,7 +2653,42 @@ focus_tree = {
 			}
 		}
 	}
-	
+
+	focus = {
+		id = PBZ_MAN_Invest_In_Mongolia
+		icon = GFX_focus_generic_expand_gold_mining
+		x = 1
+		y = 2
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Asian_Department
+
+		prerequisite = {
+			focus = PBZ_MAN_Asian_Department
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_FOREIGN_POLICY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			custom_effect_tooltip = PBZ_MAN_mongolian_resources_tt
+			custom_effect_tooltip = tooltip_white_line
+			add_opinion_modifier = {
+				target = MON
+				modifier = diplomatic_outreach
+			}
+			MON = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+		}
+	}
+
 	focus = {
 		id = PBZ_MAN_Smuggle_Resources
 		icon = GFX_focus_generic_smugglers
@@ -2532,7 +2709,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 
 		completion_reward = {
-			custom_effect_tooltip = PBZ_MAN_smuggle_resources
+			custom_effect_tooltip = PBZ_MAN_smuggle_resources_tt
 			custom_effect_tooltip = tooltip_white_line
 			add_equipment_to_stockpile = {
    				type = convoy
@@ -2545,7 +2722,7 @@ focus_tree = {
 		id = PBZ_MAN_Contact_Plutocrats
 		icon = GFX_focus_generic_gather_funds
 		x = 0
-		y = 1
+		y = 2
 		cost = 35
 
 		relative_position_id = PBZ_MAN_Smuggle_Resources
@@ -2585,7 +2762,7 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
-				amount = 2000
+				amount = 2500
 				producer = SGH
 			}
 		}
@@ -2774,6 +2951,17 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = -15
 			custom_effect_tooltip = tooltip_white_line
+			add_opinion_modifier = {
+				target = CAL
+				modifier = diplomatic_outreach
+			}
+			CAL = {
+				add_opinion_modifier = {
+					target = MAN
+					modifier = diplomatic_outreach
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
 			379 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2786,6 +2974,7 @@ focus_tree = {
 					amount = 4
 				}
 			}
+			custom_effect_tooltip = tooltip_white_line
 			CAL = {
 				add_ideas = PBZ_MAN_Korean_Resources
 			}
@@ -2797,9 +2986,9 @@ focus_tree = {
 	focus = {
 		id = PBZ_MAN_Ministry_Of_Culture
 		icon = GFX_focus_AFG_parliamentary_democracy
-		x = -12
+		x = -14
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Finish_Political_Stuff
 
@@ -2822,7 +3011,7 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			add_ideas = PBZ_MAN_Ministry_Of_Culture_0
 			custom_effect_tooltip = tooltip_white_line
-			add_research_slot = 1
+			custom_effect_tooltip = PBZ_MAN_unlock_assimilate_province_feature_tt
 		}
 	}
 
@@ -2854,6 +3043,13 @@ focus_tree = {
 				remove_idea = PB_basic_education
 				add_idea = PB_subsidized_basic_education
 			}
+			add_research_slot = 1
+			custom_effect_tooltip = tooltip_white_line
+			subtract_from_variable = {
+				var = PBZ_MAN_assimilate_province_time
+				value = 10
+				tooltip = PBZ_MAN_assimilating_province_time_reduce_10_tt
+			}
 		}
 	}
 
@@ -2884,6 +3080,11 @@ focus_tree = {
 				remove_idea = PBZ_MAN_Ministry_Of_Culture_0
 				add_idea = PBZ_MAN_Ministry_Of_Culture_1
 			}
+			subtract_from_variable = {
+				var = PBZ_MAN_assimilate_province_time
+				value = 10
+				tooltip = PBZ_MAN_assimilating_province_time_reduce_10_tt
+			}
 		}
 	}
 
@@ -2907,7 +3108,9 @@ focus_tree = {
 		cancel_if_invalid = yes
 
 		completion_reward = {
-			custom_effect_tooltip = PBZ_MAN_available_tech_team
+			custom_effect_tooltip = PBZ_MAN_Hire_Scientist_Minister_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = PBZ_MAN_available_tech_team_tt
 			show_ideas_tooltip = PBZ_MAN_Harbin_Institute
 			custom_effect_tooltip = tooltip_white_line
 			add_research_slot = 1
@@ -2934,6 +3137,8 @@ focus_tree = {
 		cancel_if_invalid = yes
 
 		completion_reward = {
+			add_ideas = PBZ_MAN_Super_Weapons
+			custom_effect_tooltip = tooltip_white_line
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 1
@@ -2945,15 +3150,6 @@ focus_tree = {
 				bonus = 1
 				uses = 1
 				category = chemical_weapons
-			}
-			custom_effect_tooltip = tooltip_white_line
-			add_breakthrough_points = {
-				specialization = specialization_nuclear
-				value = 1
-			}
-			add_breakthrough_points = {
-				specialization = specialization_biochem
-				value = 1
 			}
 		}
 	}
@@ -3009,16 +3205,9 @@ focus_tree = {
 		completion_reward = {
 			SD_WEST_growth_progress_moderate = yes
 			custom_effect_tooltip = tooltip_white_line
-			717 = {
-				set_temp_variable = { temp_culture = 355 }
-				PB_Cultures_change_culture_of_state = yes
-			}
-			714 = {
-				set_temp_variable = { temp_culture = 355 }
-				PB_Cultures_change_culture_of_state = yes
-			}
-			custom_effect_tooltip = tooltip_white_line
 			custom_effect_tooltip = PBZ_MAN_Change_Chinese_Names_tt
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = PBZ_MAN_unlock_assimilate_province_tt
 			hidden_effect = {
 				set_province_name = {
 					id = 4572
@@ -3091,6 +3280,11 @@ focus_tree = {
 					add_idea = PBZ_MAN_Ethnic_Tensions_2
 				}
 			}
+			subtract_from_variable = {
+				var = PBZ_MAN_assimilate_province_time
+				value = 10
+				tooltip = PBZ_MAN_assimilating_province_time_reduce_10_tt
+			}
 		}
 	}
 
@@ -3132,6 +3326,11 @@ focus_tree = {
 					add_idea = PBZ_MAN_Ethnic_Tensions_2
 				}
 			}
+			subtract_from_variable = {
+				var = PBZ_MAN_assimilate_province_time
+				value = 20
+				tooltip = PBZ_MAN_assimilating_province_time_reduce_20_tt
+			}
 		}
 	}
 	
@@ -3158,14 +3357,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			custom_effect_tooltip = tooltip_white_line
-			761 = {
-				set_temp_variable = { temp_culture = 355 }
-				PB_Cultures_change_culture_of_state = yes
-			}
-			612 = {
-				set_temp_variable = { temp_culture = 355 }
-				PB_Cultures_change_culture_of_state = yes
-			}
+			custom_effect_tooltip = PBZ_MAN_unlock_assimilate_province_tt
 		}
 	}
 
@@ -3198,23 +3390,11 @@ focus_tree = {
 		completion_reward = {
 			SD_WEST_growth_progress_moderate = yes
 			custom_effect_tooltip = tooltip_white_line
-			716 = {
-				set_temp_variable = { temp_culture = 355 }
-				PB_Cultures_change_culture_of_state = yes
-			}
-			715 = {
-				set_temp_variable = { temp_culture = 355 }
-				PB_Cultures_change_culture_of_state = yes
-			}
-			610 = {
-				set_temp_variable = { temp_culture = 355 }
-				PB_Cultures_change_culture_of_state = yes
-			}
-			custom_effect_tooltip = tooltip_white_line
 			swap_ideas = {
 				remove_idea = PBZ_MAN_Ethnic_Tensions_2
 				add_idea = PBZ_MAN_Ethnic_Tensions_3
 			}
+			custom_effect_tooltip = PBZ_MAN_unlock_assimilate_province_tt
 		}
 	}
 
@@ -3224,17 +3404,17 @@ focus_tree = {
 	focus = {
 		id = PBZ_MAN_Ministry_Of_Defence
 		icon = GFX_focus_SOV_my_brothers_keeper
-		x = 28
+		x = 29
 		y = 0
-		cost = 28
+		cost = 35
 
 		available_if_capitulated = no
 
 		search_filters = {FOCUS_FILTER_ARMY}
 
-        available = {
+		available = {
 			has_completed_focus = PBZ_MAN_Victory_Achieved
-        }
+		}
 
 		cancel_if_invalid = yes
 
@@ -3252,7 +3432,7 @@ focus_tree = {
 		icon = GFX_focus_ARG_march_to_la_casa_rosada
 		x = 0
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Ministry_Of_Defence
 
@@ -3263,6 +3443,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		search_filters = {FOCUS_FILTER_ARMY}
+		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		cancel_if_invalid = yes
 
@@ -3289,7 +3470,7 @@ focus_tree = {
 		icon = GFX_focus_generic_full_social_mobilization
 		x = -4
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Army_Department
 
@@ -3328,7 +3509,7 @@ focus_tree = {
 		icon = GFX_focus_AFG_scavenging
 		x = 0
 		y = 2
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Infantry_Doctrine
 
@@ -3363,7 +3544,7 @@ focus_tree = {
 		icon = GFX_focus_BEL_better_than_maginot
 		x = 1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Infantry_Development
 
@@ -3394,7 +3575,7 @@ focus_tree = {
 		icon = GFX_focus_generic_railway_gun
 		x = -1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Infantry_Development
 
@@ -3425,7 +3606,7 @@ focus_tree = {
 		icon = GFX_focus_generic_tank_assembly
 		x = 0
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Army_Department
 
@@ -3454,7 +3635,7 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			add_tech_bonus = {
 				name = PBZ_MAN_Military_Research
-				bonus = 0.5
+				bonus = 0.75
 				uses = 2
 				category = armor
 			}
@@ -3471,7 +3652,7 @@ focus_tree = {
 		icon = GFX_focus_GER_german_army_invincible
 		x = 0
 		y = 2
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Mobile_Forces_Doctrine
 
@@ -3505,7 +3686,7 @@ focus_tree = {
 		icon = GFX_focus_generic_tank_assault
 		x = 1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Mobile_Forces_School
 
@@ -3536,7 +3717,7 @@ focus_tree = {
 		icon = GFX_focus_generic_heavy_tank
 		x = -1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Mobile_Forces_School
 
@@ -3567,7 +3748,7 @@ focus_tree = {
 		icon = GFX_focus_eng_special_air_service
 		x = 4
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Army_Department
 
@@ -3615,7 +3796,7 @@ focus_tree = {
 		icon = GFX_focus_RAJ_a_private_military
 		x = 0
 		y = 2
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Special_Forces_Doctrine
 
@@ -3655,7 +3836,7 @@ focus_tree = {
 		icon = GFX_focus_generic_paratrooper
 		x = 1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Special_Augmented_Units
 
@@ -3694,7 +3875,7 @@ focus_tree = {
 		icon = GFX_focus_generic_mountain_training
 		x = -1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Special_Augmented_Units
 
@@ -3720,14 +3901,145 @@ focus_tree = {
 				category = mountaineers_tech
 			}
 			custom_effect_tooltip = tooltip_white_line
+			set_technology = { mountain_warfare_tech = 1 popup = no }
+			custom_effect_tooltip = PBZ_MAN_mountain_warfare_tech_tt
+			custom_effect_tooltip = tooltip_white_line
 			swap_ideas = {
 				remove_idea = PBZ_MAN_Ministry_of_Defence_Special_1
 				add_idea = PBZ_MAN_Ministry_of_Defence_Special_3
 			}
-			custom_effect_tooltip = PBZ_MAN_mountain_warfare_tech
-			hidden_effect = {
-				set_technology = { mountain_warfare_tech = 1 popup = no }
-			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Morale_Boosters
+		icon = GFX_focus_SIA_chemical_imports
+		x = 1
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Railway_Guns
+
+		prerequisite = {
+			focus = PBZ_MAN_Railway_Guns
+			focus = PBZ_MAN_Infantry_Trenches
+			focus = PBZ_MAN_Mobile_Landship_Maneuvers
+			focus = PBZ_MAN_Mobile_Anti_Armour_Battle
+			focus = PBZ_MAN_Special_Highland_War
+			focus = PBZ_MAN_Special_From_Skies
+		}
+
+		mutually_exclusive = {
+			focus = PBZ_MAN_Flawless_Support
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_ideas = PBZ_MAN_Morale_Boosters_idea
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Flawless_Support
+		icon = GFX_focus_PRC_develop_yanan_soviet
+		x = 3
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Railway_Guns
+
+		prerequisite = {
+			focus = PBZ_MAN_Railway_Guns
+			focus = PBZ_MAN_Infantry_Trenches
+			focus = PBZ_MAN_Mobile_Landship_Maneuvers
+			focus = PBZ_MAN_Mobile_Anti_Armour_Battle
+			focus = PBZ_MAN_Special_Highland_War
+			focus = PBZ_MAN_Special_From_Skies
+		}
+
+		mutually_exclusive = {
+			focus = PBZ_MAN_Morale_Boosters
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_ideas = PBZ_MAN_Flawless_Support_idea
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Assault_Troops
+		icon = GFX_focus_SIA_night_time_training
+		x = -3
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Special_From_Skies
+
+		prerequisite = {
+			focus = PBZ_MAN_Railway_Guns
+			focus = PBZ_MAN_Infantry_Trenches
+			focus = PBZ_MAN_Mobile_Landship_Maneuvers
+			focus = PBZ_MAN_Mobile_Anti_Armour_Battle
+			focus = PBZ_MAN_Special_Highland_War
+			focus = PBZ_MAN_Special_From_Skies
+		}
+
+		mutually_exclusive = {
+			focus = PBZ_MAN_Clandestine_War
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_ideas = PBZ_MAN_Assault_Troops_idea
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Clandestine_War
+		icon = GFX_focus_RAJ_a_policy_of_silence
+		x = -1
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Special_From_Skies
+
+		prerequisite = {
+			focus = PBZ_MAN_Railway_Guns
+			focus = PBZ_MAN_Infantry_Trenches
+			focus = PBZ_MAN_Mobile_Landship_Maneuvers
+			focus = PBZ_MAN_Mobile_Anti_Armour_Battle
+			focus = PBZ_MAN_Special_Highland_War
+			focus = PBZ_MAN_Special_From_Skies
+		}
+
+		mutually_exclusive = {
+			focus = PBZ_MAN_Assault_Troops
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_ARMY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			add_ideas = PBZ_MAN_Clandestine_War_idea
 		}
 	}
 
@@ -3736,7 +4048,7 @@ focus_tree = {
 		icon = GFX_focus_generic_reinforcing_the_supply_network
 		x = -1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Mobile_Forces_Doctrine
 
@@ -3764,9 +4076,9 @@ focus_tree = {
 				category = support_tech
 			}
 			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = PBZ_MAN_improved_engineer_corps_tech
+			custom_effect_tooltip = PBZ_MAN_improved_engineer_corps_tech_tt
 			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = PBZ_MAN_improved_logistics_tech
+			custom_effect_tooltip = PBZ_MAN_improved_logistics_tech_tt
 			hidden_effect = {
 				set_technology = { improved_engineer_corps_tech = 1 popup = no }
 				set_technology = { improved_logistics_tech = 1 popup = no }
@@ -3779,7 +4091,7 @@ focus_tree = {
 		icon = GFX_focus_CHI_guerrilla_warfare
 		x = -3
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Mobile_Forces_Doctrine
 
@@ -3807,9 +4119,9 @@ focus_tree = {
 				category = support_tech
 			}
 			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = PBZ_MAN_improved_recon_units_tech
+			custom_effect_tooltip = PBZ_MAN_improved_recon_units_tech_tt
 			custom_effect_tooltip = tooltip_white_line
-			custom_effect_tooltip = PBZ_MAN_improved_field_hospitals_tech
+			custom_effect_tooltip = PBZ_MAN_improved_field_hospitals_tech_tt
 			hidden_effect = {
 				set_technology = { improved_recon_units_tech = 1 popup = no }
 				set_technology = { improved_field_hospitals_tech = 1 popup = no }
@@ -3822,7 +4134,7 @@ focus_tree = {
 		icon = GFX_focus_generic_secret_agent_operative
 		x = -2
 		y = 2
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Mobile_Forces_Doctrine
 
@@ -3839,7 +4151,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 
 		completion_reward = {
-			add_ideas = PBZ_MAN_osoboe_deloproizvodstvo_idea
+			add_ideas = PBZ_MAN_Osoboe_Deloproizvodstvo_idea
 		}
 	}
 
@@ -3848,7 +4160,7 @@ focus_tree = {
 		icon = GFX_goal_generic_position_armies
 		x = 1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Mobile_Forces_Doctrine
 
@@ -3876,7 +4188,7 @@ focus_tree = {
 		icon = GFX_focus_MAN_cossack_host
 		x = 3
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Mobile_Forces_Doctrine
 
@@ -3919,7 +4231,7 @@ focus_tree = {
 		icon = GFX_focus_generic_combined_arms
 		x = 1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Revise_War_Plans
 
@@ -3946,7 +4258,7 @@ focus_tree = {
 			custom_effect_tooltip = tooltip_white_line
 			if = {
 				limit = {
-						has_completed_focus = PBZ_MAN_Infantry_Doctrine
+					has_completed_focus = PBZ_MAN_Infantry_Doctrine
 				}
 				every_army_leader = {
 					add_defense = 1
@@ -3955,7 +4267,7 @@ focus_tree = {
 			}
 			else_if = {
 				limit = {
-						has_completed_focus = PBZ_MAN_Mobile_Forces_Doctrine
+					has_completed_focus = PBZ_MAN_Mobile_Forces_Doctrine
 				}
 				every_army_leader = {
 					add_attack = 1
@@ -3964,7 +4276,7 @@ focus_tree = {
 			}
 			else_if = {
 				limit = {
-						has_completed_focus = PBZ_MAN_Special_Forces_Doctrine
+					has_completed_focus = PBZ_MAN_Special_Forces_Doctrine
 				}
 				every_army_leader = {
 					add_attack = 1
@@ -3972,19 +4284,19 @@ focus_tree = {
 				}
 			}
 			else = {
-				custom_effect_tooltip = PBZ_MAN_if_infantry_doctrine
+				custom_effect_tooltip = PBZ_MAN_if_infantry_doctrine_tt
 				every_army_leader = {
 					add_defense = 1
 					add_planning = 1
 				}
 				custom_effect_tooltip = tooltip_white_line
-				custom_effect_tooltip = PBZ_MAN_if_mobile_doctrine
+				custom_effect_tooltip = PBZ_MAN_if_mobile_doctrine_tt
 				every_army_leader = {
 					add_attack = 1
 					add_logistics = 1
 				}
 				custom_effect_tooltip = tooltip_white_line
-				custom_effect_tooltip = PBZ_MAN_if_special_doctrine
+				custom_effect_tooltip = PBZ_MAN_if_special_doctrine_tt
 				every_army_leader = {
 					add_attack = 1
 					add_planning = 1
@@ -4000,7 +4312,7 @@ focus_tree = {
 		icon = GFX_focus_PER_raf_planes
 		x = -7
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Ministry_Of_Defence
 
@@ -4015,7 +4327,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 
 		completion_reward = {
-			air_experience = 25
+			air_experience = 50
 			custom_effect_tooltip = tooltip_white_line
 			add_doctrine_cost_reduction = {
 				name = PBZ_MAN_Doctrine_Cost
@@ -4039,7 +4351,7 @@ focus_tree = {
 		icon = GFX_focus_generic_aircraft_production
 		x = -1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Air_Force_Department
 
@@ -4050,6 +4362,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		search_filters = {FOCUS_FILTER_AIR}
+		search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		cancel_if_invalid = yes
 
@@ -4071,7 +4384,7 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = tooltip_white_line
-			add_ideas = PBZ_MAN_Air_Production
+			add_ideas = PBZ_MAN_Air_Production_0
 		}
 	}
 
@@ -4080,7 +4393,7 @@ focus_tree = {
 		icon = GFX_focus_generic_air_research_boost
 		x = 1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Air_Force_Department
 
@@ -4091,6 +4404,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		search_filters = {FOCUS_FILTER_AIR}
+		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		cancel_if_invalid = yes
 
@@ -4142,7 +4456,7 @@ focus_tree = {
 		icon = GFX_focus_generic_pilot_training
 		x = 1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Build_Aircraft_Industry
 
@@ -4179,7 +4493,7 @@ focus_tree = {
 		icon = GFX_focus_generic_tank_air_support
 		x = -1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Pilot_Academy
 
@@ -4202,6 +4516,12 @@ focus_tree = {
 				remove_idea = PBZ_MAN_Air_Department_1
 				add_idea = PBZ_MAN_Air_Department_2
 			}
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 1
+				uses = 1
+				category = light_air	
+			}
 		}
 	}
 
@@ -4210,7 +4530,7 @@ focus_tree = {
 		icon = GFX_focus_SWE_marauder_bombers
 		x = 1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Pilot_Academy
 
@@ -4233,6 +4553,46 @@ focus_tree = {
 				remove_idea = PBZ_MAN_Air_Department_1
 				add_idea = PBZ_MAN_Air_Department_3
 			}
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 1
+				uses = 1
+				category = medium_air	
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Strategic_Bombers
+		icon = GFX_focus_CHI_effectivize_ground_crew_usage
+		x = 1
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_CAS_Planes
+
+		prerequisite = {
+			focus = PBZ_MAN_CAS_Planes
+			focus = PBZ_MAN_Tactical_Bombers
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_AIR}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Air_Production_0
+				add_idea = PBZ_MAN_Air_Production_1
+			}
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 1
+				uses = 1
+				category = heavy_air	
+			}
 		}
 	}
 
@@ -4243,7 +4603,7 @@ focus_tree = {
 		icon = GFX_focus_generic_merchant_fleet
 		x = 7
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Ministry_Of_Defence
 
@@ -4276,7 +4636,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 0
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Navy_Department
 
@@ -4287,6 +4647,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		search_filters = {FOCUS_FILTER_NAVY}
+		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		cancel_if_invalid = yes
 
@@ -4305,7 +4666,13 @@ focus_tree = {
 					province = 9835
 				}
 			}
-			add_ideas = PBZ_MAN_Building_Fleet_Faster
+			custom_effect_tooltip = tooltip_white_line
+			add_breakthrough_points = {
+				specialization = specialization_naval
+				value = 1
+			}
+			custom_effect_tooltip = tooltip_white_line
+			add_ideas = PBZ_MAN_Building_Fleet_Faster_0
 		}
 	}
 
@@ -4314,7 +4681,7 @@ focus_tree = {
 		icon = GFX_focus_generic_naval_discipline
 		x = 0
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Expand_Dockyards
 
@@ -4343,7 +4710,7 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_submarine
 		x = -1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Naval_Training
 
@@ -4366,6 +4733,12 @@ focus_tree = {
 				remove_idea = PBZ_MAN_Navy_Department_1
 				add_idea = PBZ_MAN_Navy_Department_2
 			}
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 1
+				uses = 1
+				category = ss_tech	
+			}
 		}
 	}
 
@@ -4374,7 +4747,7 @@ focus_tree = {
 		icon = GFX_focus_generic_destroyer
 		x = 1
 		y = 1
-		cost = 28
+		cost = 35
 
 		relative_position_id = PBZ_MAN_Naval_Training
 
@@ -4397,6 +4770,55 @@ focus_tree = {
 				remove_idea = PBZ_MAN_Navy_Department_1
 				add_idea = PBZ_MAN_Navy_Department_3
 			}
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 1
+				uses = 1
+				category = dd_tech	
+			}
+		}
+	}
+
+	focus = {
+		id = PBZ_MAN_Build_Cruisers
+		icon = GFX_focus_generic_navy_battleship2
+		x = 1
+		y = 1
+		cost = 35
+
+		relative_position_id = PBZ_MAN_Submarine_Fleet
+
+		prerequisite = {
+			focus = PBZ_MAN_Destroyer_Fleet
+			focus = PBZ_MAN_Submarine_Fleet
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_NAVY}
+
+		cancel_if_invalid = yes
+
+		completion_reward = {
+			610 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			swap_ideas = {
+				remove_idea = PBZ_MAN_Building_Fleet_Faster_0
+				add_idea = PBZ_MAN_Building_Fleet_Faster_1
+			}
+			add_tech_bonus = {
+				name = PBZ_MAN_Military_Research
+				bonus = 1
+				uses = 1
+				category = ca_tech	
+			}
 		}
 	}
 	
@@ -4406,7 +4828,7 @@ focus_tree = {
 		id = PBZ_MAN_China_United
 		icon = GFX_focus_chi_one_china_policy
 		x = 26
-		y = 7
+		y = 8
 		cost = 28
 		
 		available = {
